@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import Layout from './layout';
 
-function ClientsSay({ alternate }: { alternate?: boolean }) {
+function ClientsSay({
+  alternate,
+  title,
+}: {
+  alternate?: boolean;
+  title: string;
+}) {
   const [selected, setSelected] = useState(0);
 
-  const className = alternate || false ? 'flex-row-reverse' : 'flex-row';
+  const alt = alternate || false;
+  const className = alt ? 'flex-row-reverse' : 'flex-row';
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -43,20 +50,24 @@ function ClientsSay({ alternate }: { alternate?: boolean }) {
       parent="bg-lavendar"
       child={`md:px-32 lg:px-6 py-20 flex flex-col lg:${className}`}
     >
-      <div className="flex-1 flex items-center pb-5 lg:pb-0">
-        <div className="flex gap-10">
+      <div
+        className={`flex-1 flex items-center pb-5 lg:pb-0 ${
+          alt ? 'lg:text-right lg:flex-row-reverse' : ''
+        }`}
+      >
+        <div className={`flex ${alt ? 'gap-6' : 'gap-10'} float-right`}>
           <img src="/clients-say.svg" alt="Comment" draggable={false} />
           <h1 className="uppercase text-blue text-3xl md:text-4xl font-semibold">
-            What our <br /> clients say
+            What our <br /> {title} say
           </h1>
         </div>
       </div>
       <div className="flex-1">
         <p>
           <span className="text-red text-5xl absolute -mt-1">"</span>
-          <span className="italic text-black-light leading-loose text-normal lg:text-lg inline-block indent">
+          <span className="italic text-black-light leading-10 text-normal lg:text-lg inline-block indent">
             {comment}
-            <span className="not-italic text-red text-5xl absolute -mt-4 -ml-4">
+            <span className="not-italic text-red text-5xl absolute mt-3 -ml-5">
               "
             </span>
           </span>

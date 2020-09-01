@@ -43,4 +43,9 @@ body *:focus {
   .text-8xl {
     font-size: 6rem;
   }
+
+  .py-28 {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
 }

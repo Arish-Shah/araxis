@@ -22,7 +22,7 @@ function IndexPage() {
         <Companies />
         <Vision />
         <HowItWorks />
-        <ClientsSay />
+        <ClientsSay title="Clients" />
         <Ready />
         <Footer />
       </div>

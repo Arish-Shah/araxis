@@ -2,6 +2,8 @@ import Navbar from '../components/navbar';
 import Hero from '../components/job-seekers/hero';
 import Footer from '../components/footer';
 import Text from '../components/job-seekers/text';
+import ClientsSay from '../components/clients-say';
+import RegisterForm from '../components/job-seekers/register-form';
 
 function JobSeekers() {
   return (
@@ -9,6 +11,8 @@ function JobSeekers() {
       <Navbar />
       <Hero />
       <Text />
+      <ClientsSay alternate={true} title="Recruits" />
+      <RegisterForm />
       <Footer />
     </>
   );

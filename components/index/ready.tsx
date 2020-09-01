@@ -11,8 +11,8 @@ function Ready() {
         Ready to work with us?
       </h1>
       <div className="mx-auto w-full justify-center md:w-1/2 flex lg:mt-4 gap-3 md:gap-4 flex-col md:flex-row">
-        {RedButton}
-        {BlueButton}
+        <RedButton text="Find Work" />
+        <BlueButton text="Find Talent" />
       </div>
     </Layout>
   );

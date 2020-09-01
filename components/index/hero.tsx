@@ -12,8 +12,8 @@ function Hero() {
           outsourcing partner, or a career in the IT, Araxis delivers.
         </p>
         <div className="flex lg:mt-4 gap-3 md:gap-4 flex-col md:flex-row">
-          {RedButton}
-          {BlueButton}
+          <RedButton text="Find Work" />
+          <BlueButton text="Find Talent" />
         </div>
       </div>
       <div className="mt-12 xl:mt-0 xl:w-7/12">
@@ -30,17 +30,17 @@ function Hero() {
 const buttonStyles =
   'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12 transition-colors duration-200';
 
-export const RedButton = (
+export const RedButton = ({ text }: { text: string }) => (
   <button className={`${buttonStyles} from-red to-red-dark hover:to-red`}>
-    Find Work
+    {text}
   </button>
 );
 
-export const BlueButton = (
+export const BlueButton = ({ text }: { text: string }) => (
   <button
     className={`${buttonStyles} from-blue-light to-blue hover:to-blue-light`}
   >
-    Find Talent
+    {text}
   </button>
 );
 
