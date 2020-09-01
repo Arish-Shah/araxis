@@ -1,6 +1,6 @@
-import Layout from './layout';
+import Layout from '../layout';
 
-function HeroIndex() {
+function Hero() {
   return (
     <Layout child="py-10 my-4 flex flex-col md:px-32 lg:gap-10 lg:px-6 lg:flex-row lg:items-center lg:py-12">
       <div className="xl:w-5/12">
@@ -44,4 +44,4 @@ export const BlueButton = (
   </button>
 );
 
-export default HeroIndex;
+export default Hero;

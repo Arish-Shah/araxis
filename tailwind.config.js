@@ -24,6 +24,9 @@ module.exports = {
           default: '#2d2d2d',
         },
       },
+      backgroundImage: theme => ({
+        'footer-image': 'url("/footer.svg")',
+      }),
     },
     fontFamily: {
       body: ['Poppins'],

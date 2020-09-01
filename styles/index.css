@@ -35,4 +35,12 @@ body *:focus {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
   }
+
+  .text-7xl {
+    font-size: 5rem;
+  }
+
+  .text-8xl {
+    font-size: 6rem;
+  }
 }

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import Layout from './layout';
 
-function ClientsSay() {
+function ClientsSay({ alternate }: { alternate?: boolean }) {
   const [selected, setSelected] = useState(0);
+
+  const className = alternate || false ? 'flex-row-reverse' : 'flex-row';
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -39,7 +41,7 @@ function ClientsSay() {
   return (
     <Layout
       parent="bg-lavendar"
-      child="md:px-32 lg:px-6 py-20 flex flex-col lg:flex-row"
+      child={`md:px-32 lg:px-6 py-20 flex flex-col lg:${className}`}
     >
       <div className="flex-1 flex items-center pb-5 lg:pb-0">
         <div className="flex gap-10">

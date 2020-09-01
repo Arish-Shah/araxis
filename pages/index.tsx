@@ -1,12 +1,12 @@
 import Head from 'next/head';
 
 import Navbar from '../components/navbar';
-import HeroIndex from '../components/hero-index';
-import Companies from '../components/companies';
-import Vision from '../components/vision';
-import HowItWorks from '../components/how-it-works';
+import Hero from '../components/index/hero';
+import Companies from '../components/index/companies';
+import Vision from '../components/index/vision';
+import HowItWorks from '../components/index/how-it-works';
 import ClientsSay from '../components/clients-say';
-import Ready from '../components/ready';
+import Ready from '../components/index/ready';
 import Footer from '../components/footer';
 
 function IndexPage() {
@@ -18,7 +18,7 @@ function IndexPage() {
       </Head>
       <div>
         <Navbar />
-        <HeroIndex />
+        <Hero />
         <Companies />
         <Vision />
         <HowItWorks />

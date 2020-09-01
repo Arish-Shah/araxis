@@ -10,20 +10,20 @@ function Footer() {
     { href: '/', text: 'Press' },
   ];
 
-  const socials: {name: string; url: string;}[] = [
-    {name: 'facebook', url: 'https://facebook.com'},
-    {name: 'twitter', url: 'https://twitter.com'},
-    {name: 'instagram', url: 'https://instagram.com'},
-    {name: 'linkedin', url: 'https://linkedin.com'},
+  const socials: { name: string; url: string }[] = [
+    { name: 'facebook', url: 'https://facebook.com' },
+    { name: 'twitter', url: 'https://twitter.com' },
+    { name: 'instagram', url: 'https://instagram.com' },
+    { name: 'linkedin', url: 'https://linkedin.com' },
   ];
 
   return (
     <Layout
-      parent="bg-gradient-to-br from-blue to-blue-light lg:bg-gradient-to-r"
+      parent="bg-footer-image bg-cover"
       child="py-12 text-white md:px-32 lg:px-6"
     >
-      <div className="flex flex-col lg:flex-row ">
-        <div className="flex-1 py-8 border-solid border-b-2 border-gray-700 lg:border-b-0 lg:border-r-2">
+      <div className="flex flex-col lg:flex-row">
+        <div className="lg:w-5/12 py-8 border-solid border-b-2 border-gray-700 lg:border-b-0 lg:border-r-2">
           <h3 className="text-lg font-medium">Who We are?</h3>
           <div className="text-black-lighter text-sm leading-loose pt-5 lg:pr-24">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -32,7 +32,7 @@ function Footer() {
             and scrambled it to make a type specimen book.
           </div>
         </div>
-        <div className="flex-none py-8 border-solid border-b-2 border-gray-700 lg:pl-12 lg:pr-32 lg:border-b-0 lg:border-r-2">
+        <div className="lg:w-3/12 py-8 border-solid border-b-2 border-gray-700 lg:pl-12 lg:pr-32 lg:border-b-0 lg:border-r-2">
           <h3 className="text-lg font-medium">Know Us</h3>
           <div className="pt-5 leading-loose flex flex-col items-start">
             {links.map(({ href, text }) => (
@@ -44,13 +44,18 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex-1 py-8 lg:pl-12">
+        <div className="lg:w-3/12 py-8 lg:pl-12">
           <h3 className="text-lg font-medium">Connect</h3>
-          <div className="flex gap-4 py-6">
+          <div className="flex gap-5 py-6">
             {socials.map(({ name, url }) => (
               <Link href={url} key={name}>
                 <a target="_blank">
-                  <img src={`social/${name}.svg`} alt={name} draggable={false} />
+                  <img
+                    src={`social/${name}.svg`}
+                    alt={name}
+                    className="h-6 md:h-auto"
+                    draggable={false}
+                  />
                 </a>
               </Link>
             ))}

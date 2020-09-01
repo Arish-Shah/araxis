@@ -1,4 +1,4 @@
-import Layout from './layout';
+import Layout from '../layout';
 
 export const ButtonWithArrow = ({ text }: { text: string }) => (
   <button className="flex items-center text-red uppercase text-xl font-medium">
