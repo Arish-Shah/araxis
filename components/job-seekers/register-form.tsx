@@ -46,8 +46,7 @@ function RegisterForm() {
             />
           </div>
         </div>
-
-        <p className="text-left text-gray-600 pt-16 leading-loose">
+        <p className="text-left text-gray-600 pt-16 leading-loose text-sm lg:text-base">
           From time to time, we would like to contact you about our services as
           well as other content that may be of interest to you. If you consent
           to us contacting you for this purpose, please tick below. You may
@@ -56,7 +55,7 @@ function RegisterForm() {
 
         <div
           onClick={() => setChecked(checked => !checked)}
-          className="text-left flex items-center gap-4 text-gray-600 pt-5"
+          className="text-left flex items-center gap-4 text-gray-600 pt-5 text-sm lg:text-base"
         >
           {checked ? (
             <img

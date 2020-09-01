@@ -1,13 +1,18 @@
-import Layout from '../layout';
+import Layout from './layout';
 
-function Hero() {
+interface Props {
+  firstLine: string;
+  secondLine: string;
+}
+
+function Hero({ firstLine, secondLine }: Props) {
   return (
     <Layout child="py-20 text-center md:px-32 lg:px-40">
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl">
-        Looking for a Career Change?
+        {firstLine}
       </h1>
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl">
-        Let us take care of it!
+        {secondLine}
       </h1>
       <p className="text-black-light mt-6 lg:text-lg">
         Lorem Ipsum is simply dummy text of the printing and typesetting
