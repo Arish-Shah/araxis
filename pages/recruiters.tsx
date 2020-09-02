@@ -13,7 +13,11 @@ function RecruitersPage() {
         firstLine="Employment Services"
         secondLine="Find the right talent."
       />
-      <SecondHero />
+      <SecondHero
+        title="Staff Solutions"
+        subtitle="Success is not a matter of coincidence"
+        content="Over the years, we have successfully executed various assignments across the globe. We have a team of specialist consultants to service the true needs of each of our clients. We believe in maintaining long-standing relationships with our clients and candidates, in order to provide right talent at the right time."
+      />
       <End2End />
       <Form />
       <Footer />

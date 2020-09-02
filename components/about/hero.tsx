@@ -2,7 +2,7 @@ import Layout from '../layout';
 
 function Hero() {
   return (
-    <Layout child="pt-20 md:px-32 lg:px-6 text-center">
+    <Layout child="pt-12 md:px-32 lg:px-6 text-center">
       <div>
         <h1 className="uppercase text-3xl md:text-4xl lg:text-inter font-semibold text-blue">
           About Us

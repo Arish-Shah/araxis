@@ -1,7 +1,7 @@
 import Layout from '../layout';
 
 const First = (
-  <Layout child="py-20 text-center md:px-32 lg:px-6">
+  <Layout child="pt-12 pb-20 text-center md:px-32 lg:px-6 lg:pt-20">
     <h1 className="uppercase text-blue text-3xl md:text-inter font-semibold">
       Tailored End to End IT Solutions
     </h1>
