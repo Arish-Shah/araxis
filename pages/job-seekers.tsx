@@ -5,7 +5,7 @@ import Text from '../components/job-seekers/text';
 import ClientsSay from '../components/clients-say';
 import RegisterForm from '../components/job-seekers/register-form';
 
-function JobSeekers() {
+function JobSeekersPage() {
   return (
     <>
       <Navbar />
@@ -21,4 +21,4 @@ function JobSeekers() {
   );
 }
 
-export default JobSeekers;
+export default JobSeekersPage;

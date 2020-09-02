@@ -36,6 +36,10 @@ body *:focus {
     padding-right: 3.75rem;
   }
 
+  .text-inter {
+    font-size: 2.5rem;
+  }
+
   .text-7xl {
     font-size: 5rem;
   }

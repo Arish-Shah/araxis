@@ -20,7 +20,7 @@ function Vision() {
       child="py-0 md:px-32 lg:px-6 pt-20 flex flex-col md:flex-row"
     >
       <div className="md:pb-12 flex-1 lg:pr-16">
-        <h1 className="text-blue uppercase text-5xl font-bold leading-tight py-2 xl:text-6xl">
+        <h1 className="text-blue uppercase text-5xl font-bold leading-tight py-2 lg:text-6xl xl:text-7xl">
           10+ years <br />
           one vision
         </h1>

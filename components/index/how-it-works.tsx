@@ -27,7 +27,7 @@ function HowItWorks() {
   return (
     <Layout child="md:px-32 lg:px-6 pt-20 pb-16 text-center">
       <div>
-        <h1 className="uppercase text-blue text-4xl font-semibold">
+        <h1 className="uppercase text-blue text-4xl lg:text-inter font-semibold">
           How It Works
         </h1>
         <p className="text-red text-2xl py-1 italic">

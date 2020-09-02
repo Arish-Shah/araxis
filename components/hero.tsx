@@ -8,10 +8,10 @@ interface Props {
 function Hero({ firstLine, secondLine }: Props) {
   return (
     <Layout child="py-20 text-center md:px-32 lg:px-40">
-      <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl">
+      <h1 className="uppercase text-blue text-3xl font-semibold md:text-inter">
         {firstLine}
       </h1>
-      <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl">
+      <h1 className="uppercase text-blue text-3xl font-semibold md:text-inter">
         {secondLine}
       </h1>
       <p className="text-black-light mt-6 lg:text-lg">
