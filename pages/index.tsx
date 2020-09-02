@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Navbar from '../components/navbar';
 import Hero from '../components/index/hero';
-import Companies from '../components/index/companies';
+import Companies from '../components/companies';
 import Vision from '../components/index/vision';
 import HowItWorks from '../components/index/how-it-works';
 import ClientsSay from '../components/clients-say';

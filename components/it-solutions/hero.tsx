@@ -2,10 +2,10 @@ import Layout from '../layout';
 
 const First = (
   <Layout child="py-20 text-center md:px-32 lg:px-6">
-    <h1 className="uppercase text-blue text-4xl md:text-inter font-semibold">
+    <h1 className="uppercase text-blue text-3xl md:text-inter font-semibold">
       Tailored End to End IT Solutions
     </h1>
-    <h1 className="uppercase text-blue text-4xl md:text-inter font-semibold">
+    <h1 className="uppercase text-blue text-3xl md:text-inter font-semibold">
       For Your IT Needs
     </h1>
     <div className="text-black-light md:text-lg leading-relaxed font-medium">
