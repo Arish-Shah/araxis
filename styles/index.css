@@ -3,6 +3,10 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+:root {
+  --blue: #1b1a4e;
+  --red: #eb4a53;
+}
 
 /* Start purging... */
 @tailwind components;

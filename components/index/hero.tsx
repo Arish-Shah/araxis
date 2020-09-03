@@ -18,7 +18,7 @@ function Hero() {
       </div>
       <div className="mt-12 xl:mt-0 xl:w-7/12">
         <img
-          src="/assets/home-banner-illustration.svg"
+          src="/home-banner-illustration.svg"
           alt="People"
           draggable={false}
         />

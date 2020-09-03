@@ -39,10 +39,10 @@ function Navbar() {
   };
 
   const smClasses =
-    'font-medium text-lg border-solid border-b-2 py-1 my-1 hover:text-red transition-colors duration-200 ease-in-out';
+    'font-semibold text-lg border-solid border-b-2 py-1 my-1 hover:text-red transition-colors duration-200 ease-in-out';
 
   const lgClasses =
-    'text-sm font-medium border-solid border-b-2 py-1 ml-6 hover:text-red transition-colors duration-200 ease-in-out';
+    'text-sm font-semibold border-solid border-b-2 py-1 ml-6 hover:text-red transition-colors duration-200 ease-in-out';
 
   return (
     <>
