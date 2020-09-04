@@ -1,16 +1,80 @@
+import { useForm } from 'react-hook-form';
+
 import Layout from '../layout';
 import { useState } from 'react';
 import { RedButton } from '../index/hero';
 
+interface IFormInput {
+  firstName: string;
+  lastName: string;
+  phone: number;
+  email: string;
+  linkedin: string;
+  resume: FileList;
+  communications: boolean;
+}
+
 function RegisterForm() {
   const [checked, setChecked] = useState(false);
+  const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const inputs: { label: string; id: string; type: string }[] = [
-    { label: 'First Name*', id: 'first-name', type: 'text' },
-    { label: 'Last Name*', id: 'last-name', type: 'text' },
-    { label: 'Phone Number', id: 'phone-number', type: 'number' },
-    { label: 'Email', id: 'email', type: 'email' },
-    { label: 'Linkedin URL', id: 'linkedin', type: 'url' },
+  const onSubmit = data => {
+    console.log({ ...data, communications: checked });
+  };
+
+  const inputs: {
+    label: string;
+    id: string;
+    type: string;
+    rules: Partial<{}>;
+  }[] = [
+    {
+      label: 'First Name*',
+      id: 'firstName',
+      type: 'text',
+      rules: {
+        required: { value: true, message: 'Fields marked * are required' },
+      },
+    },
+    {
+      label: 'Last Name*',
+      id: 'lastName',
+      type: 'text',
+      rules: {
+        required: { value: true, message: 'Fields marked * are required' },
+      },
+    },
+    {
+      label: 'Phone Number',
+      id: 'phone',
+      type: 'number',
+      rules: {
+        minLength: { value: 10, message: 'Please enter a valid number' },
+        maxLength: { value: 10, message: 'Please enter a valid number' },
+      },
+    },
+    {
+      label: 'Email',
+      id: 'email',
+      type: 'email',
+      rules: {
+        pattern: {
+          value: /\S+@\S+.\S+/,
+          message: 'Please enter a valid email',
+        },
+      },
+    },
+    {
+      label: 'Linkedin URL',
+      id: 'linkedin',
+      type: 'url',
+      rules: {
+        pattern: {
+          value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/,
+          message: 'Please enter a valid URL',
+        },
+      },
+    },
   ];
 
   return (
@@ -21,27 +85,54 @@ function RegisterForm() {
       <p className="text-black-light py-4 md:text-lg lg:text-xl">
         We want to get know you better
       </p>
-      <form className="mt-6">
+      <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 gap-y-5 md:gap-y-6 gap-x-6 lg:gap-x-8 xl:gap-x-10 md:grid-cols-2 lg:grid-cols-3">
-          {inputs.map(({ label, id, type }) => (
+          {inputs.map(({ label, id, type, rules }) => (
             <div className="text-left" key={id}>
-              <label className="block text-sm text-gray-600" htmlFor={id}>
-                {label}
-              </label>
+              <div className="flex justify-between items-center">
+                <label className="block text-sm text-gray-600" htmlFor={id}>
+                  {label}
+                </label>
+                {errors[id] && (
+                  <span className="text-red text-xs mt-0">
+                    {errors[id]?.message}
+                  </span>
+                )}
+              </div>
               <input
                 type={type}
                 id={id}
+                name={id}
+                ref={register(rules)}
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
               />
             </div>
           ))}
           <div className="text-left">
-            <label className="block text-sm text-gray-600" htmlFor="resume">
-              Please Attach your Resume*
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="block text-sm text-gray-600" htmlFor="resume">
+                Please Attach your Resume*
+              </label>
+              {errors.resume && (
+                <span className="text-red text-xs mt-0">
+                  {errors.resume?.message}
+                  {errors.resume.type === 'validate' &&
+                    'File must be under 10MB.'}
+                </span>
+              )}
+            </div>
             <input
               type="file"
               id="resume"
+              name="resume"
+              ref={register({
+                required: {
+                  value: true,
+                  message: 'Fields marked * are required',
+                },
+                validate: fileList => fileList[0].size < 10000000,
+              })}
+              multiple={false}
               className="text-sm w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
             />
           </div>
