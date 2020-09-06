@@ -1,3 +1,4 @@
+import { useForm } from 'react-hook-form';
 import Layout from '../layout';
 
 function Form() {
@@ -34,15 +35,77 @@ const Hero = (
   </div>
 );
 
+interface IFormInput {
+  select: string;
+  name: string;
+  email: string;
+  phone: number;
+  topic: string;
+  message?: string;
+}
+
 const ContactUsForm = () => {
-  const inputs: { label: string; id: string; type: string }[] = [
-    { label: 'Name*', id: 'name', type: 'text' },
-    { label: 'Email Address*', id: 'email', type: 'email' },
-    { label: 'Phone Number*', id: 'phone-number', type: 'number' },
+  const { register, errors, handleSubmit } = useForm<IFormInput>();
+
+  const onSubmit = data => {
+    console.log(data);
+  };
+
+  const inputs: {
+    label: string;
+    id: string;
+    type: string;
+    rules: Partial<{}>;
+  }[] = [
+    {
+      label: 'Name*',
+      id: 'name',
+      type: 'text',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+      },
+    },
+    {
+      label: 'Email Address*',
+      id: 'email',
+      type: 'email',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+        pattern: {
+          value: /\S+@\S+\.\S+/,
+          message: 'Please enter a valid email',
+        },
+      },
+    },
+    {
+      label: 'Phone Number*',
+      id: 'phone',
+      type: 'number',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+        minLength: {
+          value: 10,
+          message: 'Please enter a valid phone number',
+        },
+        maxLength: {
+          value: 10,
+          message: 'Please enter a valid phone number',
+        },
+      },
+    },
   ];
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-4 lg:gap-x-6 xl:gap-x-8 md:grid-cols-2">
         <div className="text-left">
           <label htmlFor="select" className="block text-sm text-gray-600">
@@ -51,17 +114,28 @@ const ContactUsForm = () => {
           <select
             id="select"
             className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+            ref={register()}
+            name="select"
           >
             <option value="Foo">Foo</option>
           </select>
         </div>
-        {inputs.map(({ label, id, type }) => (
+        {inputs.map(({ label, id, type, rules }) => (
           <div className="text-left" key={id}>
-            <label htmlFor={id} className="block text-sm text-gray-600">
-              {label}
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="block text-sm text-gray-600" htmlFor={id}>
+                {label}
+              </label>
+              {errors[id] && (
+                <span className="text-red text-xs mt-0">
+                  {errors[id]?.message}
+                </span>
+              )}
+            </div>
             <input
               id={id}
+              name={id}
+              ref={register(rules)}
               type={type}
               className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
             />
@@ -74,15 +148,31 @@ const ContactUsForm = () => {
         </h3>
         <div className="flex gap-8 mt-5 text-black-light">
           <label htmlFor="recruiting">
-            <input type="radio" name="topic" id="recruiting" />
+            <input
+              type="radio"
+              name="topic"
+              id="recruiting"
+              ref={register()}
+              defaultChecked={true}
+            />
             <span className="pl-2">Recruiting</span>
           </label>
           <label htmlFor="job-seeking">
-            <input type="radio" name="topic" id="job-seeking" />
+            <input
+              type="radio"
+              name="topic"
+              id="job-seeking"
+              ref={register()}
+            />
             <span className="pl-2">Job Seeking</span>
           </label>
           <label htmlFor="it-solutions">
-            <input type="radio" name="topic" id="it-solutions" />
+            <input
+              type="radio"
+              name="topic"
+              id="it-solutions"
+              ref={register()}
+            />
             <span className="pl-2">IT Solutions</span>
           </label>
         </div>
@@ -91,6 +181,8 @@ const ContactUsForm = () => {
         <textarea
           placeholder="Message"
           className="w-full h-40 placeholder-blue border-solid border-2 border-gray-300 rounded-md p-2 focus:border-green"
+          name="message"
+          ref={register()}
         />
       </div>
       <div className="mt-6 flex text-left lg:block">

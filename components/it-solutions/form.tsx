@@ -1,10 +1,73 @@
+import { useForm } from 'react-hook-form';
+
 import Layout from '../layout';
 
+interface IFormInput {
+  name: string;
+  email: string;
+  phone: number;
+  service: string;
+  message?: string;
+}
+
 function Form() {
-  const inputs: { label: string; id: string; type: string }[] = [
-    { label: 'Name*', id: 'name', type: 'text' },
-    { label: 'Email Address*', id: 'email', type: 'email' },
-    { label: 'Phone Number*', id: 'phone-number', type: 'number' },
+  const { register, errors, handleSubmit } = useForm<IFormInput>();
+
+  const onSubmit = data => {
+    console.log(data);
+  };
+
+  const inputs: {
+    label: string;
+    id: string;
+    type: string;
+    rules: Partial<{}>;
+  }[] = [
+    {
+      label: 'Name*',
+      id: 'name',
+      type: 'text',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+      },
+    },
+    {
+      label: 'Email Address*',
+      id: 'email',
+      type: 'email',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+        pattern: {
+          value: /\S+@\S+\.\S+/,
+          message: 'Please enter a valid email',
+        },
+      },
+    },
+    {
+      label: 'Phone Number*',
+      id: 'phone',
+      type: 'number',
+      rules: {
+        required: {
+          value: true,
+          message: 'Fields marked * are required',
+        },
+        minLength: {
+          value: 10,
+          message: 'Please enter a valid phone number',
+        },
+        maxLength: {
+          value: 10,
+          message: 'Please enter a valid phone number',
+        },
+      },
+    },
   ];
 
   return (
@@ -13,15 +76,24 @@ function Form() {
         <h1 className="uppercase text-blue font-semibold text-4xl leading-tight lg:text-inter xl:text-5xl">
           Tell us <br /> about your Project
         </h1>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="pt-16 grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-6 lg:gap-x-8 xl:gap-x-10 md:grid-cols-2">
-            {inputs.map(({ label, id, type }) => (
+            {inputs.map(({ label, id, type, rules }) => (
               <div className="text-left" key={id}>
-                <label htmlFor={id} className="block text-sm text-gray-600">
-                  {label}
-                </label>
+                <div className="flex justify-between items-center">
+                  <label className="block text-sm text-gray-600" htmlFor={id}>
+                    {label}
+                  </label>
+                  {errors[id] && (
+                    <span className="text-red text-xs mt-0">
+                      {errors[id]?.message}
+                    </span>
+                  )}
+                </div>
                 <input
                   id={id}
+                  name={id}
+                  ref={register(rules)}
                   type={type}
                   className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
                 />
@@ -33,8 +105,10 @@ function Form() {
               </label>
               <select
                 id="service"
+                name="service"
                 placeholder="Select"
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                ref={register()}
               >
                 <option value="Foo">Foo</option>
               </select>
@@ -46,12 +120,17 @@ function Form() {
             </label>
             <textarea
               id="message"
+              name="message"
               placeholder="Message"
               className="w-full text-sm h-40 border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+              ref={register()}
             />
           </div>
           <div className="mt-6 flex lg:block">
-            <button type="submit" className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-20">
+            <button
+              type="submit"
+              className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-20"
+            >
               Submit
             </button>
           </div>

@@ -7,9 +7,9 @@ import { RedButton } from '../index/hero';
 interface IFormInput {
   firstName: string;
   lastName: string;
-  phone: number;
-  email: string;
-  linkedin: string;
+  phone?: number;
+  email?: string;
+  linkedin?: string;
   resume: FileList;
   communications: boolean;
 }
@@ -19,7 +19,12 @@ function RegisterForm() {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   const onSubmit = data => {
-    console.log({ ...data, communications: checked });
+    fetch('/api/register', {
+      method: 'POST',
+      body: data,
+    })
+      .then(res => res.text())
+      .then(res => console.log(res));
   };
 
   const inputs: {
@@ -59,7 +64,7 @@ function RegisterForm() {
       type: 'email',
       rules: {
         pattern: {
-          value: /\S+@\S+.\S+/,
+          value: /\S+@\S+\.\S+/,
           message: 'Please enter a valid email',
         },
       },
@@ -128,7 +133,7 @@ function RegisterForm() {
               ref={register({
                 required: {
                   value: true,
-                  message: 'Fields marked * are required',
+                  message: 'Resume required',
                 },
                 validate: fileList => fileList[0].size < 10000000,
               })}
