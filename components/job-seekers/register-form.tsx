@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 import Layout from '../layout';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { RedButton } from '../index/hero';
 
 interface IFormInput {
@@ -18,12 +18,12 @@ function RegisterForm() {
   const [checked, setChecked] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = data => {
+  const onSubmit = (data: IFormInput) => {
     fetch('/api/register', {
       method: 'POST',
-      body: data,
+      body: new FormData(formRef.current),
     })
-      .then(res => res.text())
+      .then(res => res.json())
       .then(res => console.log(res));
   };
 
@@ -82,6 +82,8 @@ function RegisterForm() {
     },
   ];
 
+  const formRef = useRef();
+
   return (
     <Layout child="py-28 text-center md:px-32 lg:px-6">
       <h1 className="font-semibold uppercase text-3xl md:text-4xl lg:text-5xl text-blue">
@@ -90,7 +92,7 @@ function RegisterForm() {
       <p className="text-black-light py-4 md:text-lg lg:text-xl">
         We want to get know you better
       </p>
-      <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
+      <form className="mt-6" onSubmit={handleSubmit(onSubmit)} ref={formRef}>
         <div className="grid grid-cols-1 gap-y-5 md:gap-y-6 gap-x-6 lg:gap-x-8 xl:gap-x-10 md:grid-cols-2 lg:grid-cols-3">
           {inputs.map(({ label, id, type, rules }) => (
             <div className="text-left" key={id}>

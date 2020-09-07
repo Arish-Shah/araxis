@@ -69,8 +69,8 @@ function Panel({ title, content, image, reverse }: PanelProps) {
   const flex = reverse ? 'flex-row-reverse' : 'flex-row';
 
   return (
-    <div className={`pt-24 flex flex-col lg:${flex} items-center`}>
-      <div className="lg:flex-1 pr-12">
+    <div className={`pt-24 flex flex-col-reverse lg:${flex} items-center`}>
+      <div className="lg:flex-1 lg:pr-12">
         <img
           src={`/services/${image}`}
           alt={title}
@@ -78,7 +78,7 @@ function Panel({ title, content, image, reverse }: PanelProps) {
           className="h-64 lg:h-auto mx-auto"
         />
       </div>
-      <div className="lg:flex-1 text-center text-left mt-12 lg:mt-0 lg:text-left">
+      <div className="lg:flex-1 text-center text-left mb-10 lg:mb-0 lg:text-left">
         <h1 className="uppercase text-blue font-semibold text-xl hidden lg:block">
           {heading}
         </h1>

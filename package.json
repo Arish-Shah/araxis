@@ -5,10 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "preexport": "npm run build",
-    "export": "next export",
-    "predeploy": "npm run export",
-    "deploy": "cp CNAME out/ && surge out/"
+    "export": "next export"
   },
   "dependencies": {
     "next": "latest",
