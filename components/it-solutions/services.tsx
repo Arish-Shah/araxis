@@ -34,7 +34,7 @@ function Services() {
       title: 'Technical\n Support',
       content:
         'We have servers in some of the best data centers in the country. We host applications and database on our secure servers. We supply the bandwidth and power your application needs when it needs it. We work with clients to provide custom hosted solutions including web servers, database servers, firewalls, VPNs and load balancing.',
-      image: 'web-app.svg',
+      image: 'technical-support.svg',
       reverse: true,
     },
     {

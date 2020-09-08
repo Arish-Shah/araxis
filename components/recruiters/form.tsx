@@ -20,7 +20,12 @@ function Form() {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   const onSubmit = data => {
-    console.log({ ...data, communications: checked });
+    fetch('/api/recruiters', {
+      body: JSON.stringify({ ...data, communications: checked }),
+      method: 'POST',
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
   };
 
   const inputs: {
