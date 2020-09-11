@@ -19,12 +19,7 @@ function RegisterForm() {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   const onSubmit = (data: IFormInput) => {
-    fetch('/api/register', {
-      method: 'POST',
-      body: new FormData(formRef.current),
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    console.log(data);
   };
 
   const inputs: {

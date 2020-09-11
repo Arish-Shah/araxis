@@ -19,13 +19,8 @@ function Form() {
   const [checked, setChecked] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = data => {
-    fetch('/api/recruiters', {
-      body: JSON.stringify({ ...data, communications: checked }),
-      method: 'POST',
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+  const onSubmit = (data: IFormInput) => {
+    console.log(data);
   };
 
   const inputs: {
