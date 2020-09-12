@@ -21,7 +21,9 @@ function End2End() {
           Ipsum has been the industry's standard dummy text ever since the
           1500s.
         </p>
-        {Chart}
+        <div className="pt-12">
+          <img src="/chart.png" alt="Chart" className="mx-auto" />
+        </div>
       </div>
     </Layout>
   );
@@ -37,34 +39,6 @@ const arrow = (
       <path d="M296.75 149.188L215 98.875v33.5H0v33h215v32.5z" />
     </svg>
   </span>
-);
-
-const boxClassName =
-  'leading-snug border-solid border-2 border-gray-800 bg-blue-lighter w-40 text-white text-lg text-left px-5 flex items-center';
-const largeBoxClassName = boxClassName + ' h-64';
-const smallBoxClassName = boxClassName + ' h-40';
-
-const Chart = (
-  <div className="overflow-x-scroll justify-center flex items-center mt-10 gap-2 scale-50 lg:overflow-x-hidden">
-    <div className={largeBoxClassName}>Application</div>
-    {arrow}
-    <div className={largeBoxClassName}>Recruiter Call</div>
-    <div className="flex flex-col justify-between h-48">
-      {arrow}
-      {arrow}
-    </div>
-    <div className="flex flex-col justify-between h-64 gap-10">
-      <div className={smallBoxClassName}>Team Interview</div>
-      <div className={smallBoxClassName}>Technical Assessment</div>
-    </div>
-    <div className="flex flex-col justify-between h-48">
-      {arrow}
-      {arrow}
-    </div>
-    <div className={largeBoxClassName}>Hiring Manager Call</div>
-    {arrow}
-    <div className={largeBoxClassName}>Offer</div>
-  </div>
 );
 
 export default End2End;
