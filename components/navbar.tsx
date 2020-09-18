@@ -73,7 +73,7 @@ function Navbar() {
             {icon}
           </button>
         </div>
-        <div className="hidden lg:flex flex-row">
+        <div className="hidden lg:flex flex-row justify-between ml-16 lg:ml-24 xl:ml-32 flex-1">
           {links.map(({ href, text }) => {
             const classes =
               pathname === href

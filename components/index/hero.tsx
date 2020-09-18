@@ -28,20 +28,14 @@ function Hero() {
 }
 
 const buttonStyles =
-  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12 transition-colors duration-200';
+  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12 fill';
 
 export const RedButton = ({ text }: { text: string }) => (
-  <button className={`${buttonStyles} from-red to-red-dark hover:to-red`}>
-    {text}
-  </button>
+  <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>
 );
 
 export const BlueButton = ({ text }: { text: string }) => (
-  <button
-    className={`${buttonStyles} from-blue-light to-blue hover:to-blue-light`}
-  >
-    {text}
-  </button>
+  <button className={`${buttonStyles} from-blue-light to-blue`}>{text}</button>
 );
 
 export default Hero;

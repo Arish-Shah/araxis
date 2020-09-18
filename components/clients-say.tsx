@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Layout from './layout';
 
 function ClientsSay({
@@ -12,13 +12,6 @@ function ClientsSay({
 
   const alt = alternate || false;
   const className = alt ? 'flex-row-reverse' : 'flex-row';
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setSelected(s => (s + 1) % testimonals.length);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   const testimonals: { name: string; of: string; comment: string }[] = [
     {
