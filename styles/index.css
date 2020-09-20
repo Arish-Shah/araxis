@@ -4,9 +4,18 @@
 
 /* Write your own custom base styles here */
 :root {
-  --blue: #1b1a4e;
-  --red: #eb4a53;
-  --chart-blue: #234e9f;
+  --red-default: #eb4a53;
+  --red-dark: #d03153;
+  --blue-lighter: #234e9f;
+  --blue-light: #1e3b6f;
+  --blue-default: #1b1a4e;
+  --green: #00dda3;
+  --white: #fff;
+  --lavendar: #efeff9;
+  --pink: #f9eff0;
+  --black-lighter: #cccccc;
+  --black-light: #4d4d4d;
+  --black-default: #2d2d2d;
 }
 
 /* Start purging... */
@@ -39,23 +48,30 @@ input[type='number']::-webkit-outer-spin-button {
 
 .fill {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
-.fill::after {
-  content: '';
+.fill:hover {
+  background-color: transparent !important;
+}
+
+.fill:hover::before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+.fill::before {
+  display: block;
   position: absolute;
-  z-index: -1;
-  transition: top 150ms ease;
-  bottom: 0;
   left: 0;
-  right: 0;
-  top: 100%;
-  background: #000;
-}
-
-.fill:hover::after {
   top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  background: var(--green);
+  transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 /* Start purging... */

@@ -42,7 +42,7 @@ function Navbar() {
     'font-semibold text-lg border-solid border-b-2 py-1 my-1 hover:text-red transition-colors duration-200 ease-in-out';
 
   const lgClasses =
-    'text-sm font-semibold border-solid border-b-2 py-1 ml-6 hover:text-red transition-colors duration-200 ease-in-out';
+    'text-sm font-semibold border-solid border-b-2 py-1 mr-8 hover:text-red transition-colors duration-200 ease-in-out';
 
   return (
     <>
@@ -51,7 +51,7 @@ function Navbar() {
       </Head>
       <Layout
         parent="border-solid border-b-2 border-gray-200"
-        child="py-6 flex justify-between items-center lg:py-4"
+        child="py-6 flex justify-between lg:justify-start items-center lg:py-4"
       >
         <div>
           <Link href="/">
@@ -73,7 +73,7 @@ function Navbar() {
             {icon}
           </button>
         </div>
-        <div className="hidden lg:flex flex-row justify-between ml-16 lg:ml-24 xl:ml-32 flex-1">
+        <div className="hidden lg:flex flex-row ml-12 flex-1">
           {links.map(({ href, text }) => {
             const classes =
               pathname === href
@@ -85,6 +85,8 @@ function Navbar() {
               </Link>
             );
           })}
+        </div>
+        <div className="">
           <Link href={phoneLink.href}>
             <a
               className={`text-blue border-transparent flex gap-2 ${lgClasses}`}

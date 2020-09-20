@@ -7,22 +7,22 @@ module.exports = {
     extend: {
       colors: {
         red: {
-          default: '#eb4a53',
-          dark: '#d03153',
+          default: 'var(--red-default)',
+          dark: 'var(--red-dark)',
         },
         blue: {
-          lighter: '#234e9f',
-          light: '#1e3b6f',
-          default: '#1b1a4e',
+          lighter: 'var(--blue-lighter)',
+          light: 'var(--blue-light)',
+          default: 'var(--blue-default)',
         },
-        green: '#00dda3',
-        white: '#ffffff',
-        lavendar: '#efeff9',
-        pink: '#f9eff0',
+        green: 'var(--green)',
+        white: 'var(--white)',
+        lavendar: 'var(--lavendar)',
+        pink: 'var(--pink)',
         black: {
-          lighter: '#cccccc',
-          light: '#4d4d4d',
-          default: '#2d2d2d',
+          lighter: 'var(--black-lighter)',
+          light: 'var(--black-light)',
+          default: 'var(--black-default)',
         },
       },
       backgroundImage: theme => ({
@@ -30,7 +30,7 @@ module.exports = {
       }),
     },
     fontFamily: {
-      body: ['Poppins'],
+      body: ['Poppins', 'Arial', 'sans-serif'],
     },
   },
   variants: {},

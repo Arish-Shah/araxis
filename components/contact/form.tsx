@@ -107,40 +107,30 @@ const ContactUsForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-4 lg:gap-x-6 xl:gap-x-8 md:grid-cols-2">
-        <div className="text-left">
-          <label htmlFor="select" className="block text-sm text-gray-600">
-            Select
-          </label>
-          <select
-            id="select"
-            className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
-            ref={register()}
-            name="select"
-          >
-            <option value="Foo">Foo</option>
-          </select>
-        </div>
-        {inputs.map(({ label, id, type, rules }) => (
-          <div className="text-left" key={id}>
-            <div className="flex justify-between items-center">
-              <label className="block text-sm text-gray-600" htmlFor={id}>
-                {label}
-              </label>
-              {errors[id] && (
-                <span className="text-red text-xs mt-0">
-                  {errors[id]?.message}
-                </span>
-              )}
+        {inputs.map(({ label, id, type, rules }, index) => {
+          const spanner = index === 0 ? 'col-span-2' : '';
+          return (
+            <div className={`text-left ${spanner}`} key={id}>
+              <div className="flex justify-between items-center">
+                <label className="block text-sm text-gray-600" htmlFor={id}>
+                  {label}
+                </label>
+                {errors[id] && (
+                  <span className="text-red text-xs mt-0">
+                    {errors[id]?.message}
+                  </span>
+                )}
+              </div>
+              <input
+                id={id}
+                name={id}
+                ref={register(rules)}
+                type={type}
+                className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+              />
             </div>
-            <input
-              id={id}
-              name={id}
-              ref={register(rules)}
-              type={type}
-              className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
-            />
-          </div>
-        ))}
+          );
+        })}
       </div>
       <div className="mt-8 mb-6 text-left">
         <h3 className="text-blue text-xl">

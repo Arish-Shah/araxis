@@ -110,7 +110,16 @@ function Form() {
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
                 ref={register()}
               >
-                <option value="Foo">Foo</option>
+                <option value="Custom Application Development">
+                  Custom Application Development
+                </option>
+                <option value="Custom Web Development">
+                  Custom Web Development
+                </option>
+                <option value="SEO">SEO</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Quality Engineering">Quality Engineering</option>
+                <option value="Other">Other</option>
               </select>
             </div>
           </div>
