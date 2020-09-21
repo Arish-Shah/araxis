@@ -77,7 +77,6 @@ function Form() {
           Tell us <br /> about your Project
         </h1>
         <form
-          onSubmit={handleSubmit(onSubmit)}
           action="/contact"
           method="POST"
           name="it-solutions"
