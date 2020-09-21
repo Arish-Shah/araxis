@@ -76,7 +76,13 @@ function Form() {
         <h1 className="uppercase text-blue font-semibold text-4xl leading-tight lg:text-inter xl:text-5xl">
           Tell us <br /> about your Project
         </h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          action="/contact"
+          method="POST"
+          name="it-solutions"
+          data-netlify="true"
+        >
           <div className="pt-16 grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-6 lg:gap-x-8 xl:gap-x-10 md:grid-cols-2">
             {inputs.map(({ label, id, type, rules }) => (
               <div className="text-left" key={id}>

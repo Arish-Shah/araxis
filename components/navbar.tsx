@@ -21,7 +21,7 @@ function Navbar() {
       document.body.style.position = 'initial';
     }
 
-    const scrollFn = window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
 
@@ -100,7 +100,7 @@ function Navbar() {
           </Link>
         </div>
         {/* The Hamburger/Cross icon */}
-        <div className="lg:hidden">
+        <div className="lg:hidden relative z-40">
           <button
             onClick={() => setIsOpen(open => !open)}
             className={`${isOpen ? 'text-red' : 'text-blue'}`}
@@ -131,30 +131,32 @@ function Navbar() {
             </a>
           </Link>
         </div>
+        {/* Small screen navigation */}
+        <div
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } lg:hidden z-30 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid border rounded border-gray-300 flex flex-col items-center`}
+        >
+          {links.map(({ href, text }) => {
+            const classes =
+              pathname === href
+                ? 'border-red text-red'
+                : 'text-blue border-transparent';
+            return (
+              <Link href={href} key={href}>
+                <a className={`${classes} ${smClasses}`}>{text}</a>
+              </Link>
+            );
+          })}
+          <Link href={phoneLink.href}>
+            <a
+              className={`text-blue border-transparent flex gap-2 ${smClasses}`}
+            >
+              {call} {phoneLink.text}
+            </a>
+          </Link>
+        </div>
       </Layout>
-      {/* Small screen navigation */}
-      <div
-        className={`${
-          isOpen ? 'block' : 'hidden'
-        } lg:hidden z-20 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid border rounded border-gray-300 flex flex-col items-center`}
-      >
-        {links.map(({ href, text }) => {
-          const classes =
-            pathname === href
-              ? 'border-red text-red'
-              : 'text-blue border-transparent';
-          return (
-            <Link href={href} key={href}>
-              <a className={`${classes} ${smClasses}`}>{text}</a>
-            </Link>
-          );
-        })}
-        <Link href={phoneLink.href}>
-          <a className={`text-blue border-transparent flex gap-2 ${smClasses}`}>
-            {call} {phoneLink.text}
-          </a>
-        </Link>
-      </div>
     </>
   );
 }
