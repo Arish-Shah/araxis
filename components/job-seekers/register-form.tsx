@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 
 import Layout from '../layout';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { RedButton } from '../index/hero';
 
 interface IFormInput {
@@ -17,6 +17,11 @@ interface IFormInput {
 function RegisterForm() {
   const [checked, setChecked] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = '/form/check-green.svg';
+  });
 
   const onSubmit = (data: IFormInput) => {
     console.log(data);
@@ -91,27 +96,29 @@ function RegisterForm() {
       </p>
       <form className="mt-6" onSubmit={handleSubmit(onSubmit)} ref={formRef}>
         <div className="grid grid-cols-1 gap-y-5 md:gap-y-6 gap-x-6 lg:gap-x-8 xl:gap-x-10 md:grid-cols-2 lg:grid-cols-3">
-          {inputs.map(({ label, id, type, rules }) => (
-            <div className="text-left" key={id}>
-              <div className="flex justify-between items-center">
-                <label className="block text-sm text-gray-600" htmlFor={id}>
-                  {label}
-                </label>
-                {errors[id] && (
-                  <span className="text-red text-xs mt-0">
-                    {errors[id]?.message}
-                  </span>
-                )}
+          {inputs.map(({ label, id, type, rules }) => {
+            return (
+              <div className="text-left" key={id}>
+                <div className="flex justify-between items-center">
+                  <label className="block text-sm text-gray-600" htmlFor={id}>
+                    {label}
+                  </label>
+                  {errors[id] && (
+                    <span className="text-red text-xs mt-0">
+                      {errors[id]?.message}
+                    </span>
+                  )}
+                </div>
+                <input
+                  type={type}
+                  id={id}
+                  name={id}
+                  ref={register(rules)}
+                  className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                />
               </div>
-              <input
-                type={type}
-                id={id}
-                name={id}
-                ref={register(rules)}
-                className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
-              />
-            </div>
-          ))}
+            );
+          })}
           <div className="text-left">
             <div className="flex justify-between items-center">
               <label className="block text-sm text-gray-600" htmlFor="resume">

@@ -41,7 +41,7 @@ function ClientsSay({
   return (
     <Layout
       parent="bg-lavendar"
-      child={`md:px-32 lg:px-6 py-20 flex flex-col lg:${className}`}
+      child={`md:px-32 lg:px-6 py-20 h-128 flex flex-col lg:${className}`}
     >
       <div
         className={`flex-1 flex items-center pb-5 lg:pb-0 ${
@@ -56,7 +56,7 @@ function ClientsSay({
         </div>
       </div>
       <div className="flex-1">
-        <p>
+        <p className="h-56">
           <span className="text-red text-5xl absolute -mt-1">"</span>
           <span className="italic text-black-light leading-10 text-normal lg:text-lg inline-block indent">
             {comment}
@@ -65,7 +65,7 @@ function ClientsSay({
             </span>
           </span>
         </p>
-        <p className="text-blue text-sm font-semibold italic pt-4 pb-2">
+        <p className="text-blue text-sm font-semibold italic pb-2">
           - {name}, {of}
         </p>
         <div className="flex">

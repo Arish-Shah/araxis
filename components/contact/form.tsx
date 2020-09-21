@@ -3,7 +3,7 @@ import Layout from '../layout';
 
 function Form() {
   return (
-    <Layout child="pt-12 pb-20 md:px-32 lg:px-6 text-center lg:pt-20 lg:pb-32">
+    <Layout child="pt-40 pb-20 md:px-32 lg:px-6 text-center lg:pt-32 lg:pb-32">
       {Hero}
       <div className="pt-16 grid grid-cols-1 gap-y-10 lg:gap-8 lg:grid-cols-8">
         <div className="col-span-5">
@@ -18,7 +18,7 @@ function Form() {
 }
 
 const Hero = (
-  <div>
+  <div className="lg:pt-6">
     <h1 className="uppercase text-3xl md:text-4xl lg:text-inter font-semibold text-blue">
       Contact Us
     </h1>

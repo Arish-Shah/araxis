@@ -7,7 +7,7 @@ interface Props {
 
 function Hero({ firstLine, secondLine }: Props) {
   return (
-    <Layout child="pt-12 pb-20 text-center md:px-32 lg:px-40 lg:pt-20">
+    <Layout child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40">
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl lg:text-inter">
         {firstLine}
       </h1>
@@ -24,19 +24,25 @@ function Hero({ firstLine, secondLine }: Props) {
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 text-white gap-8">
         <div className="text-left px-6 bg-gradient-to-r from-green to-green pt-6 pb-12">
-          <span><img src="/icons/like.svg" alt="Like"/></span>
+          <span>
+            <img src="/icons/like.svg" alt="Like" />
+          </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
             Developer friendly Experience
           </span>
         </div>
         <div className="text-left px-6 bg-gradient-to-r from-red-dark to-red pt-6 pb-12">
-          <span><img src="/icons/trust.svg" alt="Like"/></span>
+          <span>
+            <img src="/icons/trust.svg" alt="Like" />
+          </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
             Trusted Remote Process
           </span>
         </div>
         <div className="text-left px-6 bg-gradient-to-r from-blue-light to-blue pt-6 pb-12">
-          <span><img src="/icons/advanced-skill.svg" alt="Like"/></span>
+          <span>
+            <img src="/icons/advanced-skill.svg" alt="Like" />
+          </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
             Advanced Skill Assessments
           </span>

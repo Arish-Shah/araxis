@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import Layout from './layout';
@@ -12,6 +12,7 @@ interface NavItem {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [transition, setTransition] = useState('py-6 lg:py-4');
 
   useEffect(() => {
     if (isOpen) {
@@ -19,7 +20,36 @@ function Navbar() {
     } else {
       document.body.style.position = 'initial';
     }
+
+    const scrollFn = window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
+
+  const parentRef = useRef();
+  const navbarContainerRef = useRef();
+
+  const handleScroll = () => {
+    const navbarClassList = (navbarContainerRef.current as HTMLInputElement)
+      .classList;
+    const parentClassList = (parentRef.current as HTMLDivElement).classList;
+    const add = (classNames, classList) =>
+      classNames.split(' ').map(className => classList.add(className));
+    const remove = (classNames, classList) =>
+      classNames.split(' ').map(className => classList.remove(className));
+
+    if (
+      document.body.scrollTop > 40 ||
+      document.documentElement.scrollTop > 40
+    ) {
+      add('py-4', navbarClassList);
+      remove('py-8 lg:py-6', navbarClassList);
+      add('shadow', parentClassList);
+    } else {
+      remove('py-4', navbarClassList);
+      add('py-8 lg:py-6', navbarClassList);
+      remove('shadow', parentClassList);
+    }
+  };
 
   const icon = isOpen ? Cross : Hamburger;
   const pathname = useRouter().pathname;
@@ -50,10 +80,14 @@ function Navbar() {
         <title>Araxis</title>
       </Head>
       <Layout
-        parent="border-solid border-b-2 border-gray-200"
-        child="py-6 flex justify-between lg:justify-start items-center lg:py-4"
+        parent="z-20 fixed top-0 left-0 right-0 bg-white"
+        child="z-20 flex justify-between lg:justify-start items-center"
+        parentRef={parentRef}
       >
-        <div>
+        <div
+          className="transition-all duration-300 py-8 lg:py-6"
+          ref={navbarContainerRef}
+        >
           <Link href="/">
             <a>
               <img
@@ -65,14 +99,16 @@ function Navbar() {
             </a>
           </Link>
         </div>
+        {/* The Hamburger/Cross icon */}
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(open => !open)}
-            className={`${isOpen ? 'text-red' : 'text-blue'} z-20 relative`}
+            className={`${isOpen ? 'text-red' : 'text-blue'}`}
           >
             {icon}
           </button>
         </div>
+        {/* Big screen navigation */}
         <div className="hidden lg:flex flex-row ml-12 flex-1">
           {links.map(({ href, text }) => {
             const classes =
@@ -86,7 +122,7 @@ function Navbar() {
             );
           })}
         </div>
-        <div className="">
+        <div className="hidden lg:block">
           <Link href={phoneLink.href}>
             <a
               className={`text-blue border-transparent flex gap-2 ${lgClasses}`}
@@ -96,10 +132,11 @@ function Navbar() {
           </Link>
         </div>
       </Layout>
+      {/* Small screen navigation */}
       <div
         className={`${
           isOpen ? 'block' : 'hidden'
-        } lg:hidden fixed top-0 left-0 right-0 bg-white z-10 p-8 pt-12 m-4 border-solid border rounded border-gray-300 flex flex-col items-center`}
+        } lg:hidden z-20 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid border rounded border-gray-300 flex flex-col items-center`}
       >
         {links.map(({ href, text }) => {
           const classes =
