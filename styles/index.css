@@ -18,6 +18,11 @@
   --black-default: #2d2d2d;
 }
 
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
@@ -75,6 +80,10 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 /* For Carousel dots */
+.slick-dots {
+  text-align: left !important;
+}
+
 .slick-dots li {
   width: 15px !important;
 }
@@ -82,7 +91,7 @@ input[type='number']::-webkit-outer-spin-button {
 .slick-dots li button::before {
   color: var(--blue-default) !important;
   opacity: 1 !important;
-  font-size: 7px !important;
+  font-size: 8px !important;
 }
 
 .slick-dots li.slick-active button::before {

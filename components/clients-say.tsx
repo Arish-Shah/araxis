@@ -49,7 +49,7 @@ function ClientsSay({
     <>
       <Layout
         parent="bg-lavendar"
-        child={`md:px-32 lg:px-6 py-20 h-128 lg:${className}`}
+        child={`md:px-32 lg:px-6 py-20 h-128 lg:${className} flex flex-col`}
       >
         <div
           className={`flex-1 flex items-center pb-5 lg:pb-0 ${
@@ -74,7 +74,7 @@ function ClientsSay({
                     "
                   </span>
                 </span>
-                <p className="text-blue text-sm font-semibold italic pt-4 pb-8">
+                <p className="text-blue text-sm font-semibold italic pt-4 pb-4">
                   - {t.name}, {t.of}
                 </p>
               </React.Fragment>
