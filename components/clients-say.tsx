@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React from 'react';
 import Layout from './layout';
+import Slider from 'react-slick';
 
 function ClientsSay({
   alternate,
@@ -8,8 +9,6 @@ function ClientsSay({
   alternate?: boolean;
   title: string;
 }) {
-  const [selected, setSelected] = useState(0);
-
   const alt = alternate || false;
   const className = alt ? 'flex-row-reverse' : 'flex-row';
 
@@ -36,55 +35,54 @@ function ClientsSay({
     },
   ];
 
-  const { name, of, comment } = testimonals[selected];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+  };
 
   return (
-    <Layout
-      parent="bg-lavendar"
-      child={`md:px-32 lg:px-6 py-20 h-128 flex flex-col lg:${className}`}
-    >
-      <div
-        className={`flex-1 flex items-center pb-5 lg:pb-0 ${
-          alt ? 'lg:text-right lg:flex-row-reverse' : ''
-        }`}
+    <>
+      <Layout
+        parent="bg-lavendar"
+        child={`md:px-32 lg:px-6 py-20 h-128 lg:${className}`}
       >
-        <div className={`flex ${alt ? 'gap-6' : 'gap-10'} float-right`}>
-          <img src="/clients-say.svg" alt="Comment" draggable={false} />
-          <h1 className="uppercase text-blue text-3xl md:text-4xl lg:text-inter font-semibold">
-            What our <br /> {title} say
-          </h1>
+        <div
+          className={`flex-1 flex items-center pb-5 lg:pb-0 ${
+            alt ? 'lg:text-right lg:flex-row-reverse' : ''
+          }`}
+        >
+          <div className={`flex ${alt ? 'gap-6' : 'gap-10'} float-right`}>
+            <img src="/clients-say.svg" alt="Comment" draggable={false} />
+            <h1 className="uppercase text-blue text-3xl md:text-4xl lg:text-inter font-semibold">
+              What our <br /> {title} say
+            </h1>
+          </div>
         </div>
-      </div>
-      <div className="flex-1">
-        <p className="h-56">
-          <span className="text-red text-5xl absolute -mt-1">"</span>
-          <span className="italic text-black-light leading-10 text-normal lg:text-lg inline-block indent">
-            {comment}
-            <span className="not-italic text-red text-5xl absolute mt-3 -ml-5">
-              "
-            </span>
-          </span>
-        </p>
-        <p className="text-blue text-sm font-semibold italic pb-2">
-          - {name}, {of}
-        </p>
-        <div className="flex">
-          {testimonals.map((_, index) => {
-            const className = index === selected ? 'text-red' : 'text-blue';
-            return (
-              <div className="w-6 leading-0" key={index}>
-                <span
-                  onClick={() => setSelected(index)}
-                  className={`${className} cursor-pointer text-3xl`}
-                >
-                  &bull;
+        <div className="flex-1">
+          <Slider {...settings}>
+            {testimonals.map((t, index) => (
+              <React.Fragment key={index}>
+                <span className="text-red text-5xl absolute -mt-1">"</span>
+                <span className="italic text-black-light leading-10 text-normal lg:text-lg inline-block indent">
+                  {t.comment}
+                  <span className="not-italic text-red text-5xl absolute mt-3 -ml-5">
+                    "
+                  </span>
                 </span>
-              </div>
-            );
-          })}
+                <p className="text-blue text-sm font-semibold italic pt-4 pb-8">
+                  - {t.name}, {t.of}
+                </p>
+              </React.Fragment>
+            ))}
+          </Slider>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 

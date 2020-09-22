@@ -74,6 +74,21 @@ input[type='number']::-webkit-outer-spin-button {
   transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
+/* For Carousel dots */
+.slick-dots li {
+  width: 15px !important;
+}
+
+.slick-dots li button::before {
+  color: var(--blue-default) !important;
+  opacity: 1 !important;
+  font-size: 7px !important;
+}
+
+.slick-dots li.slick-active button::before {
+  color: var(--red-default) !important;
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */

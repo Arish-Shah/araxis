@@ -135,7 +135,7 @@ function Navbar() {
         <div
           className={`${
             isOpen ? 'block' : 'hidden'
-          } lg:hidden z-30 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid border rounded border-gray-300 flex flex-col items-center`}
+          } lg:hidden z-30 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid shadow-lg rounded flex flex-col items-center`}
         >
           {links.map(({ href, text }) => {
             const classes =
