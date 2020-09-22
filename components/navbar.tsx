@@ -12,18 +12,11 @@ interface NavItem {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [transition, setTransition] = useState('py-6 lg:py-4');
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.position = 'fixed';
-    } else {
-      document.body.style.position = 'initial';
-    }
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isOpen]);
+  }, []);
 
   const parentRef = useRef();
   const navbarContainerRef = useRef();
