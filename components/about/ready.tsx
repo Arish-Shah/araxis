@@ -7,7 +7,7 @@ function Ready() {
         Give your customer the experience they desire
       </p>
       <h1 className="text-blue text-3xl md:text-4xl xl:text-5xl font-semibold py-6 uppercase">
-        Ready to work with us?
+        Work with us!
       </h1>
       <div className="mt-4 flex lg:block">
         <button

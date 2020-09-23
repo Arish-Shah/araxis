@@ -2,10 +2,10 @@ import Layout from '../layout';
 
 const First = (
   <Layout child="pt-40 pb-24 text-center md:px-32 lg:px-6 lg:pt-40">
-    <h1 className="uppercase text-blue text-3xl md:text-inter font-semibold">
+    <h1 className="uppercase text-blue text-2xl md:text-4xl xl:text-inter font-semibold">
       Tailormade & End-To-End. Scalable & Successful.
     </h1>
-    <h1 className="uppercase text-blue text-3xl md:text-inter font-semibold">
+    <h1 className="uppercase text-blue mt-2 text-2xl md:text-4xl xl:text-inter font-semibold">
       That’s our USP in four words!
     </h1>
     <div className="text-black-light md:text-lg leading-relaxed font-medium">

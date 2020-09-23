@@ -38,7 +38,7 @@ const Leading = (
       </p>
     </div>
     <div className="flex-1">
-      <h1 className="text-blue text-4xl lg:text-inter font-semibold italic">
+      <h1 className="text-blue text-3xl md:text-4xl xl:text-inter font-semibold italic">
         "Accelerate Innovation. Accelerate Growth"
       </h1>
     </div>

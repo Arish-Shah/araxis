@@ -115,10 +115,10 @@ function Form() {
 
   return (
     <Layout child="py-32 md:px-32 lg:px-6 text-center">
-      <h1 className="text-blue uppercase font-semibold leading-tight text-5xl">
+      <h1 className="text-blue uppercase font-semibold leading-tight text-3xl md:text-4xl xl:text-5xl">
         Fill out the Form
       </h1>
-      <h1 className="text-blue uppercase font-semibold leading-tight text-5xl">
+      <h1 className="text-blue uppercase font-semibold leading-tight text-3xl md:text-4xl xl:text-5xl">
         To get started
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
