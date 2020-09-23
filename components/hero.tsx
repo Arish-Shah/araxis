@@ -3,9 +3,10 @@ import Layout from './layout';
 interface Props {
   firstLine: string;
   secondLine: string;
+  intro: string;
 }
 
-function Hero({ firstLine, secondLine }: Props) {
+function Hero({ firstLine, secondLine, intro }: Props) {
   return (
     <Layout child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40">
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl lg:text-inter">
@@ -14,14 +15,11 @@ function Hero({ firstLine, secondLine }: Props) {
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl lg:text-inter">
         {secondLine}
       </h1>
-      <p className="text-black-light mt-6 lg:text-lg">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </p>
-      <p className="text-black-light mt-2 lg:text-lg">
+      <p className="text-black-light mt-6 lg:text-lg">{intro}</p>
+      {/* <p className="text-black-light mt-2 lg:text-lg">
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s.
-      </p>
+      </p> */}
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 text-white gap-8">
         <div className="text-left px-6 bg-gradient-to-r from-green to-green pt-6 pb-12">
           <span>

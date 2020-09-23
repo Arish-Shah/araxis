@@ -3,11 +3,12 @@ import Link from 'next/link';
 
 function Footer() {
   const links: { href: string; text: string }[] = [
-    { href: '/about', text: 'About Us' },
-    { href: '/', text: 'Blog' },
-    { href: '/', text: 'Resources' },
-    { href: '/', text: 'Careers' },
-    { href: '/', text: 'Press' },
+    { text: 'Home', href: '/' },
+    { text: 'Job Seekers', href: '/job-seekers' },
+    { text: 'Recruiters', href: '/recruiters' },
+    { text: 'IT Solutions', href: '/it-solutions' },
+    { text: 'About', href: '/about' },
+    { text: 'Contact', href: '/contact' },
   ];
 
   const socials: { name: string; url: string }[] = [
@@ -26,10 +27,9 @@ function Footer() {
         <div className="lg:w-5/12 py-8 border-solid border-b-2 border-gray-700 lg:border-b-0 lg:border-r-2">
           <h3 className="text-lg font-medium">Who We are?</h3>
           <div className="text-black-lighter text-sm leading-loose pt-5 lg:pr-24">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            With a decade of experience in the IT Consulting services industry,
+            we at Araxis are mavericks at matching technical professionals who
+            help you connect and match with talent, partners and companies.
           </div>
         </div>
         <div className="lg:w-3/12 py-8 border-solid border-b-2 border-gray-700 lg:pl-12 lg:pr-32 lg:border-b-0 lg:border-r-2">

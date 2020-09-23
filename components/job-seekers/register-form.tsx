@@ -166,7 +166,7 @@ function RegisterForm() {
               draggable={false}
             />
           ) : (
-            <div className="cursor-pointer border-solid rounded-sm border border-gray-600 h-5 w-5"></div>
+            <div className="cursor-pointer border-solid rounded-sm border border-gray-600 h-4 lg:h-5 w-5"></div>
           )}
           <p className="cursor-default cursor-pointer">
             I agree to receive communications from Araxis Systems.

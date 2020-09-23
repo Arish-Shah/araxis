@@ -10,13 +10,14 @@ function RecruitersPage() {
     <>
       <Navbar />
       <Hero
-        firstLine="Employment Services"
-        secondLine="Find the right talent."
+        firstLine="We filter from the rest;"
+        secondLine=" to give you the best."
+        intro=""
       />
       <SecondHero
         title="Staff Solutions"
         subtitle="Success is not a matter of coincidence"
-        content="Over the years, we have successfully executed various assignments across the globe. We have a team of specialist consultants to service the true needs of each of our clients. We believe in maintaining long-standing relationships with our clients and candidates, in order to provide right talent at the right time."
+        content="Over the years, we have successfully executed various assignments across the globe. Our A-team of consultants, service the true needs of each of our clients, at the drop of a hat. We believe in maintaining long-standing relationships with our clients and candidates, in order to provide the right talent to the right team at the right time."
       />
       <End2End />
       <Form />

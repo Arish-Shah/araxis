@@ -74,7 +74,7 @@ function Navbar() {
       </Head>
       <Layout
         parent="z-20 fixed top-0 left-0 right-0 bg-white"
-        child="z-20 flex justify-between lg:justify-start items-center"
+        child="z-20 flex justify-between items-center"
         parentRef={parentRef}
       >
         <div
@@ -102,7 +102,7 @@ function Navbar() {
           </button>
         </div>
         {/* Big screen navigation */}
-        <div className="hidden lg:flex flex-row ml-12 flex-1">
+        <div className="hidden lg:flex flex-row">
           {links.map(({ href, text }) => {
             const classes =
               pathname === href
@@ -114,15 +114,15 @@ function Navbar() {
               </Link>
             );
           })}
-        </div>
-        <div className="hidden lg:block">
-          <Link href={phoneLink.href}>
-            <a
-              className={`text-blue border-transparent flex gap-2 ${lgClasses}`}
-            >
-              {call} {phoneLink.text}
-            </a>
-          </Link>
+          <div className="hidden lg:block">
+            <Link href={phoneLink.href}>
+              <a
+                className={`text-blue border-transparent flex gap-2 ${lgClasses}`}
+              >
+                {call} {phoneLink.text}
+              </a>
+            </Link>
+          </div>
         </div>
         {/* Small screen navigation */}
         <div

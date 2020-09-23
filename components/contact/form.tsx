@@ -108,7 +108,7 @@ const ContactUsForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-4 lg:gap-x-6 xl:gap-x-8 md:grid-cols-2">
         {inputs.map(({ label, id, type, rules }, index) => {
-          const spanner = index === 0 ? 'col-span-2' : '';
+          const spanner = index === 0 ? 'md:col-span-2' : '';
           return (
             <div className={`text-left ${spanner}`} key={id}>
               <div className="flex justify-between items-center">
@@ -164,6 +164,10 @@ const ContactUsForm = () => {
               ref={register()}
             />
             <span className="pl-2">IT Solutions</span>
+          </label>
+          <label htmlFor="other">
+            <input type="radio" name="topic" id="other" ref={register()} />
+            <span className="pl-2">Other</span>
           </label>
         </div>
       </div>

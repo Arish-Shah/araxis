@@ -15,8 +15,8 @@ function AboutPage() {
       <Values />
       <Secondary
         title="Our Story"
-        subtitle="Success is not a matter of coincidences"
-        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        subtitle=""
+        content="With a solid reputation of more than 10 years of experience in the IT Consulting services industry, we at Araxis are mavericks at matching technical professionals. We prioritise understanding individual needs of various partners and closely match it with our list of candidates. We started out with one mission: to pioneer innovation and growth, in every vertical possible - and with time, have managed to carve a reputed niche for our company."
         className="bg-pink pt-20"
       />
       <Ready />

@@ -10,8 +10,9 @@ function JobSeekersPage() {
     <>
       <Navbar />
       <Hero
-        firstLine="Looking for a Career Change?"
-        secondLine="Let us take care of it!"
+        firstLine="Shifting gears in your career?"
+        secondLine="Let us take the steering wheel!"
+        intro="Whether you’re a novice in the industry or come with several years of experience, we ensure with our analytical processes that you land the interview of the dream job you’re searching for!"
       />
       <Text />
       <ClientsSay alternate={true} title="Recruits" />

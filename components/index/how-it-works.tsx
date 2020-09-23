@@ -9,17 +9,17 @@ function HowItWorks() {
   }[] = [
     {
       title: 'We Listen',
-      content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.`,
+      content: `The most important thing we do, is we let you speak. We understand the importance of listening to your needs and make it our utmost priority to give you exactly what you want - and nothing else`,
       icon: 'we-listen.svg',
     },
     {
       title: 'We Understand',
-      content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.`,
+      content: `Applying the same rule for all partners is just not how we like it. We take on each requirement and scrutinise it - breaking the requirements down into actionable steps.`,
       icon: 'we-understand.svg',
     },
     {
       title: 'We Deliver',
-      content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.`,
+      content: `Empty words and false promises are not the standards we go by. After analysing every detail, our results showcase an almost perfect success ratio: one that sets us apart and keeps our partners happy.`,
       icon: 'we-deliver.svg',
     },
   ];
@@ -31,11 +31,12 @@ function HowItWorks() {
           How It Works
         </h1>
         <p className="text-red text-2xl py-1 italic">
-          Success is not a matter of coincidence
+          What we do, nobody else can
         </p>
         <p className="pt-6 pb-10 lg:pb-8 text-black-light font-medium lg:w-1/2 mx-auto leading-loose">
-          Learn how our unique sourcing methodology helps organizations create
-          wholes that are greater than the sum of their parts.
+          With unique sourcing methodologies coupled with our lateral approach
+          to finding perfect matches, we enrich organisations with wholes that
+          are more than the sum of their parts.
         </p>
         <div className="grid grid-cols-1 pt-2 gap-20 lg:grid-cols-3">
           {items.map(({ title, content, icon }) => (

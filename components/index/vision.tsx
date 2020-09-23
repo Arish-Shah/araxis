@@ -20,15 +20,14 @@ function Vision() {
       child="py-0 md:px-32 lg:px-6 pt-20 flex flex-col md:flex-row"
     >
       <div className="md:pb-12 flex-1 lg:pr-16">
-        <h1 className="text-blue uppercase text-5xl font-bold leading-tight py-2 lg:text-6xl xl:text-7xl">
-          10+ years <br />
-          one vision
+        <h1 className="text-blue uppercase text-3xl lg:text-5xl font-bold leading-tight py-2">
+          A decade of excellence coupled with experience
         </h1>
         <div className="text-black-light text-sm my-6 font-medium leading-loose lg:leading-10 lg:text-base">
-          With more than 10 years of experience in the IT Consulting services
-          industry, we are experts at connecting technical professionals. We
-          make it our business to understand every employer's individual need
-          and closely match it with our profile of candidate.
+          With a solid reputation of more than 10 years of experience in the IT
+          Consulting services industry, we at Araxis are mavericks at matching
+          technical professionals. We prioritise understanding individual needs
+          of various partners and closely match it with our list of candidates
         </div>
         <ButtonWithArrow text="Our Story" />
       </div>

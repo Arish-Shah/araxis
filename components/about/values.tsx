@@ -9,27 +9,26 @@ interface PanelProps {
 function Values() {
   const panels: PanelProps[] = [
     {
-      title: 'Data Driven',
+      title: 'Driven by Data',
       content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        'Whatever we do is driven by data and powered by data. The solutions we provide are analysed based on intensive research that is then brought into effect by actionable steps.',
       image: 'data-driven.svg',
     },
     {
-      title: 'Customer Delight',
+      title: 'Customer is King',
       content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        'The client for us has the ultimate power. What we design, create and find solutions for is solely so that our partners remain satisfied, efficient and happy.',
       image: 'customer-delight.svg',
     },
     {
       title: 'Extreme Ownership',
       content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        'We love owning up to our work, with pride - and our quality of work is what sets us apart.',
       image: 'extreme-ownership.svg',
     },
     {
-      title: 'Giver',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      title: 'Givers',
+      content: 'We love giving back.',
       image: 'giver.svg',
     },
   ];
@@ -39,6 +38,9 @@ function Values() {
       <h1 className="uppercase text-blue font-semibold text-3xl md:text-4xl lg:text-inter">
         Our Values
       </h1>
+      <p className="pt-2 pb-10 lg:pb-8 text-black-light font-medium lg:w-1/2 mx-auto leading-loose">
+        All that we do, we do it with great value.
+      </p>
       <div className="grid grid-cols-1 gap-10 mt-12 lg:mt-16 lg:grid-cols-2 lg:gap-20">
         {panels.map(panel => (
           <Panel key={panel.title} {...panel} />

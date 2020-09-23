@@ -7,15 +7,16 @@ function Hero() {
         <h1 className="uppercase text-3xl md:text-4xl lg:text-inter font-semibold text-blue">
           About Us
         </h1>
-        <div className="text-black-light md:text-lg mt-6 md:w-10/12 mx-auto">
+        <div className="text-black-light md:text-lg mt-6 lg:w-8/12 mx-auto">
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+            With a decade of experience in the IT Consulting services industry,
+            we at Araxis are mavericks at matching technical professionals who
+            help you connect and match with talent, partners and companies.
           </p>
-          <p className="mt-2">
+          {/* <p className="mt-2">
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s,
-          </p>
+          </p> */}
         </div>
       </div>
       {Leading}
@@ -30,15 +31,15 @@ const Leading = (
         Our Mission
       </h1>
       <p className="mt-4 text-black-light leading-7">
-        We aim at providing highest quality of service in every phase of Client
-        Relationship, from initial contact to follow up support. Our technical
-        expertise and experience are unparalleled in the industry. Our services,
-        whether before or after sale, are the most promising you can find.
+        From initial contact to follow-up support, our aim is to provide our
+        clients and partners the complete IT Solution. With our unparalleled
+        experience and a decade long expertise, what we provide to companies, no
+        one can.
       </p>
     </div>
     <div className="flex-1">
       <h1 className="text-blue text-4xl lg:text-inter font-semibold italic">
-        "Accelerate the world's Innovation"
+        "Accelerate Innovation. Accelerate Growth"
       </h1>
     </div>
   </div>

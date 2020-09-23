@@ -7,19 +7,16 @@ function End2End() {
       child="text-center py-24 md:px-32 lg:px-6 text-white"
     >
       <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
-        Our End to End Hiring Process
+        How We Hire
       </h1>
-      <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
+      {/* <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
         For Organizations
-      </h1>
+      </h1> */}
       <div className="text-black-lighter text-sm mt-8 leading-loose lg:text-base">
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem
-        </p>
-        <p>
-          Ipsum has been the industry's standard dummy text ever since the
-          1500s.
+        <p className="lg:w-7/12 mx-auto">
+          How we hire the best recruit for your company is no rocket science. We
+          analyse your requirement, shortlist the best candidates and follow a
+          streamlined process to guarantee the best solution.
         </p>
         <div className="pt-12">
           <img
