@@ -8,7 +8,7 @@ function Hero() {
           Connecting the right developers with great companies: That’s Araxis in
           a nutshell.
         </h1>
-        <p className="text-black-light text-sm py-4 lg:py-6">
+        <p className="text-black-light text-sm py-6 pb-8 lg:pb-6">
           Looking to hire IT professionals, tie-up with experienced IT
           outsourcing partners, or propel a career in IT: Araxis delivers on all
           verticals.
