@@ -3,7 +3,10 @@ import Layout from '../layout';
 
 function Form() {
   return (
-    <Layout child="pt-40 pb-20 md:px-32 lg:px-6 text-center lg:pt-32 lg:pb-32">
+    <Layout
+      child="pt-40 pb-20 md:px-32 lg:px-6 text-center lg:pt-32 lg:pb-32"
+      animate={true}
+    >
       {Hero}
       <div className="pt-16 grid grid-cols-1 gap-y-10 lg:gap-8 lg:grid-cols-8">
         <div className="col-span-5">

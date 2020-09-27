@@ -47,7 +47,7 @@ function Services() {
   ];
 
   return (
-    <Layout child="py-24 md:px-32 lg:px-6 text-center">
+    <Layout child="py-24 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="text-blue uppercase font-semibold text-3xl md:text-4xl xl:text-inter">
         Our Services
       </h1>
@@ -66,7 +66,10 @@ function Panel({ title, content, image, reverse }: PanelProps) {
   const flex = reverse ? 'flex-row-reverse' : 'flex-row';
 
   return (
-    <div className={`pt-24 flex flex-col-reverse lg:${flex} items-center`}>
+    <div
+      className={`pt-24 flex flex-col-reverse lg:${flex} items-center`}
+      data-aos="fade-in"
+    >
       <div className="lg:flex-1 lg:pr-12">
         <img
           src={`/services/${image}`}

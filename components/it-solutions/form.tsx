@@ -71,7 +71,10 @@ function Form() {
   ];
 
   return (
-    <Layout child="md:px-32 lg:px-6 border-solid border-t-2 border-gray-300 text-center py-16">
+    <Layout
+      child="md:px-32 lg:px-6 border-solid border-t-2 border-gray-300 text-center py-16"
+      animate={true}
+    >
       <div className="lg:w-9/12 xl:w-8/12 mx-auto">
         <h1 className="uppercase text-blue font-semibold text-4xl leading-tight lg:text-inter xl:text-5xl">
           Tell us <br /> about your Project

@@ -114,7 +114,7 @@ function Form() {
   ];
 
   return (
-    <Layout child="py-32 md:px-32 lg:px-6 text-center">
+    <Layout child="py-32 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="text-blue uppercase font-semibold leading-tight text-3xl md:text-4xl xl:text-5xl">
         Fill out the Form
       </h1>

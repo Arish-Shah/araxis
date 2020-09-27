@@ -1,7 +1,10 @@
 import Layout from '../layout';
 
 const First = (
-  <Layout child="pt-40 pb-24 text-center md:px-32 lg:px-6 lg:pt-40">
+  <Layout
+    animate={true}
+    child="pt-40 pb-24 text-center md:px-32 lg:px-6 lg:pt-40"
+  >
     <h1 className="uppercase text-blue text-2xl md:text-4xl xl:text-inter font-semibold">
       Tailormade & End-To-End. Scalable & Successful.
     </h1>
@@ -23,6 +26,7 @@ const First = (
 
 const Second = (
   <Layout
+    animate={true}
     parent="bg-pink"
     child="py-20 md:px-32 lg:px-6 flex flex-col lg:flex-row gap-10"
   >
@@ -49,6 +53,7 @@ const Second = (
 
 const Third = (
   <Layout
+    animate={true}
     parent="bg-lavendar"
     child="py-20 md:px-32 lg:px-6 flex flex-col lg:flex-row-reverse gap-10 lg:gap-20"
   >

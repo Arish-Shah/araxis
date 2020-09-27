@@ -5,6 +5,7 @@ function End2End() {
     <Layout
       parent="bg-footer-image bg-cover"
       child="text-center py-24 md:px-32 lg:px-6 text-white"
+      animate={true}
     >
       <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
         How We Hire

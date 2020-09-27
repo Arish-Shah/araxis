@@ -5,6 +5,7 @@ function Text() {
     <Layout
       parent="bg-pink"
       child="md:px-32 lg:px-6 py-24 flex flex-col lg:flex-row lg:items-center"
+      animate={true}
     >
       <h1 className="text-red uppercase text-4xl lg:text-5xl pb-6 font-bold leading-snug lg:w-5/12">
         Your Dream Job Is Our Reality

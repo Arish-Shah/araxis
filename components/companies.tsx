@@ -25,6 +25,7 @@ function Companies() {
     <Layout
       parent="bg-gray-100 mt-2"
       child="py-10 overflow-x-hidden grid grid-cols-3 gap-10 items-center text-center lg:px-6 md:px-32 md:grid-cols-5"
+      animate={true}
     >
       {images.map(image => (
         <div key={image.src}>

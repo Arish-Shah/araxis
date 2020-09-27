@@ -2,7 +2,7 @@ import Layout from '../layout';
 
 function Ready() {
   return (
-    <Layout child="text-center py-24">
+    <Layout child="text-center py-24" animate={true}>
       <p className="text-black-light">
         Give your customer the experience they desire
       </p>

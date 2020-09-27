@@ -50,6 +50,7 @@ function ClientsSay({
       <Layout
         parent="bg-lavendar"
         child={`md:px-32 lg:px-6 py-20 h-128 lg:${className} flex flex-col`}
+        animate={true}
       >
         <div
           className={`flex-1 flex items-center pb-5 lg:pb-0 ${

@@ -8,7 +8,10 @@ interface Props {
 
 function Hero({ firstLine, secondLine, intro }: Props) {
   return (
-    <Layout child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40">
+    <Layout
+      child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40"
+      animate={true}
+    >
       <h1 className="uppercase text-blue text-3xl font-semibold md:text-4xl lg:text-inter">
         {firstLine}
       </h1>

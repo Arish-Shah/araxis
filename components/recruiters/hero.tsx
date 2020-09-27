@@ -15,6 +15,7 @@ function Hero({
     <Layout
       parent={className}
       child="md:px-32 lg:px-6 flex flex-col lg:flex-row items-center pt-6 mb-2 pb-24"
+      animate={true}
     >
       <img
         src="/meeting.jpg"

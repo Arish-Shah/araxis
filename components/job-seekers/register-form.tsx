@@ -87,7 +87,7 @@ function RegisterForm() {
   const formRef = useRef();
 
   return (
-    <Layout child="py-28 text-center md:px-32 lg:px-6">
+    <Layout child="py-28 text-center md:px-32 lg:px-6" animate={true}>
       <h1 className="font-semibold uppercase text-3xl md:text-4xl lg:text-5xl text-blue">
         Register Form
       </h1>

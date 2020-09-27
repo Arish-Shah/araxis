@@ -2,7 +2,10 @@ import Layout from '../layout';
 
 function Hero() {
   return (
-    <Layout child="py-10 pt-32 my-4 flex flex-col md:px-32 lg:gap-10 lg:px-6 lg:flex-row lg:items-center lg:py-12 lg:pt-32">
+    <Layout
+      child="py-10 pt-32 my-4 flex flex-col md:px-32 lg:gap-10 lg:px-6 lg:flex-row lg:items-center lg:py-12 lg:pt-32"
+      animate={true}
+    >
       <div className="lg:w-7/12 xl:w-5/12">
         <h1 className="text-blue font-semibold text-3xl md:text-4xl leading-snug">
           Connecting the right developers with great companies: That’s Araxis in

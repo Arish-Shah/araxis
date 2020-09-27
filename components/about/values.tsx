@@ -34,7 +34,7 @@ function Values() {
   ];
 
   return (
-    <Layout child="py-20 md:px-32 lg:px-6 text-center">
+    <Layout child="py-20 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="uppercase text-blue font-semibold text-3xl md:text-4xl lg:text-inter">
         Our Values
       </h1>
@@ -52,7 +52,7 @@ function Values() {
 
 const Panel = ({ title, content, image }: PanelProps) => {
   return (
-    <div>
+    <div data-aos="fade-in">
       <div className="flex items-center gap-5">
         <img src={`values/${image}`} alt={title} className="h-12 lg:h-16" />
         <h3 className="uppercase text-blue font-semibold text-2xl">{title}</h3>

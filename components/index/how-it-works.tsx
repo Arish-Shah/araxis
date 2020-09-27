@@ -25,7 +25,7 @@ function HowItWorks() {
   ];
 
   return (
-    <Layout child="md:px-32 lg:px-6 pt-20 pb-16 text-center">
+    <Layout child="md:px-32 lg:px-6 pt-20 pb-16 text-center" animate={true}>
       <div>
         <h1 className="uppercase text-blue text-4xl lg:text-inter font-semibold">
           How It Works
