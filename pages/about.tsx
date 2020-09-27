@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '../components/about/hero';
@@ -10,10 +7,6 @@ import Secondary from '../components/recruiters/hero';
 import Ready from '../components/about/ready';
 
 function AboutPage() {
-  useEffect(() => {
-    AOS.refresh();
-  }, []);
-
   return (
     <>
       <Navbar />

@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '../components/hero';
@@ -8,11 +5,7 @@ import SecondHero from '../components/recruiters/hero';
 import End2End from '../components/recruiters/e2e';
 import Form from '../components/recruiters/form';
 
-function RecruitersPage() {
-  useEffect(() => {
-    AOS.refresh();
-  }, []);
-
+function ForRecruitersPage() {
   return (
     <>
       <Navbar />
@@ -20,6 +13,7 @@ function RecruitersPage() {
         firstLine="We filter from the rest;"
         secondLine=" to give you the best."
         intro="Find the right talent with us that helps you escalate your business to great heights!"
+        type="recruiters"
       />
       <SecondHero
         title="Staff Solutions"
@@ -33,4 +27,4 @@ function RecruitersPage() {
   );
 }
 
-export default RecruitersPage;
+export default ForRecruitersPage;

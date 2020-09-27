@@ -49,8 +49,8 @@ function Navbar() {
 
   const links: NavItem[] = [
     { text: 'Home', href: '/' },
-    { text: 'Job Seekers', href: '/job-seekers' },
-    { text: 'Recruiters', href: '/recruiters' },
+    { text: 'For Seekers', href: '/for-seekers' },
+    { text: 'For Recruiters', href: '/for-recruiters' },
     { text: 'IT Solutions', href: '/it-solutions' },
     { text: 'About', href: '/about' },
     { text: 'Contact', href: '/contact' },

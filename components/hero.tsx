@@ -4,9 +4,10 @@ interface Props {
   firstLine: string;
   secondLine: string;
   intro: string;
+  type?: 'seekers' | 'recruiters';
 }
 
-function Hero({ firstLine, secondLine, intro }: Props) {
+function Hero({ firstLine, secondLine, intro, type }: Props) {
   return (
     <Layout
       child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40"
@@ -29,7 +30,11 @@ function Hero({ firstLine, secondLine, intro }: Props) {
             <img src="/icons/like.svg" alt="Like" />
           </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
-            Developer friendly Experience
+            {type === 'seekers'
+              ? 'Hands-on Assistance'
+              : type === 'recruiters'
+              ? 'Connecting The Right Talent'
+              : ''}
           </span>
         </div>
         <div className="text-left px-6 bg-gradient-to-r from-red-dark to-red pt-6 pb-12">
@@ -37,7 +42,11 @@ function Hero({ firstLine, secondLine, intro }: Props) {
             <img src="/icons/trust.svg" alt="Like" />
           </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
-            Trusted Remote Process
+            {type === 'seekers'
+              ? 'Trusted Process'
+              : type === 'recruiters'
+              ? 'Streamlined Assessment'
+              : ''}
           </span>
         </div>
         <div className="text-left px-6 bg-gradient-to-r from-blue-light to-blue pt-6 pb-12">
@@ -45,7 +54,11 @@ function Hero({ firstLine, secondLine, intro }: Props) {
             <img src="/icons/advanced-skill.svg" alt="Like" />
           </span>
           <span className="text-xl font-light inline-block pt-3 xl:text-2xl">
-            Advanced Skill Assessments
+            {type === 'seekers'
+              ? 'Credible Partnerships'
+              : type === 'recruiters'
+              ? 'Complete Quality Check'
+              : ''}
           </span>
         </div>
       </div>
