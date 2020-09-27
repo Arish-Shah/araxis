@@ -33,7 +33,7 @@ function Hero() {
 }
 
 const buttonStyles =
-  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12 fill';
+  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12';
 
 export const RedButton = ({ text }: { text: string }) => (
   <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>

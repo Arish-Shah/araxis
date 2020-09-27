@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
@@ -6,6 +9,10 @@ import ClientsSay from '../components/clients-say';
 import RegisterForm from '../components/job-seekers/register-form';
 
 function JobSeekersPage() {
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Navbar />

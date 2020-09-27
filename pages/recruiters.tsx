@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '../components/hero';
@@ -6,6 +9,10 @@ import End2End from '../components/recruiters/e2e';
 import Form from '../components/recruiters/form';
 
 function RecruitersPage() {
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Navbar />

@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
+import AOS from 'aos';
 
 import Navbar from '../components/navbar';
 import Hero from '../components/index/hero';
@@ -10,6 +12,10 @@ import Ready from '../components/index/ready';
 import Footer from '../components/footer';
 
 function IndexPage() {
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Head>
