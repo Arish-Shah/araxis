@@ -52,7 +52,7 @@ function Values() {
 
 const Panel = ({ title, content, image }: PanelProps) => {
   return (
-    <div data-aos="fade-in">
+    <div data-aos="fade-up">
       <div className="flex items-center gap-5">
         <img src={`values/${image}`} alt={title} className="h-12 lg:h-16" />
         <h3 className="uppercase text-blue font-semibold text-2xl">{title}</h3>

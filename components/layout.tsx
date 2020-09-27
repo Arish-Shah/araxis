@@ -12,7 +12,7 @@ function Layout({ children, parent, parentRef, child, animate }: Props) {
   const props = {};
 
   if (animate) {
-    props['data-aos'] = 'fade-in';
+    props['data-aos'] = 'fade-up';
   }
 
   return (

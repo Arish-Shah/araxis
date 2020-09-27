@@ -12,7 +12,10 @@ function Form() {
         <div className="col-span-5">
           <ContactUsForm />
         </div>
-        <div className="relative text-left bg-gradient-to-b from-blue to-blue-light text-white py-20 px-16 w-full col-span-3">
+        <div
+          className="relative text-left bg-gradient-to-b from-blue to-blue-light text-white py-20 px-16 w-full col-span-3"
+          data-aos="fade-up"
+        >
           {Card}
         </div>
       </div>
@@ -139,7 +142,7 @@ const ContactUsForm = () => {
         <h3 className="text-blue text-xl">
           Send message in the following topic
         </h3>
-        <div className="flex gap-8 mt-5 text-black-light">
+        <div className="grid grid-cols-2 gap-y-2 md:grid-cols-4 mt-5 text-black-light">
           <label htmlFor="recruiting">
             <input
               type="radio"

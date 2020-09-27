@@ -22,6 +22,7 @@ function Hero({
         alt="Meeting"
         draggable={false}
         className="w-full flex-1"
+        data-aos="fade-right"
       />
       <div className="pl-0 pt-8 lg:pl-12 lg:pt-0 flex-1">
         <h1 className="uppercase text-blue text-3xl xl:text-4xl font-semibold">

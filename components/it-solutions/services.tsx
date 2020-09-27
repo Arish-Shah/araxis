@@ -64,30 +64,33 @@ function Services() {
 function Panel({ title, content, image, reverse }: PanelProps) {
   const heading = title.split('\n').map((t, i) => <p key={i}>{t}</p>);
   const flex = reverse ? 'flex-row-reverse' : 'flex-row';
+  const dataAos = reverse ? 'fade-left' : 'fade-right';
 
   return (
-    <div
-      className={`pt-24 flex flex-col-reverse lg:${flex} items-center`}
-      data-aos="fade-in"
-    >
-      <div className="lg:flex-1 lg:pr-12">
-        <img
-          src={`/services/${image}`}
-          alt={title}
-          draggable={false}
-          className="h-64 lg:h-auto mx-auto"
-        />
-      </div>
-      <div className="lg:flex-1 text-center text-left mb-10 lg:mb-0 lg:text-left">
-        <h1 className="uppercase text-blue font-semibold text-xl hidden lg:block">
-          {heading}
-        </h1>
-        <h1 className="uppercase text-blue font-semibold text-xl block lg:hidden">
-          {title}
-        </h1>
-        <p className="text-sm leading-loose text-black-light pt-2 lg:pt-3 xl:pt-4 sm:text-base">
-          {content}
-        </p>
+    <div className="overflow-x-hidden">
+      <div
+        className={`pt-24 flex flex-col-reverse lg:${flex} items-center`}
+        data-aos={dataAos}
+      >
+        <div className="lg:flex-1 lg:pr-12">
+          <img
+            src={`/services/${image}`}
+            alt={title}
+            draggable={false}
+            className="h-64 lg:h-auto mx-auto"
+          />
+        </div>
+        <div className="lg:flex-1 text-center text-left mb-10 lg:mb-0 lg:text-left">
+          <h1 className="uppercase text-blue font-semibold text-xl hidden lg:block">
+            {heading}
+          </h1>
+          <h1 className="uppercase text-blue font-semibold text-xl block lg:hidden">
+            {title}
+          </h1>
+          <p className="text-sm leading-loose text-black-light pt-2 lg:pt-3 xl:pt-4 sm:text-base">
+            {content}
+          </p>
+        </div>
       </div>
     </div>
   );

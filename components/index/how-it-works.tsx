@@ -40,7 +40,7 @@ function HowItWorks() {
         </p>
         <div className="grid grid-cols-1 pt-2 gap-20 lg:grid-cols-3">
           {items.map(({ title, content, icon }) => (
-            <div key={title} className="flex flex-col">
+            <div key={title} className="flex flex-col" data-aos="fade-up">
               <img
                 src={`/how-it-works/${icon}`}
                 alt={title}
