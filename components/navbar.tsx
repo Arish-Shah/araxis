@@ -128,6 +128,12 @@ function Navbar() {
         <div
           className={`${
             isOpen ? 'block' : 'hidden'
+          } h-screen w-screen opacity-75 lg:hidden absolute left-0 top-0`}
+          style={{ backgroundColor: 'black' }}
+        ></div>
+        <div
+          className={`${
+            isOpen ? 'block' : 'hidden'
           } lg:hidden z-30 fixed top-0 left-0 right-0 bg-white p-8 pt-12 m-4 border-solid shadow-lg rounded flex flex-col items-center`}
         >
           {links.map(({ href, text }) => {
