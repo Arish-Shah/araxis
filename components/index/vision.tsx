@@ -22,13 +22,13 @@ function Vision() {
     >
       <div className="md:pb-12 flex-1 lg:pr-16">
         <h1 className="text-blue uppercase text-3xl lg:text-5xl font-bold leading-tight py-2">
-          A decade of excellence coupled with experience
+          A decade of excellence coupled with experience.
         </h1>
         <div className="text-black-light text-sm my-6 font-medium leading-loose lg:leading-10 lg:text-base">
           With a solid reputation of more than 10 years of experience in the IT
           Consulting services industry, we at Araxis are mavericks at matching
           technical professionals. We prioritise understanding individual needs
-          of various partners and closely match it with our list of candidates
+          of various partners and closely match it with our list of candidates.
         </div>
         <ButtonWithArrow text="Our Story" />
       </div>

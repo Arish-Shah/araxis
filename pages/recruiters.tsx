@@ -12,7 +12,7 @@ function RecruitersPage() {
       <Hero
         firstLine="We filter from the rest;"
         secondLine=" to give you the best."
-        intro=""
+        intro="Find the right talent with us that helps you escalate your business to great heights!"
       />
       <SecondHero
         title="Staff Solutions"

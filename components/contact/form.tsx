@@ -29,14 +29,8 @@ const Hero = (
       Contact Us
     </h1>
     <div className="text-black-light md:text-lg mt-6 md:w-10/12 mx-auto">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </p>
-      <p className="mt-2">
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s,
-      </p>
+      <p>Looking for the right hire or the perfect job?</p>
+      <p className="mt-2">Get in touch with us and let us aid your process.</p>
     </div>
   </div>
 );
