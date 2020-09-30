@@ -1,5 +1,5 @@
-import Layout from '../layout';
-import { BlueButton, RedButton } from './hero';
+import Layout from "../layout";
+import { BlueButton, RedButton } from "./hero";
 
 function Ready() {
   return (
@@ -11,8 +11,8 @@ function Ready() {
         Work with us!
       </h1>
       <div className="mx-auto w-full justify-center md:w-1/2 flex lg:mt-4 gap-3 md:gap-4 flex-col md:flex-row">
-        <RedButton text="Find Work" />
-        <BlueButton text="Hire Talent" />
+        <RedButton text="Find Work" href="/for-seekers" />
+        <BlueButton text="Hire Talent" href="/for-recruiters" />
       </div>
     </Layout>
   );

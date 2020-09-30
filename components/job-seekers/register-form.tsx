@@ -1,8 +1,8 @@
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 
-import Layout from '../layout';
-import { useState, useRef, useEffect } from 'react';
-import { RedButton } from '../index/hero';
+import Layout from "../layout";
+import { useState, useRef, useEffect } from "react";
+import { RedButton } from "../index/hero";
 
 interface IFormInput {
   firstName: string;
@@ -20,7 +20,7 @@ function RegisterForm() {
 
   useEffect(() => {
     const image = new Image();
-    image.src = '/form/check-green.svg';
+    image.src = "/form/check-green.svg";
   });
 
   const onSubmit = (data: IFormInput) => {
@@ -34,51 +34,51 @@ function RegisterForm() {
     rules: Partial<{}>;
   }[] = [
     {
-      label: 'First Name*',
-      id: 'firstName',
-      type: 'text',
+      label: "First Name*",
+      id: "firstName",
+      type: "text",
       rules: {
-        required: { value: true, message: 'Fields marked * are required' },
-        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' },
+        required: { value: true, message: "Fields marked * are required" },
+        pattern: { value: /^[a-zA-Z]+$/, message: "Enter a correct value" },
       },
     },
     {
-      label: 'Last Name*',
-      id: 'lastName',
-      type: 'text',
+      label: "Last Name*",
+      id: "lastName",
+      type: "text",
       rules: {
-        required: { value: true, message: 'Fields marked * are required' },
-        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' },
+        required: { value: true, message: "Fields marked * are required" },
+        pattern: { value: /^[a-zA-Z]+$/, message: "Enter a correct value" },
       },
     },
     {
-      label: 'Phone Number',
-      id: 'phone',
-      type: 'number',
+      label: "Phone Number",
+      id: "phone",
+      type: "number",
       rules: {
-        minLength: { value: 10, message: 'Please enter a valid number' },
-        maxLength: { value: 10, message: 'Please enter a valid number' },
+        minLength: { value: 10, message: "Please enter a valid number" },
+        maxLength: { value: 10, message: "Please enter a valid number" },
       },
     },
     {
-      label: 'Email',
-      id: 'email',
-      type: 'email',
+      label: "Email",
+      id: "email",
+      type: "email",
       rules: {
         pattern: {
           value: /\S+@\S+\.\S+/,
-          message: 'Please enter a valid email',
+          message: "Please enter a valid email",
         },
       },
     },
     {
-      label: 'Linkedin URL',
-      id: 'linkedin',
-      type: 'url',
+      label: "Linkedin URL",
+      id: "linkedin",
+      type: "url",
       rules: {
         pattern: {
           value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/,
-          message: 'Please enter a valid URL',
+          message: "Please enter a valid URL",
         },
       },
     },
@@ -127,8 +127,8 @@ function RegisterForm() {
               {errors.resume && (
                 <span className="text-red text-xs mt-0">
                   {errors.resume?.message}
-                  {errors.resume.type === 'validate' &&
-                    'File must be under 10MB.'}
+                  {errors.resume.type === "validate" &&
+                    "File must be under 10MB."}
                 </span>
               )}
             </div>
@@ -139,9 +139,9 @@ function RegisterForm() {
               ref={register({
                 required: {
                   value: true,
-                  message: 'Resume required',
+                  message: "Resume required",
                 },
-                validate: fileList => fileList[0].size < 10000000,
+                validate: (fileList) => fileList[0].size < 10000000,
               })}
               multiple={false}
               className="text-sm w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
@@ -156,7 +156,7 @@ function RegisterForm() {
         </p>
 
         <div
-          onClick={() => setChecked(checked => !checked)}
+          onClick={() => setChecked((checked) => !checked)}
           className="text-left flex items-center gap-4 text-gray-600 pt-5 text-sm lg:text-base"
         >
           {checked ? (

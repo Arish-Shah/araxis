@@ -1,4 +1,5 @@
-import Layout from '../layout';
+import Link from "next/link";
+import Layout from "../layout";
 
 function Hero() {
   return (
@@ -17,8 +18,8 @@ function Hero() {
           verticals.
         </p>
         <div className="flex lg:mt-4 gap-3 md:gap-4 flex-col md:flex-row">
-          <RedButton text="Find Work" />
-          <BlueButton text="Hire Talent" />
+          <RedButton text="Find Work" href="/for-seekers" />
+          <BlueButton text="Hire Talent" href="/for-recruiters" />
         </div>
       </div>
       <div className="mt-12 xl:mt-0 xl:w-7/12">
@@ -33,14 +34,34 @@ function Hero() {
 }
 
 const buttonStyles =
-  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12';
+  "bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12";
 
-export const RedButton = ({ text }: { text: string }) => (
-  <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>
-);
+export const RedButton = ({ text, href }: { text: string; href?: string }) =>
+  href ? (
+    <Link href={href}>
+      <a>
+        <button className={`${buttonStyles} from-red to-red-dark`}>
+          {text}
+        </button>
+      </a>
+    </Link>
+  ) : (
+    <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>
+  );
 
-export const BlueButton = ({ text }: { text: string }) => (
-  <button className={`${buttonStyles} from-blue-light to-blue`}>{text}</button>
-);
+export const BlueButton = ({ text, href }: { text: string; href?: string }) =>
+  href ? (
+    <Link href={href}>
+      <a>
+        <button className={`${buttonStyles} from-blue-light to-blue`}>
+          {text}
+        </button>
+      </a>
+    </Link>
+  ) : (
+    <button className={`${buttonStyles} from-blue-light to-blue`}>
+      {text}
+    </button>
+  );
 
 export default Hero;

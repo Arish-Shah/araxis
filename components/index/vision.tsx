@@ -1,16 +1,27 @@
-import Layout from '../layout';
+import Link from "next/link";
+import Layout from "../layout";
 
-export const ButtonWithArrow = ({ text }: { text: string }) => (
-  <button className="flex items-center text-red uppercase text-xl font-medium">
-    {text}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      className="h-3 fill-current ml-1"
-    >
-      <path d="M79 0L49 30l98 98-98 98 30 30 128-128z" />
-    </svg>
-  </button>
+export const ButtonWithArrow = ({
+  text,
+  href,
+}: {
+  text: string;
+  href?: string;
+}) => (
+  <Link href={href}>
+    <a>
+      <button className="flex items-center text-red uppercase text-xl font-medium">
+        {text}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          className="h-3 fill-current ml-1"
+        >
+          <path d="M79 0L49 30l98 98-98 98 30 30 128-128z" />
+        </svg>
+      </button>
+    </a>
+  </Link>
 );
 
 function Vision() {
@@ -30,7 +41,7 @@ function Vision() {
           technical professionals. We prioritise understanding individual needs
           of various partners and closely match it with our list of candidates.
         </div>
-        <ButtonWithArrow text="Our Story" />
+        <ButtonWithArrow text="Our Story" href="/about" />
       </div>
       <div className="flex-1 self-end -mt-8 w-7/12 lg:pt-12 md:w-full md:mt-0">
         <img src="/brand.png" alt="Logo" draggable={false} />

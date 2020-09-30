@@ -1,5 +1,5 @@
-import Layout from '../layout';
-import { ButtonWithArrow } from './vision';
+import Layout from "../layout";
+import { ButtonWithArrow } from "./vision";
 
 function HowItWorks() {
   const items: {
@@ -8,19 +8,19 @@ function HowItWorks() {
     icon: string;
   }[] = [
     {
-      title: 'We Listen',
+      title: "We Listen",
       content: `The most important thing we do, is we let you speak. We understand the importance of listening to your needs and make it our utmost priority to give you exactly what you want - and nothing else`,
-      icon: 'we-listen.svg',
+      icon: "we-listen.svg",
     },
     {
-      title: 'We Understand',
+      title: "We Understand",
       content: `Applying the same rule for all partners is just not how we like it. We take on each requirement and scrutinise it - breaking the requirements down into actionable steps.`,
-      icon: 'we-understand.svg',
+      icon: "we-understand.svg",
     },
     {
-      title: 'We Deliver',
+      title: "We Deliver",
       content: `Empty words and false promises are not the standards we go by. After analysing every detail, our results showcase an almost perfect success ratio: one that sets us apart and keeps our partners happy.`,
-      icon: 'we-deliver.svg',
+      icon: "we-deliver.svg",
     },
   ];
 
@@ -57,7 +57,7 @@ function HowItWorks() {
           ))}
         </div>
         <div className="flex justify-center pt-6">
-          <ButtonWithArrow text="Read More" />
+          <ButtonWithArrow text="Read More" href="/it-solutions" />
         </div>
       </div>
     </Layout>
