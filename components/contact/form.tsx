@@ -47,8 +47,13 @@ interface IFormInput {
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = (data) => {
+    fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   };
 
   const inputs: {
@@ -109,6 +114,7 @@ const ContactUsForm = () => {
       <div className="grid grid-cols-1 gap-y-5 md:gap-y-8 gap-x-4 lg:gap-x-6 xl:gap-x-8 md:grid-cols-2">
         {inputs.map(({ label, id, type, rules }, index) => {
           const spanner = index === 0 ? 'md:col-span-2' : '';
+
           return (
             <div className={`text-left ${spanner}`} key={id}>
               <div className="flex justify-between items-center">
@@ -142,6 +148,7 @@ const ContactUsForm = () => {
               type="radio"
               name="topic"
               id="recruiting"
+              value="Recruiting"
               ref={register()}
               defaultChecked={true}
             />
@@ -152,6 +159,7 @@ const ContactUsForm = () => {
               type="radio"
               name="topic"
               id="job-seeking"
+              value="Job Seeking"
               ref={register()}
             />
             <span className="pl-2">Job Seeking</span>
@@ -161,12 +169,19 @@ const ContactUsForm = () => {
               type="radio"
               name="topic"
               id="it-solutions"
+              value="IT Solutions"
               ref={register()}
             />
             <span className="pl-2">IT Solutions</span>
           </label>
           <label htmlFor="other">
-            <input type="radio" name="topic" id="other" ref={register()} />
+            <input
+              type="radio"
+              name="topic"
+              id="other"
+              value="Other"
+              ref={register()}
+            />
             <span className="pl-2">Other</span>
           </label>
         </div>

@@ -20,7 +20,12 @@ function Form() {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   const onSubmit = (data: IFormInput) => {
-    console.log(data);
+    fetch('/api/for-recruiters', {
+      method: 'POST',
+      body: JSON.stringify({ ...data, communications: checked }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   };
 
   const inputs: {
@@ -175,7 +180,7 @@ function Form() {
           </p>
 
           <div
-            onClick={() => setChecked(checked => !checked)}
+            onClick={() => setChecked((checked) => !checked)}
             className="text-left flex items-center gap-4 text-gray-600 pt-5 text-sm lg:text-base"
           >
             {checked ? (

@@ -42,7 +42,7 @@ function Values() {
         All that we do, we do it with great value.
       </p>
       <div className="grid grid-cols-1 gap-10 mt-12 lg:mt-16 lg:grid-cols-2 lg:gap-20">
-        {panels.map(panel => (
+        {panels.map((panel) => (
           <Panel key={panel.title} {...panel} />
         ))}
       </div>
@@ -54,7 +54,11 @@ const Panel = ({ title, content, image }: PanelProps) => {
   return (
     <div data-aos="fade-up">
       <div className="flex items-center gap-5">
-        <img src={`values/${image}`} alt={title} className="h-12 lg:h-16" />
+        <img
+          src={`values/${image}`}
+          alt={title}
+          className="h-12 w-12 lg:h-16 lg:w-16"
+        />
         <h3 className="uppercase text-blue font-semibold text-2xl">{title}</h3>
       </div>
       <div className="mt-3 text-blue text-sm font-medium leading-relaxed lg:leading-loose text-left lg:text-base lg:mt-5">
