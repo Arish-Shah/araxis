@@ -39,11 +39,7 @@ const buttonStyles =
 export const RedButton = ({ text, href }: { text: string; href?: string }) =>
   href ? (
     <Link href={href}>
-      <a>
-        <button className={`${buttonStyles} from-red to-red-dark`}>
-          {text}
-        </button>
-      </a>
+      <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>
     </Link>
   ) : (
     <button className={`${buttonStyles} from-red to-red-dark`}>{text}</button>
@@ -52,11 +48,9 @@ export const RedButton = ({ text, href }: { text: string; href?: string }) =>
 export const BlueButton = ({ text, href }: { text: string; href?: string }) =>
   href ? (
     <Link href={href}>
-      <a>
-        <button className={`${buttonStyles} from-blue-light to-blue`}>
-          {text}
-        </button>
-      </a>
+      <button className={`${buttonStyles} from-blue-light to-blue`}>
+        {text}
+      </button>
     </Link>
   ) : (
     <button className={`${buttonStyles} from-blue-light to-blue`}>
