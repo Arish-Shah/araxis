@@ -103,6 +103,11 @@ button:hover {
   color: var(--red-default) !important;
 }
 
+/* Companies slider */
+.companies-slick .slick-track {
+  @apply .flex .items-center .gap-x-8;
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
