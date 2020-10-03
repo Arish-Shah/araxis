@@ -18,6 +18,10 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
+
   const parentRef = useRef();
   const navbarContainerRef = useRef();
 
@@ -26,9 +30,9 @@ function Navbar() {
       .classList;
     const parentClassList = (parentRef.current as HTMLDivElement).classList;
     const add = (classNames, classList) =>
-      classNames.split(' ').map(className => classList.add(className));
+      classNames.split(' ').map((className) => classList.add(className));
     const remove = (classNames, classList) =>
-      classNames.split(' ').map(className => classList.remove(className));
+      classNames.split(' ').map((className) => classList.remove(className));
 
     if (
       document.body.scrollTop > 40 ||
@@ -95,7 +99,7 @@ function Navbar() {
         {/* The Hamburger/Cross icon */}
         <div className="lg:hidden relative z-40">
           <button
-            onClick={() => setIsOpen(open => !open)}
+            onClick={() => setIsOpen((open) => !open)}
             className={`${isOpen ? 'text-red' : 'text-blue'}`}
           >
             {icon}

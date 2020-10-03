@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Layout from '../layout';
+import { SyntheticEvent } from 'react';
 
 function Form() {
   return (
@@ -47,14 +48,7 @@ interface IFormInput {
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = (data) => {
-    fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  };
+  const onSubmit = (_: IFormInput, event: SyntheticEvent) => {};
 
   const inputs: {
     label: string;
