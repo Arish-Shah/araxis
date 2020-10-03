@@ -25,12 +25,15 @@ function Companies() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
+    autoplaySpeed: 0,
     className: 'companies-slick',
+    cssEase: 'linear',
+    touchMove: false,
   };
 
   return (

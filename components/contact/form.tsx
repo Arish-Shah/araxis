@@ -234,9 +234,9 @@ const Card = (
       </div>
     </div>
     <img
-      src="/brand.png"
+      src="/brand-white.svg"
       alt="Brand"
-      className="absolute bottom-0 right-0 opacity-25 w-4/6"
+      className="absolute bottom-0 right-0 w-4/6"
       style={{ zIndex: 1 }}
     />
   </>
