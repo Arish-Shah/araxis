@@ -1,4 +1,6 @@
+import Head from 'next/head';
 import AOS from 'aos';
+
 import 'aos/dist/aos.css';
 import '../styles/index.css';
 import 'slick-carousel/slick/slick.css';
@@ -12,9 +14,20 @@ function MyApp({ Component, pageProps }) {
       once: true,
       duration: 800,
     });
+
+    // Prefetch check image
+    const image = new Image();
+    image.src = '/form/check-green.svg';
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
