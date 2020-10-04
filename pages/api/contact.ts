@@ -5,45 +5,44 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, phone, topic, message } = JSON.parse(req.body);
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
+    service: 'gmail',
     auth: {
-      user: 'murray48@ethereal.email',
-      pass: 'a2TRFkThuvVRNZDak8',
+      user: 'formsubmission.araxis@gmail.com',
+      pass: 'Araxis@2020',
     },
   });
 
   await transporter.sendMail(
     {
-      from: '"Form Submission" <murray48@ethereal.email>',
+      from: '"Form Submission" <formsubmission.araxis@gmail.com>',
       to: 'yashjha0007@gmail.com',
       subject: 'New Submission in Contact Form',
       text: name + ' submitted the contact form',
       html: `
-      <h3>Details:</h3>
-      <table>
-        <tr>
-          <th>Name</th>
-          <td>${name}</td>
-        </tr>
-        <tr>
-          <th>Email</th>
-          <td>${email}</td>
-        </tr>
-        <tr>
-          <th>Phone</th>
-          <td>${phone}</td>
-        </tr>
-        <tr>
-          <th>Topic</th>
-          <td>${topic}</td>
-        </tr>
-        <tr>
-          <th>Message</th>
-          <td>${message}</td>
-        </tr>
-      </table>
-    `,
+        <h3>Details:</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <td>${name}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>${email}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>${phone}</td>
+          </tr>
+          <tr>
+            <th>Topic</th>
+            <td>${topic}</td>
+          </tr>
+          <tr>
+            <th>Message</th>
+            <td>${message}</td>
+          </tr>
+        </table>
+      `,
     },
     (error, info) => {
       if (error) {
