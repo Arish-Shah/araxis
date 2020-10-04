@@ -3,9 +3,7 @@ import nodemailer from 'nodemailer';
 
 async function main() {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
       user: 'yashjha0007@gmail.com',
       pass: 'iamyashjha',
