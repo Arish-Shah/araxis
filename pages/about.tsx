@@ -3,7 +3,7 @@ import Footer from '../components/footer';
 import Hero from '../components/about/hero';
 import Companies from '../components/companies';
 import Values from '../components/about/values';
-import Secondary from '../components/recruiters/hero';
+import Secondary from '../components/for-recruiters/hero';
 import Ready from '../components/about/ready';
 
 function AboutPage() {

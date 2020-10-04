@@ -1,9 +1,9 @@
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
-import Text from '../components/job-seekers/text';
+import Text from '../components/for-seekers/text';
 import ClientsSay from '../components/clients-say';
-import RegisterForm from '../components/job-seekers/register-form';
+import RegisterForm from '../components/for-seekers/register-form';
 
 function ForSeekersPage() {
   return (

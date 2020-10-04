@@ -2,14 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { name, email, phone, topic, message } = JSON.parse(req.body);
+  const { name, email, phone, service, message } = JSON.parse(req.body);
 
   await transporter.sendMail(
     {
       from: '"Form Submission" <formsubmission.araxis@gmail.com>',
       to: 'yashjha0007@gmail.com',
-      subject: 'New Submission from Contact',
-      text: name + ' submitted the contact form',
+      subject: 'New Submission from IT Solutions',
+      text: name + ' submitted the IT Solutions form',
       html: `
         <h2>New Submission:</h2>
         <table>
@@ -26,8 +26,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             <td>${phone}</td>
           </tr>
           <tr>
-            <th>Topic</th>
-            <td>${topic}</td>
+            <th>Service</th>
+            <td>${service}</td>
           </tr>
           <tr>
             <th>Message</th>

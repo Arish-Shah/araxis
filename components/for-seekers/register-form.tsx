@@ -23,7 +23,15 @@ function RegisterForm() {
     image.src = '/form/check-green.svg';
   });
 
-  const onSubmit = (data: IFormInput) => {};
+  const onSubmit = (data: IFormInput) => {
+    console.log('sending req');
+    fetch('/api/for-seekers', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
 
   const inputs: {
     label: string;

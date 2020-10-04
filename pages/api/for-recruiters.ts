@@ -2,7 +2,16 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { name, email, phone, topic, message } = JSON.parse(req.body);
+  const {
+    firstName,
+    lastName,
+    email,
+    phone,
+    company,
+    website,
+    needs,
+    communications,
+  } = JSON.parse(req.body);
 
   await transporter.sendMail(
     {
@@ -15,7 +24,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         <table>
           <tr>
             <th>Name</th>
-            <td>${name}</td>
+            <td>${firstName} ${lastName}</td>
           </tr>
           <tr>
             <th>Email</th>
@@ -26,12 +35,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             <td>${phone}</td>
           </tr>
           <tr>
-            <th>Topic</th>
-            <td>${topic}</td>
+            <th>Company</th>
+            <td>${company}</td>
           </tr>
           <tr>
-            <th>Message</th>
-            <td>${message}</td>
+            <th>Website</th>
+            <td>${website}</td>
+          </tr>
+          <tr>
+            <th>Needs</th>
+            <td>${needs}</td>
+          </tr>
+          <tr>
+            <th>Receive Communications</th>
+            <td>${communications}</td>
           </tr>
         </table>
         <a href="mailto:${email}">Click here to reply</a>
