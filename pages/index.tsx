@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 
 import Navbar from '../components/navbar';
@@ -11,12 +10,6 @@ import Ready from '../components/index/ready';
 import Footer from '../components/footer';
 
 function IndexPage() {
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }, []);
-
   return (
     <>
       <Head>
