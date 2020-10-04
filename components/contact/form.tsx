@@ -48,7 +48,14 @@ interface IFormInput {
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = (_: IFormInput, event: SyntheticEvent) => {};
+  const onSubmit = (data: IFormInput) => {
+    fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
 
   const inputs: {
     label: string;
