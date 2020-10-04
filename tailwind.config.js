@@ -24,11 +24,15 @@ module.exports = {
           light: 'var(--black-light)',
           default: 'var(--black-default)',
         },
+        facebook: 'var(--facebook)',
+        twitter: 'var(--twitter)',
+        instagram: 'var(--instagram)',
+        linkedin: 'var(--linkedin)',
       },
       backgroundImage: (theme) => ({
         'footer-image': 'url("/footer.svg")',
         'footer-image-dark':
-          'linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/footer.svg")',
+          'linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/footer.svg")',
       }),
     },
     fontFamily: {
