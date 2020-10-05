@@ -14,10 +14,6 @@ function MyApp({ Component, pageProps }) {
       once: true,
       duration: 800,
     });
-
-    // Prefetch check image
-    const image = new Image();
-    image.src = '/form/check-green.svg';
   }, []);
 
   return (

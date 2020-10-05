@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Layout from '../layout';
-import { useState } from 'react';
 import { RedButton } from '../index/hero';
 
 interface IFormInput {
@@ -18,6 +18,11 @@ interface IFormInput {
 function Form() {
   const [checked, setChecked] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = '/form/check-green.svg';
+  }, []);
 
   const onSubmit = async (data: IFormInput) => {
     const req = await fetch('/api/for-recruiters', {
@@ -190,7 +195,10 @@ function Form() {
                 draggable={false}
               />
             ) : (
-              <div className="border-solid rounded-sm border border-gray-600 h-5 w-5"></div>
+              <div
+                className="border-solid rounded-sm border border-gray-600"
+                style={{ height: '20px', width: '20px' }}
+              ></div>
             )}
             <p className="cursor-default">
               I agree to receive communications from Araxis Systems.

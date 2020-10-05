@@ -22,7 +22,7 @@ function RegisterForm() {
   useEffect(() => {
     const image = new Image();
     image.src = '/form/check-green.svg';
-  });
+  }, []);
 
   const onSubmit = async (data: IFormInput) => {
     const resume = await base64(data.resume[0]);
@@ -179,7 +179,10 @@ function RegisterForm() {
               draggable={false}
             />
           ) : (
-            <div className="cursor-pointer border-solid rounded-sm border border-gray-600 h-4 lg:h-5 w-5"></div>
+            <div
+              className="cursor-pointer border-solid rounded-sm border border-gray-600"
+              style={{ height: '20px', width: '20px' }}
+            ></div>
           )}
           <p className="cursor-default cursor-pointer">
             I agree to receive communications from Araxis Systems.
