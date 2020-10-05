@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import Layout from '../layout';
 import { useState, useRef, useEffect } from 'react';
 import { RedButton } from '../index/hero';
+import base64 from '../../util/base64';
 
 interface IFormInput {
   firstName: string;
@@ -23,14 +24,14 @@ function RegisterForm() {
     image.src = '/form/check-green.svg';
   });
 
-  const onSubmit = (data: IFormInput) => {
-    console.log('sending req');
-    fetch('/api/for-seekers', {
+  const onSubmit = async (data: IFormInput) => {
+    const resume = await base64(data.resume[0]);
+    const request = await fetch('/api/for-seekers', {
       method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+      body: JSON.stringify({ ...data, resume, communications: checked }),
+    });
+    const json = await request.json();
+    console.log(json);
   };
 
   const inputs: {
@@ -133,8 +134,8 @@ function RegisterForm() {
               {errors.resume && (
                 <span className="text-red text-xs mt-0">
                   {errors.resume?.message}
-                  {errors.resume.type === 'validate' &&
-                    'File must be under 10MB.'}
+                  {errors.resume.type === 'size' && 'File must be under 10MB.'}
+                  {errors.resume.type === 'type' && 'Unsupported Format'}
                 </span>
               )}
             </div>
@@ -147,7 +148,15 @@ function RegisterForm() {
                   value: true,
                   message: 'Resume required',
                 },
-                validate: (fileList) => fileList[0].size < 10000000,
+                validate: {
+                  size: (fileList) => fileList[0].size < 10000000,
+                  type: (fileList: File[]) => {
+                    const supportedTypes = ['pdf', 'doc', 'docx'];
+                    const extension = fileList[0].name.split('.').pop();
+                    if (supportedTypes.includes(extension)) return true;
+                    else return false;
+                  },
+                },
               })}
               multiple={false}
               className="text-sm w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
