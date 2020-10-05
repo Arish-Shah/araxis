@@ -10,9 +10,6 @@ function End2End() {
       <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
         How We Hire
       </h1>
-      {/* <h1 className="uppercase font-semibold text-3xl md:text-4xl lg:text-inter">
-        For Organizations
-      </h1> */}
       <div className="text-black-lighter text-sm mt-8 leading-loose lg:text-base">
         <p className="lg:w-7/12 mx-auto">
           How we hire the best recruit for your company is no rocket science. We

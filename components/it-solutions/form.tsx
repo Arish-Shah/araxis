@@ -13,13 +13,13 @@ interface IFormInput {
 function Form() {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
-  const onSubmit = (data: IFormInput) => {
-    fetch('/api/it-solutions', {
+  const onSubmit = async (data: IFormInput) => {
+    const request = await fetch('/api/it-solutions', {
       method: 'POST',
       body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    });
+    const json = await request.json();
+    console.log(json);
   };
 
   const inputs: {

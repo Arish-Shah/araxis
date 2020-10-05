@@ -150,12 +150,10 @@ function RegisterForm() {
                 },
                 validate: {
                   size: (fileList) => fileList[0].size < 10000000,
-                  type: (fileList: File[]) => {
-                    const supportedTypes = ['pdf', 'doc', 'docx'];
-                    const extension = fileList[0].name.split('.').pop();
-                    if (supportedTypes.includes(extension)) return true;
-                    else return false;
-                  },
+                  type: (fileList: File[]) =>
+                    ['pdf', 'doc', 'docx'].includes(
+                      fileList[0].name.split('.').pop()
+                    ),
                 },
               })}
               multiple={false}

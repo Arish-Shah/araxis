@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
-import fs from 'fs';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const {

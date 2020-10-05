@@ -29,5 +29,10 @@
     "tailwindcss": "^1.7.4",
     "typescript": "^4.0.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ]
 }
