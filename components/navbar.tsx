@@ -57,12 +57,12 @@ function Navbar() {
     { text: 'For Recruiters', href: '/for-recruiters' },
     { text: 'IT Solutions', href: '/it-solutions' },
     { text: 'About', href: '/about' },
-    { text: 'Contact', href: '/contact' },
+    { text: 'Contact', href: '/contact' }
   ];
 
   const phoneLink: NavItem = {
     text: '+1 (757) 271-8920',
-    href: 'tel:+17572718920',
+    href: 'tel:+17572718920'
   };
 
   const smClasses =

@@ -1,4 +1,4 @@
-import Layout from "../layout";
+import Layout from '../layout';
 
 interface PanelProps {
   title: string;
@@ -10,40 +10,40 @@ interface PanelProps {
 function Services() {
   const panels: PanelProps[] = [
     {
-      title: "Custom\n Application Development",
+      title: 'Custom\n Application Development',
       content:
-        "We build custom applications to accelerate business processes while automating the existing workflow. From simple QuickBooks automation solutions to complete CRM solutions, we have done everything - all while choosing the best tools for the job to ensure higher efficiencies.",
-      image: "custom-app.svg",
-      reverse: false,
+        'We build custom applications to accelerate business processes while automating the existing workflow. From simple QuickBooks automation solutions to complete CRM solutions, we have done everything - all while choosing the best tools for the job to ensure higher efficiencies.',
+      image: 'custom-app.svg',
+      reverse: false
     },
     {
-      title: "Custom\n Web Development",
+      title: 'Custom\n Web Development',
       content:
-        "We develop robust websites to run various online businesses. We build custom websites across many verticals, such as retail e-commerce, financial securities, insurance, telephony B2B and medical research.",
-      image: "custom-dev.svg",
-      reverse: true,
+        'We develop robust websites to run various online businesses. We build custom websites across many verticals, such as retail e-commerce, financial securities, insurance, telephony B2B and medical research.',
+      image: 'custom-dev.svg',
+      reverse: true
     },
     {
-      title: "Search Engine\n Optimization (SEO)",
+      title: 'Search Engine\n Optimization (SEO)',
       content:
-        "We recommend technologies and platforms to ensure our clients always get the best bang for their technology investment buck. We always employ the right technology and use the right words - to ensure what our clients do, reaches those who they intend for it to reach.",
-      image: "web-app.svg",
-      reverse: false,
+        'We recommend technologies and platforms to ensure our clients always get the best bang for their technology investment buck. We always employ the right technology and use the right words - to ensure what our clients do, reaches those who they intend for it to reach.',
+      image: 'web-app.svg',
+      reverse: false
     },
     {
-      title: "Technical\n Support",
+      title: 'Technical\n Support',
       content:
-        "We work with clients to provide custom hosted solutions including web servers, database servers, firewalls, VPNs and load balancing.",
-      image: "technical-support.svg",
-      reverse: true,
+        'We work with clients to provide custom hosted solutions including web servers, database servers, firewalls, VPNs and load balancing.',
+      image: 'technical-support.svg',
+      reverse: true
     },
     {
-      title: "Quality\n Engineering",
+      title: 'Quality\n Engineering',
       content:
-        "While we have designed many types of solutions for clients, we have also designed and architected complete design solutions with quality engineering to ensure nothing but the best goes out to our partners.",
-      image: "app-architecture.svg",
-      reverse: false,
-    },
+        'While we have designed many types of solutions for clients, we have also designed and architected complete design solutions with quality engineering to ensure nothing but the best goes out to our partners.',
+      image: 'app-architecture.svg',
+      reverse: false
+    }
   ];
 
   return (
@@ -62,12 +62,12 @@ function Services() {
 }
 
 function Panel({ title, content, image, reverse }: PanelProps) {
-  const heading = title.split("\n").map((t, i) => <p key={i}>{t}</p>);
-  const flex = reverse ? "flex-row-reverse" : "flex-row";
-  const dataAos = reverse ? "fade-left" : "fade-right";
+  const heading = title.split('\n').map((t, i) => <p key={i}>{t}</p>);
+  const flex = reverse ? 'flex-row-reverse' : 'flex-row';
+  const dataAos = reverse ? 'fade-left' : 'fade-right';
 
   const borderClasses =
-    image !== "app-architecture.svg" ? "border-b border-gray-300" : "";
+    image !== 'app-architecture.svg' ? 'border-b border-gray-300' : '';
 
   return (
     <div className={`overflow-x-hidden lg:border-none ${borderClasses}`}>

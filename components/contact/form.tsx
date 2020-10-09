@@ -52,7 +52,7 @@ const ContactUsForm = () => {
   const onSubmit = async (data: IFormInput) => {
     const request = await fetch('/api/contact', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     });
     const json = await request.json();
     console.log(json);
@@ -71,9 +71,9 @@ const ContactUsForm = () => {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
-        },
-      },
+          message: 'Fields marked * are required'
+        }
+      }
     },
     {
       label: 'Email Address*',
@@ -82,13 +82,13 @@ const ContactUsForm = () => {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
+          message: 'Fields marked * are required'
         },
         pattern: {
           value: /\S+@\S+\.\S+/,
-          message: 'Please enter a valid email',
-        },
-      },
+          message: 'Please enter a valid email'
+        }
+      }
     },
     {
       label: 'Phone Number*',
@@ -97,18 +97,18 @@ const ContactUsForm = () => {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
+          message: 'Fields marked * are required'
         },
         minLength: {
           value: 10,
-          message: 'Please enter a valid phone number',
+          message: 'Please enter a valid phone number'
         },
         maxLength: {
           value: 10,
-          message: 'Please enter a valid phone number',
-        },
-      },
-    },
+          message: 'Please enter a valid phone number'
+        }
+      }
+    }
   ];
 
   return (

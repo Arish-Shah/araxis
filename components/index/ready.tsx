@@ -1,5 +1,5 @@
-import Layout from "../layout";
-import { BlueButton, RedButton } from "./hero";
+import Layout from '../layout';
+import { BlueButton, RedButton } from './hero';
 
 function Ready() {
   return (

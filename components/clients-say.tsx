@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 
 function ClientsSay({
   alternate,
-  title,
+  title
 }: {
   alternate?: boolean;
   title: string;
@@ -16,23 +16,23 @@ function ClientsSay({
     {
       name: 'John Doe',
       of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`,
+      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
     },
     {
       name: 'Alice May',
       of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.`,
+      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.`
     },
     {
       name: 'Jack Smith',
       of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`,
+      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
     },
     {
       name: 'Karen Rae',
       of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`,
-    },
+      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
+    }
   ];
 
   const settings = {
@@ -42,7 +42,7 @@ function ClientsSay({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: true
   };
 
   return (

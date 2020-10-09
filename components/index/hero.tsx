@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Layout from "../layout";
+import Link from 'next/link';
+import Layout from '../layout';
 
 function Hero() {
   return (
@@ -34,7 +34,7 @@ function Hero() {
 }
 
 const buttonStyles =
-  "bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12";
+  'bg-gradient-to-r uppercase font-medium text-xl text-white rounded-none py-4 flex-auto lg:flex-none lg:px-12';
 
 export const RedButton = ({ text, href }: { text: string; href?: string }) =>
   href ? (

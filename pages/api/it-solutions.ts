@@ -43,7 +43,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             </tr>
           </table>
           <a href="mailto:${email}">Click here to reply</a>
-        `,
+        `
       },
       (error, info) => {
         if (error) {

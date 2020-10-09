@@ -28,7 +28,7 @@ function RegisterForm() {
     const resume = await base64(data.resume[0]);
     const request = await fetch('/api/for-seekers', {
       method: 'POST',
-      body: JSON.stringify({ ...data, resume, communications: checked }),
+      body: JSON.stringify({ ...data, resume, communications: checked })
     });
     const json = await request.json();
     console.log(json);
@@ -46,8 +46,8 @@ function RegisterForm() {
       type: 'text',
       rules: {
         required: { value: true, message: 'Fields marked * are required' },
-        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' },
-      },
+        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' }
+      }
     },
     {
       label: 'Last Name*',
@@ -55,8 +55,8 @@ function RegisterForm() {
       type: 'text',
       rules: {
         required: { value: true, message: 'Fields marked * are required' },
-        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' },
-      },
+        pattern: { value: /^[a-zA-Z]+$/, message: 'Enter a correct value' }
+      }
     },
     {
       label: 'Phone Number',
@@ -64,8 +64,8 @@ function RegisterForm() {
       type: 'number',
       rules: {
         minLength: { value: 10, message: 'Please enter a valid number' },
-        maxLength: { value: 10, message: 'Please enter a valid number' },
-      },
+        maxLength: { value: 10, message: 'Please enter a valid number' }
+      }
     },
     {
       label: 'Email',
@@ -74,9 +74,9 @@ function RegisterForm() {
       rules: {
         pattern: {
           value: /\S+@\S+\.\S+/,
-          message: 'Please enter a valid email',
-        },
-      },
+          message: 'Please enter a valid email'
+        }
+      }
     },
     {
       label: 'Linkedin URL',
@@ -85,10 +85,10 @@ function RegisterForm() {
       rules: {
         pattern: {
           value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/,
-          message: 'Please enter a valid URL',
-        },
-      },
-    },
+          message: 'Please enter a valid URL'
+        }
+      }
+    }
   ];
 
   const formRef = useRef();
@@ -146,15 +146,15 @@ function RegisterForm() {
               ref={register({
                 required: {
                   value: true,
-                  message: 'Resume required',
+                  message: 'Resume required'
                 },
                 validate: {
                   size: (fileList) => fileList[0].size < 10000000,
                   type: (fileList: File[]) =>
                     ['pdf', 'doc', 'docx'].includes(
                       fileList[0].name.split('.').pop()
-                    ),
-                },
+                    )
+                }
               })}
               multiple={false}
               className="text-sm w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"

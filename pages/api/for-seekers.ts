@@ -10,7 +10,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       email,
       linkedin,
       resume,
-      communications,
+      communications
     } = JSON.parse(req.body);
     const valid =
       firstName?.trim() !== '' &&
@@ -55,7 +55,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           </table>
           <a href="mailto:${email}">Click here to reply</a>
         `,
-        attachments: [resume],
+        attachments: [resume]
       },
       (error, info) => {
         if (error) {

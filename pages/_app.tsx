@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     AOS.init({
       delay: 150,
       once: true,
-      duration: 800,
+      duration: 800
     });
   }, []);
 

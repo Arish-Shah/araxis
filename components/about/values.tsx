@@ -12,25 +12,25 @@ function Values() {
       title: 'Driven by Data',
       content:
         'Whatever we do is driven by data and powered by data. The solutions we provide are analysed based on intensive research that is then brought into effect by actionable steps.',
-      image: 'data-driven.svg',
+      image: 'data-driven.svg'
     },
     {
       title: 'Customer is King',
       content:
         'The client for us has the ultimate power. What we design, create and find solutions for is solely so that our partners remain satisfied, efficient and happy.',
-      image: 'customer-delight.svg',
+      image: 'customer-delight.svg'
     },
     {
       title: 'Extreme Ownership',
       content:
         'We love owning up to our work, with pride - and our quality of work is what sets us apart.',
-      image: 'extreme-ownership.svg',
+      image: 'extreme-ownership.svg'
     },
     {
       title: 'Givers',
       content: 'We love giving back.',
-      image: 'giver.svg',
-    },
+      image: 'giver.svg'
+    }
   ];
 
   return (

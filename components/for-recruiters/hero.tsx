@@ -4,7 +4,7 @@ function Hero({
   title,
   subtitle,
   content,
-  className = '',
+  className = ''
 }: {
   title: string;
   subtitle: string;

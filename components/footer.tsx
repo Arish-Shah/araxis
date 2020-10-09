@@ -8,7 +8,7 @@ function Footer() {
     { text: 'For Recruiters', href: '/for-recruiters' },
     { text: 'IT Solutions', href: '/it-solutions' },
     { text: 'About', href: '/about' },
-    { text: 'Contact', href: '/contact' },
+    { text: 'Contact', href: '/contact' }
   ];
 
   return (

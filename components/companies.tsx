@@ -6,20 +6,20 @@ function Companies() {
     {
       src: '/companies/capgemini.svg',
       alt: 'Capgemini',
-      className: 'h-8',
+      className: 'h-8'
     },
     { src: '/companies/oracle.svg', alt: 'Oracle', className: 'h-5 mx-auto' },
     {
       src: '/companies/dell.svg',
       alt: 'DELL',
-      className: 'h-6 md:h-8 mx-auto',
+      className: 'h-6 md:h-8 mx-auto'
     },
     {
       src: '/companies/deloitte.svg',
       alt: 'Deloitte',
-      className: 'h-8 mx-auto',
+      className: 'h-8 mx-auto'
     },
-    { src: '/companies/nokia.svg', alt: 'Nokia', className: 'h-6 mx-auto' },
+    { src: '/companies/nokia.svg', alt: 'Nokia', className: 'h-6 mx-auto' }
   ];
 
   const settings = {
@@ -33,7 +33,7 @@ function Companies() {
     autoplaySpeed: 0,
     className: 'companies-slick',
     cssEase: 'linear',
-    touchMove: false,
+    touchMove: false
   };
 
   return (

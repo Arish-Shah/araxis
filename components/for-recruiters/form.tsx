@@ -27,7 +27,7 @@ function Form() {
   const onSubmit = async (data: IFormInput) => {
     const req = await fetch('/api/for-recruiters', {
       method: 'POST',
-      body: JSON.stringify({ ...data, communications: checked }),
+      body: JSON.stringify({ ...data, communications: checked })
     });
     const json = await req.json();
     console.log(json);
@@ -46,9 +46,9 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
-        },
-      },
+          message: 'Fields marked * are required'
+        }
+      }
     },
     {
       label: 'Last Name*',
@@ -57,9 +57,9 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
-        },
-      },
+          message: 'Fields marked * are required'
+        }
+      }
     },
     {
       label: 'Email*',
@@ -68,13 +68,13 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
+          message: 'Fields marked * are required'
         },
         pattern: {
           value: /\S+@\S+\.\S+/,
-          message: 'Please enter a valid email',
-        },
-      },
+          message: 'Please enter a valid email'
+        }
+      }
     },
     {
       label: 'Phone Number*',
@@ -83,17 +83,17 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
+          message: 'Fields marked * are required'
         },
         minLength: {
           value: 10,
-          message: 'Please enter a valid phone number',
+          message: 'Please enter a valid phone number'
         },
         maxLength: {
           value: 10,
-          message: 'Please enter a valid phone number',
-        },
-      },
+          message: 'Please enter a valid phone number'
+        }
+      }
     },
     {
       label: 'Company Name*',
@@ -102,9 +102,9 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
-        },
-      },
+          message: 'Fields marked * are required'
+        }
+      }
     },
     {
       label: 'Website URL*',
@@ -113,14 +113,14 @@ function Form() {
       rules: {
         required: {
           value: true,
-          message: 'Fields marked * are required',
+          message: 'Fields marked * are required'
         },
         pattern: {
           value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/,
-          message: 'Please enter a valid URL',
-        },
-      },
-    },
+          message: 'Please enter a valid URL'
+        }
+      }
+    }
   ];
 
   return (
@@ -173,8 +173,8 @@ function Form() {
             ref={register({
               required: {
                 value: true,
-                message: 'Fields marked * are required',
-              },
+                message: 'Fields marked * are required'
+              }
             })}
           />
           <p className="text-left text-gray-600 pt-16 leading-loose text-sm lg:text-base">

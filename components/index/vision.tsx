@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Layout from "../layout";
+import Link from 'next/link';
+import Layout from '../layout';
 
 export const ButtonWithArrow = ({
   text,
-  href,
+  href
 }: {
   text: string;
   href?: string;

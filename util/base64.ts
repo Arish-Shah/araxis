@@ -9,7 +9,7 @@ const base64 = (file: File) => {
       resolve({
         filename: file.name,
         content,
-        encoding: 'base64',
+        encoding: 'base64'
       });
     };
     reader.onerror = (error) => reject(error);
