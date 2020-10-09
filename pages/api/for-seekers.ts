@@ -12,7 +12,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       resume,
       communications,
     } = JSON.parse(req.body);
-  
+    const valid =
+      firstName?.trim() !== '' &&
+      lastName?.trim() !== '' &&
+      resume?.content &&
+      resume?.filename &&
+      resume?.encoding;
+
+    if (!valid) {
+      res.status(400).json({ message: 'Incomplete Information' });
+    }
+
     await transporter.sendMail(
       {
         from: '"Form Submission" <formsubmission.araxis@gmail.com>',

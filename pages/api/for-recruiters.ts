@@ -13,6 +13,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       needs,
       communications,
     } = JSON.parse(req.body);
+    const valid =
+      firstName?.trim() !== '' &&
+      lastName?.trim() !== '' &&
+      email?.trim() !== '' &&
+      phone?.trim() !== '' &&
+      company?.trim() !== '' &&
+      website?.trim() !== '' &&
+      needs?.trim() !== '';
+
+    if (!valid) {
+      res.status(400).json({ message: 'Incomplete Information' });
+      return;
+    }
 
     await transporter.sendMail(
       {

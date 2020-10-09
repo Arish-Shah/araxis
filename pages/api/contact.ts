@@ -4,6 +4,12 @@ import transporter from '../../util/transport';
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const { name, email, phone, topic, message } = JSON.parse(req.body);
+    const valid = name?.trim() !== '' && email?.trim() !== '' && phone?.trim() !== '';
+
+    if (!valid) {
+      res.status(400).json({ message: 'Incomplete Information' });
+      return;
+    }
 
     await transporter.sendMail(
       {
