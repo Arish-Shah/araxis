@@ -61,8 +61,8 @@ function Navbar() {
   ];
 
   const phoneLink: NavItem = {
-    text: '+1-703-763-5282',
-    href: 'tel:+17037635282',
+    text: '+1 (757) 271-8920',
+    href: 'tel:+17572718920',
   };
 
   const smClasses =

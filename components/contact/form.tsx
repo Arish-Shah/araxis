@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Layout from '../layout';
-import { SyntheticEvent } from 'react';
+import { useState } from 'react';
 
 function Form() {
   return (
@@ -47,6 +47,7 @@ interface IFormInput {
 
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+  const [buttonClass, setButtonClass] = useState('Submit');
 
   const onSubmit = async (data: IFormInput) => {
     const request = await fetch('/api/contact', {
