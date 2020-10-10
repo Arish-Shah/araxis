@@ -57,8 +57,13 @@ function ClientsSay({
             alt ? 'lg:text-right lg:flex-row-reverse' : ''
           }`}
         >
-          <div className={`flex ${alt ? 'gap-6' : 'gap-10'} float-right`}>
-            <img src="/clients-say.svg" alt="Comment" draggable={false} />
+          <div className="flex float-right">
+            <img
+              src="/clients-say.svg"
+              alt="Comment"
+              draggable={false}
+              className={`${alt ? 'mr-6' : 'mr-10'}`}
+            />
             <h1 className="uppercase text-blue text-3xl md:text-4xl lg:text-inter font-semibold">
               What our <br /> {title} say
             </h1>

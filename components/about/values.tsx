@@ -4,6 +4,7 @@ interface PanelProps {
   title: string;
   content: string;
   image: string;
+  className: string;
 }
 
 function Values() {
@@ -12,24 +13,28 @@ function Values() {
       title: 'Driven by Data',
       content:
         'Whatever we do is driven by data and powered by data. The solutions we provide are analysed based on intensive research that is then brought into effect by actionable steps.',
-      image: 'data-driven.svg'
+      image: 'data-driven.svg',
+      className: 'lg:mb-10 lg:pr-10'
     },
     {
       title: 'Customer is King',
       content:
         'The client for us has the ultimate power. What we design, create and find solutions for is solely so that our partners remain satisfied, efficient and happy.',
-      image: 'customer-delight.svg'
+      image: 'customer-delight.svg',
+      className: 'mt-10 lg:pl-10 lg:mt-0'
     },
     {
       title: 'Extreme Ownership',
       content:
         'We love owning up to our work, with pride - and our quality of work is what sets us apart.',
-      image: 'extreme-ownership.svg'
+      image: 'extreme-ownership.svg',
+      className: 'mt-10 lg:pr-10'
     },
     {
       title: 'Givers',
       content: 'We love giving back.',
-      image: 'giver.svg'
+      image: 'giver.svg',
+      className: 'mt-10 lg:pl-10'
     }
   ];
 
@@ -41,7 +46,7 @@ function Values() {
       <p className="pt-2 pb-10 lg:pb-8 text-black-light font-medium lg:w-1/2 mx-auto leading-loose">
         All that we do, we do it with great value.
       </p>
-      <div className="grid grid-cols-1 gap-10 mt-12 lg:mt-16 lg:grid-cols-2 lg:gap-20">
+      <div className="grid grid-cols-1 mt-12 lg:mt-16 lg:grid-cols-2">
         {panels.map((panel) => (
           <Panel key={panel.title} {...panel} />
         ))}
@@ -50,16 +55,18 @@ function Values() {
   );
 }
 
-const Panel = ({ title, content, image }: PanelProps) => {
+const Panel = ({ title, content, image, className }: PanelProps) => {
   return (
-    <div data-aos="fade-up">
-      <div className="flex items-center gap-5">
+    <div className={className} data-aos="fade-up">
+      <div className="flex items-center">
         <img
           src={`values/${image}`}
           alt={title}
           className="h-12 w-12 lg:h-16 lg:w-16"
         />
-        <h3 className="uppercase text-blue font-semibold text-2xl">{title}</h3>
+        <h3 className="uppercase text-blue font-semibold text-2xl ml-5">
+          {title}
+        </h3>
       </div>
       <div className="mt-3 text-blue text-sm font-medium leading-relaxed lg:leading-loose text-left lg:text-base lg:mt-5">
         {content}

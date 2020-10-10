@@ -3,7 +3,7 @@ import Layout from '../layout';
 function End2End() {
   return (
     <Layout
-      parent="bg-footer-image bg-cover"
+      parent="bg-footer-image-dark bg-cover"
       child="text-center py-24 md:px-32 lg:px-6 text-white"
       animate={true}
     >

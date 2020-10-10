@@ -112,7 +112,11 @@ button:hover {
 
 /* Companies slider */
 .companies-slick .slick-track {
-  @apply .flex .items-center .gap-x-8;
+  @apply .flex .items-center;
+}
+
+.companies-slick .slick-track .slick-slide {
+  @apply .mx-4;
 }
 
 /* Start purging... */

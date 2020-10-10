@@ -120,9 +120,7 @@ function Navbar() {
           })}
           <div className="hidden lg:block">
             <Link href={phoneLink.href}>
-              <a
-                className={`text-blue border-transparent flex gap-2 ${lgClasses}`}
-              >
+              <a className={`text-blue border-transparent flex ${lgClasses}`}>
                 {call} {phoneLink.text}
               </a>
             </Link>
@@ -152,9 +150,7 @@ function Navbar() {
             );
           })}
           <Link href={phoneLink.href}>
-            <a
-              className={`text-blue border-transparent flex gap-2 ${smClasses}`}
-            >
+            <a className={`text-blue border-transparent flex ${smClasses}`}>
               {call} {phoneLink.text}
             </a>
           </Link>
@@ -188,6 +184,7 @@ const call = (
     width="19.272"
     height="19.305"
     viewBox="0 0 19.272 19.305"
+    className="mr-2"
   >
     <path
       id="call"

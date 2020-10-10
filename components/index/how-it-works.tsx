@@ -6,21 +6,25 @@ function HowItWorks() {
     title: string;
     content: string;
     icon: string;
+    className: string;
   }[] = [
     {
       title: 'We Listen',
       content: `The most important thing we do, is we let you speak. We understand the importance of listening to your needs and make it our utmost priority to give you exactly what you want - and nothing else`,
-      icon: 'we-listen.svg'
+      icon: 'we-listen.svg',
+      className: 'lg:mr-16'
     },
     {
       title: 'We Understand',
       content: `Applying the same rule for all partners is just not how we like it. We take on each requirement and scrutinise it - breaking the requirements down into actionable steps.`,
-      icon: 'we-understand.svg'
+      icon: 'we-understand.svg',
+      className: 'mt-20 lg:mt-0 lg:ml-8 lg:mr-8'
     },
     {
       title: 'We Deliver',
       content: `Empty words and false promises are not the standards we go by. After analysing every detail, our results showcase an almost perfect success ratio: one that sets us apart and keeps our partners happy.`,
-      icon: 'we-deliver.svg'
+      icon: 'we-deliver.svg',
+      className: 'mt-20 lg:mt-0 lg:ml-16'
     }
   ];
 
@@ -38,9 +42,13 @@ function HowItWorks() {
           to finding perfect matches, we enrich organisations with wholes that
           are more than the sum of their parts.
         </p>
-        <div className="grid grid-cols-1 pt-2 gap-20 lg:grid-cols-3">
-          {items.map(({ title, content, icon }) => (
-            <div key={title} className="flex flex-col" data-aos="fade-up">
+        <div className="grid grid-cols-1 pt-2 lg:grid-cols-3">
+          {items.map(({ title, content, icon, className }) => (
+            <div
+              key={title}
+              className={`flex flex-col ${className}`}
+              // data-aos="fade-up"
+            >
               <img
                 src={`/how-it-works/${icon}`}
                 alt={title}

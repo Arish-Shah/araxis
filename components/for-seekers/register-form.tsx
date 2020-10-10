@@ -170,7 +170,7 @@ function RegisterForm() {
 
         <div
           onClick={() => setChecked((checked) => !checked)}
-          className="text-left flex items-center gap-4 text-gray-600 pt-5 text-sm lg:text-base"
+          className="text-left flex items-center text-gray-600 pt-5 text-sm lg:text-base"
         >
           {checked ? (
             <img
@@ -184,7 +184,7 @@ function RegisterForm() {
               style={{ height: '20px', width: '20px' }}
             ></div>
           )}
-          <p className="cursor-default cursor-pointer">
+          <p className="cursor-default cursor-pointer ml-4">
             I agree to receive communications from Araxis Systems.
           </p>
         </div>

@@ -24,8 +24,8 @@ function Hero({ firstLine, secondLine, intro, type }: Props) {
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s.
       </p> */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 text-white gap-8">
-        <div className="text-left px-6 bg-gradient-to-r from-green to-green pt-6 pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 text-white">
+        <div className="text-left px-6 bg-gradient-to-r from-green to-green pt-6 pb-12 lg:mr-4">
           <span>
             <img src="/icons/like.svg" alt="Like" />
           </span>
@@ -37,7 +37,7 @@ function Hero({ firstLine, secondLine, intro, type }: Props) {
               : ''}
           </span>
         </div>
-        <div className="text-left px-6 bg-gradient-to-r from-red-dark to-red pt-6 pb-12">
+        <div className="text-left px-6 bg-gradient-to-r from-red-dark to-red pt-6 pb-12 lg:ml-4 lg:mr-4 mt-8 lg:mt-0">
           <span>
             <img src="/icons/trust.svg" alt="Like" />
           </span>
@@ -49,7 +49,7 @@ function Hero({ firstLine, secondLine, intro, type }: Props) {
               : ''}
           </span>
         </div>
-        <div className="text-left px-6 bg-gradient-to-r from-blue-light to-blue pt-6 pb-12">
+        <div className="text-left px-6 bg-gradient-to-r from-blue-light to-blue pt-6 pb-12 lg:ml-4 mt-8 lg:mt-0">
           <span>
             <img src="/icons/advanced-skill.svg" alt="Like" />
           </span>

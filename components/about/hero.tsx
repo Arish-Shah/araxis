@@ -25,12 +25,12 @@ function Hero() {
 }
 
 const Leading = (
-  <div className="text-left flex flex-col lg:flex-row lg:items-center pt-16 md:pt-20 lg:pt-24 pb-20 gap-10 lg:gap-32 xl:gap-40">
+  <div className="text-left flex flex-col lg:flex-row lg:items-center pt-16 md:pt-20 lg:pt-24 pb-20">
     <div className="flex-1">
       <h1 className="text-blue text-3xl md:text-4xl lg:text-inter font-semibold">
         Our Mission
       </h1>
-      <p className="mt-4 text-black-light leading-7">
+      <p className="mt-4 text-black-light leading-7 lg:pr-16">
         From initial contact to follow-up support, our aim is to provide our
         clients and partners the complete IT Solution. With our unparalleled
         experience and a decade long expertise, what we provide to companies, no
@@ -38,7 +38,7 @@ const Leading = (
       </p>
     </div>
     <div className="flex-1">
-      <h1 className="text-blue text-3xl md:text-4xl xl:text-inter font-semibold italic">
+      <h1 className="text-blue text-3xl md:text-4xl xl:text-inter font-semibold italic mt-10 lg:mt-0 lg:pl-12 xl:pl-20">
         "Accelerate Innovation. Accelerate Growth"
       </h1>
     </div>

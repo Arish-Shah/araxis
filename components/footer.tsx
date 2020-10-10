@@ -39,11 +39,11 @@ function Footer() {
         </div>
         <div className="lg:w-3/12 py-8 lg:pl-12">
           <h3 className="text-lg font-medium">Connect</h3>
-          <div className="flex gap-5 py-6">
+          <div className="flex py-6">
             <Link href="/facebook">
               <a
                 target="_blank"
-                className="hover:text-facebook transition duration-200"
+                className="hover:text-facebook transition duration-200 mr-5"
               >
                 {facebook}
               </a>
@@ -51,7 +51,7 @@ function Footer() {
             <Link href="/">
               <a
                 target="_blank"
-                className="hover:text-twitter transition duration-200"
+                className="hover:text-twitter transition duration-200 mr-5"
               >
                 {twitter}
               </a>
@@ -59,7 +59,7 @@ function Footer() {
             <Link href="facebook">
               <a
                 target="_blank"
-                className="hover:text-instagram transition duration-200"
+                className="hover:text-instagram transition duration-200 mr-5"
               >
                 {instagram}
               </a>
@@ -67,7 +67,7 @@ function Footer() {
             <Link href="facebook">
               <a
                 target="_blank"
-                className="hover:text-linkedin transition duration-200"
+                className="hover:text-linkedin transition duration-200 mr-5"
               >
                 {linkedin}
               </a>
