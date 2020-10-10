@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from './layout';
+import Container from './container';
 import Slider from 'react-slick';
 
-function ClientsSay({
+function Testimonials({
   alternate,
   title
 }: {
@@ -47,7 +47,7 @@ function ClientsSay({
 
   return (
     <>
-      <Layout
+      <Container
         parent="bg-lavendar"
         child={`md:px-32 lg:px-6 py-20 h-128 lg:${className} flex flex-col`}
         animate={true}
@@ -87,9 +87,9 @@ function ClientsSay({
             ))}
           </Slider>
         </div>
-      </Layout>
+      </Container>
     </>
   );
 }
 
-export default ClientsSay;
+export default Testimonials;

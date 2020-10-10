@@ -1,4 +1,4 @@
-import Layout from './layout';
+import Container from './container';
 import Link from 'next/link';
 
 function Footer() {
@@ -11,15 +11,43 @@ function Footer() {
     { text: 'Contact', href: '/contact' }
   ];
 
+  const socials: { href: string; className: string; icon: any }[] = [
+    {
+      href: '/',
+      className: 'hover:text-facebook transition duration-200 mr-5',
+      icon: facebook
+    }
+    // {
+    //   href: '/',
+    //   className: 'hover:text-twitter transition duration-200 mr-5',
+    //   icon: twitter
+    // },
+    // {
+    //   href: '/',
+    //   className: 'hover:text-instagram transition duration-200 mr-5',
+    //   icon: instagram
+    // },
+    // {
+    //   href: '/',
+    //   className: 'hover:text-linkedin transition duration-200 mr-5',
+    //   icon: linkedin
+    // }
+  ];
+
+  const phoneLink = {
+    text: '+1 (757) 271-8920',
+    href: 'tel:+17572718920'
+  };
+
   return (
-    <Layout
+    <Container
       parent="bg-footer-image-dark bg-cover brightness-50"
       child="py-12 text-white md:px-32 lg:px-6"
     >
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-5/12 py-8 border-solid border-b border-white lg:border-b-0 lg:border-r">
           <h3 className="text-lg font-medium">Who We are?</h3>
-          <div className="text-black-lighter text-sm leading-loose pt-5 lg:pr-24">
+          <div className="text-white text-sm leading-loose pt-5 lg:pr-24">
             With a decade of experience in the IT Consulting services industry,
             we at Araxis are mavericks at matching technical professionals who
             help you connect and match with talent, partners and companies.
@@ -30,7 +58,7 @@ function Footer() {
           <div className="pt-5 leading-loose flex flex-col items-start">
             {links.map(({ href, text }) => (
               <Link href={href} key={text}>
-                <a className="text-sm text-black-lighter hover:text-white transition-colors duration-100">
+                <a className="text-sm text-white hover:shadow transition-colors duration-100">
                   {text}
                 </a>
               </Link>
@@ -40,47 +68,30 @@ function Footer() {
         <div className="lg:w-3/12 py-8 lg:pl-12">
           <h3 className="text-lg font-medium">Connect</h3>
           <div className="flex py-6">
-            <Link href="/facebook">
-              <a
-                target="_blank"
-                className="hover:text-facebook transition duration-200 mr-5"
-              >
-                {facebook}
-              </a>
-            </Link>
-            <Link href="/">
-              <a
-                target="_blank"
-                className="hover:text-twitter transition duration-200 mr-5"
-              >
-                {twitter}
-              </a>
-            </Link>
-            <Link href="facebook">
-              <a
-                target="_blank"
-                className="hover:text-instagram transition duration-200 mr-5"
-              >
-                {instagram}
-              </a>
-            </Link>
-            <Link href="facebook">
-              <a
-                target="_blank"
-                className="hover:text-linkedin transition duration-200 mr-5"
-              >
-                {linkedin}
-              </a>
-            </Link>
+            {socials.map(({ href, className, icon }) => (
+              <Link href={href} key={className}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {icon}
+                </a>
+              </Link>
+            ))}
           </div>
           <h3 className="text-lg font-medium">Give us a call</h3>
-          <p className="text-sm text-black-lighter py-2">+91 9123456789</p>
+          <p className="text-sm py-2">
+            <Link href={phoneLink.href}>
+              <a className="text-white">{phoneLink.text}</a>
+            </Link>
+          </p>
         </div>
       </div>
-      <p className="text-xs lg:text-center text-black-lighter md:text-sm md:pt-10">
+      <p className="text-xs lg:text-center text-white md:text-sm md:pt-10">
         &copy; 2020 Araxis Systems Inc., All rights reserved
       </p>
-    </Layout>
+    </Container>
   );
 }
 

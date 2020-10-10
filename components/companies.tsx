@@ -1,4 +1,4 @@
-import Layout from './layout';
+import Container from './container';
 import Slider from 'react-slick';
 
 function Companies() {
@@ -38,7 +38,7 @@ function Companies() {
 
   return (
     <>
-      <Layout
+      <Container
         parent="bg-gray-100 mt-2 hidden md:block"
         child="py-10 overflow-x-hidden grid grid-cols-3 items-center text-center lg:px-6 md:px-32 md:grid-cols-5"
         animate={true}
@@ -48,14 +48,14 @@ function Companies() {
             <img {...image} draggable={false} />
           </div>
         ))}
-      </Layout>
-      <Layout parent="bg-gray-100 mt-2 md:hidden" child="px-0 py-8">
+      </Container>
+      <Container parent="bg-gray-100 mt-2 md:hidden" child="px-0 py-8">
         <Slider {...settings}>
           {images.map((image) => (
             <img {...image} draggable={false} key={image.src} />
           ))}
         </Slider>
-      </Layout>
+      </Container>
     </>
   );
 }

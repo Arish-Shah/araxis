@@ -1,8 +1,8 @@
-import Layout from '../layout';
+import Container from '../container';
 
 function Text() {
   return (
-    <Layout
+    <Container
       parent="bg-pink"
       child="md:px-32 lg:px-6 py-24 flex flex-col lg:flex-row lg:items-center"
       animate={true}
@@ -22,7 +22,7 @@ function Text() {
           industry. Lorem Ipsum has been the industry's standard dummy.
         </p> */}
       </div>
-    </Layout>
+    </Container>
   );
 }
 

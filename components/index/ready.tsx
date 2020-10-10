@@ -1,9 +1,9 @@
-import Layout from '../layout';
+import Container from '../container';
 import { BlueButton, RedButton } from './hero';
 
 function Ready() {
   return (
-    <Layout child="text-center py-32" animate={true}>
+    <Container child="text-center py-32" animate={true}>
       <p className="text-black-light">
         Give your customer the experience they desire
       </p>
@@ -14,7 +14,7 @@ function Ready() {
         <RedButton text="Find Work" href="/for-seekers" />
         <BlueButton text="Hire Talent" href="/for-recruiters" />
       </div>
-    </Layout>
+    </Container>
   );
 }
 

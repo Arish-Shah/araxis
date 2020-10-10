@@ -1,4 +1,4 @@
-import Layout from '../layout';
+import Container from '../container';
 
 interface PanelProps {
   title: string;
@@ -47,7 +47,7 @@ function Services() {
   ];
 
   return (
-    <Layout child="py-24 md:px-32 lg:px-6 text-center" animate={true}>
+    <Container child="py-24 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="text-blue uppercase font-semibold text-3xl md:text-4xl xl:text-inter">
         Our Services
       </h1>
@@ -57,7 +57,7 @@ function Services() {
       {panels.map((panel) => (
         <Panel key={panel.title} {...panel} />
       ))}
-    </Layout>
+    </Container>
   );
 }
 

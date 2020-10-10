@@ -1,14 +1,13 @@
-import Navbar from '../components/navbar';
+import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Text from '../components/for-seekers/text';
-import ClientsSay from '../components/clients-say';
+import Testimonials from '../components/testimonials';
 import RegisterForm from '../components/for-seekers/register-form';
 
 function ForSeekersPage() {
   return (
-    <>
-      <Navbar />
+    <Layout title="For Seekers - Araxis">
       <Hero
         firstLine="Shifting gears in your career?"
         secondLine="Let us take the steering wheel!"
@@ -16,10 +15,10 @@ function ForSeekersPage() {
         type="seekers"
       />
       <Text />
-      <ClientsSay alternate={true} title="Recruits" />
+      <Testimonials alternate={true} title="Recruits" />
       <RegisterForm />
       <Footer />
-    </>
+    </Layout>
   );
 }
 

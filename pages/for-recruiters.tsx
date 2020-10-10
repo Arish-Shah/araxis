@@ -1,14 +1,13 @@
-import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '../components/hero';
 import SecondHero from '../components/for-recruiters/hero';
 import End2End from '../components/for-recruiters/e2e';
 import Form from '../components/for-recruiters/form';
+import Layout from '../components/layout';
 
 function ForRecruitersPage() {
   return (
-    <>
-      <Navbar />
+    <Layout title="For Recruiters - Araxis">
       <Hero
         firstLine="We filter from the rest;"
         secondLine=" to give you the best."
@@ -23,7 +22,7 @@ function ForRecruitersPage() {
       <End2End />
       <Form />
       <Footer />
-    </>
+    </Layout>
   );
 }
 

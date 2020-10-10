@@ -1,4 +1,4 @@
-import Layout from '../layout';
+import Container from '../container';
 
 interface PanelProps {
   title: string;
@@ -39,7 +39,7 @@ function Values() {
   ];
 
   return (
-    <Layout child="py-20 md:px-32 lg:px-6 text-center" animate={true}>
+    <Container child="py-20 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="uppercase text-blue font-semibold text-3xl md:text-4xl lg:text-inter">
         Our Values
       </h1>
@@ -51,7 +51,7 @@ function Values() {
           <Panel key={panel.title} {...panel} />
         ))}
       </div>
-    </Layout>
+    </Container>
   );
 }
 

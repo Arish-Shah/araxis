@@ -1,4 +1,4 @@
-import Layout from '../layout';
+import Container from '../container';
 
 function Hero({
   title,
@@ -12,7 +12,7 @@ function Hero({
   className?: string;
 }) {
   return (
-    <Layout
+    <Container
       parent={className}
       child="md:px-32 lg:px-6 flex flex-col lg:flex-row items-center pt-6 mb-2 pb-24"
       animate={true}
@@ -33,7 +33,7 @@ function Hero({
           {content}
         </p>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Layout from '../layout';
+import Container from '../container';
 
 export const ButtonWithArrow = ({
   text,
@@ -26,7 +26,7 @@ export const ButtonWithArrow = ({
 
 function Vision() {
   return (
-    <Layout
+    <Container
       parent="bg-pink"
       child="py-0 md:px-32 lg:px-6 pt-20 flex flex-col md:flex-row"
       animate={true}
@@ -46,7 +46,7 @@ function Vision() {
       <div className="flex-1 self-end -mt-8 w-7/12 lg:pt-12 md:w-full md:mt-0">
         <img src="/brand.png" alt="Logo" draggable={false} />
       </div>
-    </Layout>
+    </Container>
   );
 }
 

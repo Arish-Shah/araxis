@@ -1,9 +1,8 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
-import Layout from './layout';
+import Container from './container';
 
 interface NavItem {
   text: string;
@@ -73,10 +72,7 @@ function Navbar() {
 
   return (
     <>
-      <Head>
-        <title>Araxis</title>
-      </Head>
-      <Layout
+      <Container
         parent="z-20 fixed top-0 left-0 right-0 bg-white"
         child="z-20 flex justify-between items-center"
         parentRef={parentRef}
@@ -155,7 +151,7 @@ function Navbar() {
             </a>
           </Link>
         </div>
-      </Layout>
+      </Container>
     </>
   );
 }

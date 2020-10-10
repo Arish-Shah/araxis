@@ -1,7 +1,7 @@
-import Layout from '../layout';
+import Container from '../container';
 
 const First = (
-  <Layout
+  <Container
     animate={true}
     child="pt-40 pb-24 text-center md:px-32 lg:px-6 lg:pt-40"
   >
@@ -21,11 +21,11 @@ const First = (
         1500s,
       </p> */}
     </div>
-  </Layout>
+  </Container>
 );
 
 const Second = (
-  <Layout
+  <Container
     animate={true}
     parent="bg-pink"
     child="py-20 md:px-32 lg:px-6 flex flex-col lg:flex-row"
@@ -48,11 +48,11 @@ const Second = (
         industry. Lorem Ipsum has been the industry's standard dummy
       </p> */}
     </div>
-  </Layout>
+  </Container>
 );
 
 const Third = (
-  <Layout
+  <Container
     // animate={true}
     parent="bg-lavendar"
     child="py-20 md:px-32 lg:px-6 flex flex-col lg:flex-row-reverse"
@@ -71,7 +71,7 @@ const Third = (
         change it and pioneer the industry.
       </p>
     </div>
-  </Layout>
+  </Container>
 );
 
 function Hero() {

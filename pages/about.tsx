@@ -1,4 +1,4 @@
-import Navbar from '../components/navbar';
+import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Hero from '../components/about/hero';
 import Companies from '../components/companies';
@@ -8,8 +8,7 @@ import Ready from '../components/about/ready';
 
 function AboutPage() {
   return (
-    <>
-      <Navbar />
+    <Layout title="About - Araxis">
       <Hero />
       <Companies />
       <Values />
@@ -21,7 +20,7 @@ function AboutPage() {
       />
       <Ready />
       <Footer />
-    </>
+    </Layout>
   );
 }
 

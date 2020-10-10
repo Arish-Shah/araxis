@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import Layout from '../layout';
+import Container from '../container';
 
 interface IFormInput {
   name: string;
@@ -76,7 +76,7 @@ function Form() {
   ];
 
   return (
-    <Layout
+    <Container
       child="md:px-32 lg:px-6 border-solid border-t-2 border-gray-300 text-center py-16"
       animate={true}
     >
@@ -153,7 +153,7 @@ function Form() {
           </div>
         </form>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

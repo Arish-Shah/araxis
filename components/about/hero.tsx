@@ -1,8 +1,11 @@
-import Layout from '../layout';
+import Container from '../container';
 
 function Hero() {
   return (
-    <Layout child="pt-40 md:px-32 lg:px-6 lg:pt-40 text-center" animate={true}>
+    <Container
+      child="pt-40 md:px-32 lg:px-6 lg:pt-40 text-center"
+      animate={true}
+    >
       <div>
         <h1 className="uppercase text-3xl md:text-4xl lg:text-inter font-semibold text-blue">
           About Us
@@ -20,7 +23,7 @@ function Hero() {
         </div>
       </div>
       {Leading}
-    </Layout>
+    </Container>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import Layout from '../layout';
+import Container from '../container';
 import { RedButton } from '../index/hero';
 
 interface IFormInput {
@@ -124,7 +124,7 @@ function Form() {
   ];
 
   return (
-    <Layout child="py-32 md:px-32 lg:px-6 text-center" animate={true}>
+    <Container child="py-32 md:px-32 lg:px-6 text-center" animate={true}>
       <h1 className="text-blue uppercase font-semibold leading-tight text-3xl md:text-4xl xl:text-5xl">
         Fill out the Form
       </h1>
@@ -178,7 +178,7 @@ function Form() {
             })}
           />
           <p className="text-left text-gray-600 pt-16 leading-loose text-sm lg:text-base">
-            From time to time, we would like to contact you about our services
+            From time to time, we would like to contact you about opportunities
             as well as other content that may be of interest to you. If you
             consent to us contacting you for this purpose, please tick below.
             You may unsubscribe from these communications at any time.
@@ -209,7 +209,7 @@ function Form() {
           </div>
         </div>
       </form>
-    </Layout>
+    </Container>
   );
 }
 

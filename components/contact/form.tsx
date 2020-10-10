@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
-import Layout from '../layout';
+import Container from '../container';
 import { useState } from 'react';
 
 function Form() {
   return (
-    <Layout
+    <Container
       child="pt-40 pb-20 md:px-32 lg:px-6 text-center lg:pt-32 lg:pb-32"
       animate={true}
     >
@@ -20,7 +20,7 @@ function Form() {
           {Card}
         </div>
       </div>
-    </Layout>
+    </Container>
   );
 }
 
@@ -47,7 +47,7 @@ interface IFormInput {
 
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
-  const [buttonClass, setButtonClass] = useState('Submit');
+  const [buttonClass, setButtonClass] = useState('');
 
   const onSubmit = async (data: IFormInput) => {
     const request = await fetch('/api/contact', {
@@ -199,7 +199,7 @@ const ContactUsForm = () => {
       <div className="mt-6 flex text-left lg:block">
         <button
           type="submit"
-          className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-16"
+          className="flex-1 flex items-center uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-16"
         >
           Submit
         </button>

@@ -1,8 +1,8 @@
-import Layout from '../layout';
+import Container from '../container';
 
 function End2End() {
   return (
-    <Layout
+    <Container
       parent="bg-footer-image-dark bg-cover"
       child="text-center py-24 md:px-32 lg:px-6 text-white"
       animate={true}
@@ -25,7 +25,7 @@ function End2End() {
           />
         </div>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

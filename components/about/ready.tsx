@@ -1,8 +1,8 @@
-import Layout from '../layout';
+import Container from '../container';
 
 function Ready() {
   return (
-    <Layout child="text-center py-24" animate={true}>
+    <Container child="text-center py-24" animate={true}>
       <p className="text-black-light">
         Give your customer the experience they desire
       </p>
@@ -17,7 +17,7 @@ function Ready() {
           Get in Touch
         </button>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

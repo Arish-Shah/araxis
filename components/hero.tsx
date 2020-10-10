@@ -1,4 +1,4 @@
-import Layout from './layout';
+import Container from './container';
 
 interface Props {
   firstLine: string;
@@ -9,7 +9,7 @@ interface Props {
 
 function Hero({ firstLine, secondLine, intro, type }: Props) {
   return (
-    <Layout
+    <Container
       child="pt-40 pb-24 text-center md:px-32 lg:px-40 lg:pt-40"
       animate={true}
     >
@@ -62,7 +62,7 @@ function Hero({ firstLine, secondLine, intro, type }: Props) {
           </span>
         </div>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

@@ -16,7 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       {
         from: '"Form Submission" <formsubmission.araxis@gmail.com>',
         to: 'yashjha0007@gmail.com',
-        subject: 'New Submission from Contact',
+        subject: 'New Submission on Contact Page',
         text: name + ' submitted the contact form',
         html: `
           <h2>New Submission:</h2>

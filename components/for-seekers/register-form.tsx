@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import Layout from '../layout';
+import Container from '../container';
 import { useState, useRef, useEffect } from 'react';
 import { RedButton } from '../index/hero';
 import base64 from '../../util/base64';
@@ -94,7 +94,7 @@ function RegisterForm() {
   const formRef = useRef();
 
   return (
-    <Layout child="py-28 text-center md:px-32 lg:px-6" animate={true}>
+    <Container child="py-28 text-center md:px-32 lg:px-6" animate={true}>
       <h1 className="font-semibold uppercase text-3xl md:text-4xl lg:text-5xl text-blue">
         Register Form
       </h1>
@@ -162,10 +162,10 @@ function RegisterForm() {
           </div>
         </div>
         <p className="text-left text-gray-600 pt-16 leading-loose text-sm lg:text-base">
-          From time to time, we would like to contact you about our services as
-          well as other content that may be of interest to you. If you consent
-          to us contacting you for this purpose, please tick below. You may
-          unsubscribe from these communications at any time.
+          From time to time, we would like to contact you about our recruitment
+          opportunities as well as other content that may be of interest to you.
+          If you consent to us contacting you for this purpose, please tick
+          below. You may unsubscribe from these communications at any time.
         </p>
 
         <div
@@ -192,7 +192,7 @@ function RegisterForm() {
           <RedButton text="Click to Submit" />
         </div>
       </form>
-    </Layout>
+    </Container>
   );
 }
 

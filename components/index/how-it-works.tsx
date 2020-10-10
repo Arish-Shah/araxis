@@ -1,4 +1,4 @@
-import Layout from '../layout';
+import Container from '../container';
 import { ButtonWithArrow } from './vision';
 
 function HowItWorks() {
@@ -29,7 +29,7 @@ function HowItWorks() {
   ];
 
   return (
-    <Layout child="md:px-32 lg:px-6 pt-20 pb-16 text-center" animate={true}>
+    <Container child="md:px-32 lg:px-6 pt-20 pb-16 text-center" animate={true}>
       <div>
         <h1 className="uppercase text-blue text-4xl lg:text-inter font-semibold">
           How It Works
@@ -65,10 +65,10 @@ function HowItWorks() {
           ))}
         </div>
         <div className="flex justify-center pt-6">
-          <ButtonWithArrow text="Read More" href="/it-solutions" />
+          <ButtonWithArrow text="Read More" href="/for-recruiters" />
         </div>
       </div>
-    </Layout>
+    </Container>
   );
 }
 

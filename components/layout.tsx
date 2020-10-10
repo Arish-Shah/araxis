@@ -1,26 +1,18 @@
-import { MutableRefObject } from 'react';
+import Head from 'next/head';
+import Navbar from './navbar';
 
-interface Props {
-  children: React.ReactNode;
-  parent?: string;
-  parentRef?: MutableRefObject<undefined>;
-  child?: string;
-  animate?: boolean;
-}
-
-function Layout({ children, parent, parentRef, child, animate }: Props) {
-  const props = {};
-
-  if (animate) {
-    props['data-aos'] = 'fade-up';
-  }
-
+function Layout({ children, title }) {
   return (
-    <div className={`w-full ${parent}`} ref={parentRef}>
-      <div className={`px-6 max-w-7xl mx-auto ${child}`} {...props}>
-        {children}
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content={title} />
+      </Head>
+      <Navbar />
+      <header>{children}</header>
+    </>
   );
 }
 
