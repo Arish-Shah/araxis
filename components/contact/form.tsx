@@ -215,22 +215,22 @@ const Card = (
       With the right team in place, you can expect great work and even greater
       results.
     </p>
-    <div className="flex items-start gap-3 mt-10">
-      <img src="/contact/mail.svg" alt="Mail" className="mt-1" />
+    <div className="flex items-start mt-10">
+      <img src="/contact/mail.svg" alt="Mail" className="mt-1 mr-3" />
       <div>
         <p className="text-green text-sm">Mail us at:</p>
         <p className="text-sm">info@araxis.com</p>
       </div>
     </div>
-    <div className="flex items-start gap-3 mt-8">
-      <img src="/contact/headset.svg" alt="Headset" className="mt-1" />
+    <div className="flex items-start mt-8">
+      <img src="/contact/headset.svg" alt="Headset" className="mt-1 mr-3" />
       <div>
         <p className="text-green text-sm">Customer Care</p>
         <p className="text-sm">040 1234567890</p>
       </div>
     </div>
-    <div className="relative z-10 flex items-start gap-3 mt-10">
-      <img src="/contact/location.svg" alt="Location" />
+    <div className="relative z-10 flex items-start mt-10">
+      <img src="/contact/location.svg" alt="Location" className=" mr-3" />
       <div>
         <p className="text-green text-sm">Our Locations:</p>
         <p className="text-xs text-black-lighter">Postal Address</p>

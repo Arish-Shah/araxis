@@ -16,7 +16,7 @@ interface IFormInput {
 }
 
 function Form() {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   useEffect(() => {
@@ -186,7 +186,7 @@ function Form() {
 
           <div
             onClick={() => setChecked((checked) => !checked)}
-            className="text-left flex items-center gap-4 text-gray-600 pt-5 text-sm lg:text-base"
+            className="text-left flex items-center text-gray-600 pt-5 text-sm lg:text-base"
           >
             {checked ? (
               <img
@@ -200,7 +200,7 @@ function Form() {
                 style={{ height: '20px', width: '20px' }}
               ></div>
             )}
-            <p className="cursor-default">
+            <p className="cursor-default ml-4">
               I agree to receive communications from Araxis Systems.
             </p>
           </div>

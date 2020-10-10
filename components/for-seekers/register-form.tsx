@@ -16,7 +16,7 @@ interface IFormInput {
 }
 
 function RegisterForm() {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   useEffect(() => {
@@ -172,18 +172,18 @@ function RegisterForm() {
           onClick={() => setChecked((checked) => !checked)}
           className="text-left flex items-center text-gray-600 pt-5 text-sm lg:text-base"
         >
-          {checked ? (
+          <span
+            className="rounded-sm shadow-inner"
+            style={{ boxShadow: 'inset 0 0 0 2px var(--gray-300)' }}
+          >
             <img
               src="/form/check-green.svg"
-              className="cursor-pointer h-5 w-5 select-none"
+              className={`select-none w-5 ${
+                checked ? 'opacity-0' : 'opacity-100'
+              }`}
               draggable={false}
             />
-          ) : (
-            <div
-              className="cursor-pointer border-solid rounded-sm border border-gray-600"
-              style={{ height: '20px', width: '20px' }}
-            ></div>
-          )}
+          </span>
           <p className="cursor-default cursor-pointer ml-4">
             I agree to receive communications from Araxis Systems.
           </p>
