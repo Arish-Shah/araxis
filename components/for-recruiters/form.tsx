@@ -188,18 +188,18 @@ function Form() {
             onClick={() => setChecked((checked) => !checked)}
             className="text-left flex items-center text-gray-600 pt-5 text-sm lg:text-base"
           >
-            {checked ? (
+            <span
+              className="rounded-sm shadow-inner cursor-pointer"
+              style={{ boxShadow: 'inset 0 0 0 1px var(--gray-600)' }}
+            >
               <img
                 src="/form/check-green.svg"
-                className="h-5 w-5 select-none"
+                className={`select-none w-5 ${
+                  checked ? 'opacity-0' : 'opacity-100'
+                }`}
                 draggable={false}
               />
-            ) : (
-              <div
-                className="border-solid rounded-sm border border-gray-600"
-                style={{ height: '20px', width: '20px' }}
-              ></div>
-            )}
+            </span>
             <p className="cursor-default ml-4">
               I agree to receive communications from Araxis Systems.
             </p>

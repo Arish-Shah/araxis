@@ -173,8 +173,8 @@ function RegisterForm() {
           className="text-left flex items-center text-gray-600 pt-5 text-sm lg:text-base"
         >
           <span
-            className="rounded-sm shadow-inner"
-            style={{ boxShadow: 'inset 0 0 0 2px var(--gray-300)' }}
+            className="rounded-sm shadow-inner cursor-pointer"
+            style={{ boxShadow: 'inset 0 0 0 1px var(--gray-600)' }}
           >
             <img
               src="/form/check-green.svg"
@@ -184,7 +184,7 @@ function RegisterForm() {
               draggable={false}
             />
           </span>
-          <p className="cursor-default cursor-pointer ml-4">
+          <p className="cursor-default ml-4">
             I agree to receive communications from Araxis Systems.
           </p>
         </div>
