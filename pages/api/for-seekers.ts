@@ -59,7 +59,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
       (error, info) => {
         if (error) {
-          res.status(400).json({ message: 'Error Occured' });
+          res.status(400).json({ message: 'Error Occured', ...error });
         } else {
           res.status(200).json({ message: 'Email sent', ...info });
         }

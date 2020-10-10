@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 const transport = nodemailer.createTransport({
-  host: 'mail.araxissystems.com ',
+  host: 'mail.araxissystems.com',
   port: 465,
   secure: true,
   auth: {
