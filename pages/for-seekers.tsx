@@ -15,7 +15,7 @@ function ForSeekersPage() {
         type="seekers"
       />
       <Text />
-      <Testimonials alternate={true} title="Recruits" />
+      <Testimonials alternate={true} title="Recruits" page="for-seekers" />
       <RegisterForm />
       <Footer />
     </Layout>

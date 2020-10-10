@@ -14,7 +14,7 @@ function IndexPage() {
       <Companies />
       <Vision />
       <HowItWorks />
-      <Testimonials title="Clients" />
+      <Testimonials title="Clients" page="index" />
       <Ready />
       <Footer />
     </Layout>

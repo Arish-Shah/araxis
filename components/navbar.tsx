@@ -48,7 +48,17 @@ function Navbar() {
   };
 
   const icon = isOpen ? Cross : Hamburger;
-  const pathname = useRouter().pathname;
+  const router = useRouter();
+  const pathname = router.pathname;
+
+  // Closes the dropdown if navigating to same page
+  const closeIfSamePage = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    const href = (event.target as HTMLAnchorElement).href;
+    const location = window.location.href;
+    if (href === location) setIsOpen(false);
+  };
 
   const links: NavItem[] = [
     { text: 'Home', href: '/' },
@@ -141,7 +151,12 @@ function Navbar() {
                 : 'text-blue border-transparent';
             return (
               <Link href={href} key={href}>
-                <a className={`${classes} ${smClasses}`}>{text}</a>
+                <a
+                  className={`${classes} ${smClasses}`}
+                  onClick={closeIfSamePage}
+                >
+                  {text}
+                </a>
               </Link>
             );
           })}

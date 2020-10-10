@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
-import Container from '../container';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+
+import Container from '../container';
 
 function Form() {
   return (
@@ -47,15 +49,14 @@ interface IFormInput {
 
 const ContactUsForm = () => {
   const { register, errors, handleSubmit } = useForm<IFormInput>();
-  const [buttonClass, setButtonClass] = useState('');
+  const router = useRouter();
 
   const onSubmit = async (data: IFormInput) => {
-    const request = await fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    });
-    const json = await request.json();
-    console.log(json);
+    // const request = await fetch('/api/contact', {
+    //   method: 'POST',
+    //   body: JSON.stringify(data)
+    // });
+    router.push('/thank-you');
   };
 
   const inputs: {
@@ -199,7 +200,7 @@ const ContactUsForm = () => {
       <div className="mt-6 flex text-left lg:block">
         <button
           type="submit"
-          className="flex-1 flex items-center uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-16"
+          className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-16"
         >
           Submit
         </button>
@@ -219,7 +220,7 @@ const Card = (
       <img src="/contact/mail.svg" alt="Mail" className="mt-1 mr-3" />
       <div>
         <p className="text-green text-sm">Mail us at:</p>
-        <p className="text-sm">info@araxis.com</p>
+        <p className="text-sm">info@araxissystems.com</p>
       </div>
     </div>
     <div className="flex items-start mt-8">

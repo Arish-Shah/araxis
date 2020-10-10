@@ -58,7 +58,7 @@ function Footer() {
           <div className="pt-5 leading-loose flex flex-col items-start">
             {links.map(({ href, text }) => (
               <Link href={href} key={text}>
-                <a className="text-sm text-white hover:shadow transition-colors duration-100">
+                <a className="text-sm text-black-lighter hover:text-white transition-colors duration-100">
                   {text}
                 </a>
               </Link>
@@ -83,7 +83,9 @@ function Footer() {
           <h3 className="text-lg font-medium">Give us a call</h3>
           <p className="text-sm py-2">
             <Link href={phoneLink.href}>
-              <a className="text-white">{phoneLink.text}</a>
+              <a className="text-black-lighter hover:text-white transition-colors duration-100">
+                {phoneLink.text}
+              </a>
             </Link>
           </p>
         </div>

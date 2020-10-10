@@ -4,36 +4,64 @@ import Slider from 'react-slick';
 
 function Testimonials({
   alternate,
-  title
+  title,
+  page
 }: {
   alternate?: boolean;
   title: string;
+  page: 'index' | 'for-seekers';
 }) {
   const alt = alternate || false;
   const className = alt ? 'flex-row-reverse' : 'flex-row';
 
-  const testimonals: { name: string; of: string; comment: string }[] = [
-    {
-      name: 'John Doe',
-      of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
-    },
-    {
-      name: 'Alice May',
-      of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.`
-    },
-    {
-      name: 'Jack Smith',
-      of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
-    },
-    {
-      name: 'Karen Rae',
-      of: 'Multinational Corp.',
-      comment: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.`
-    }
-  ];
+  const testimonals: { name: string; of: string; comment: string }[] =
+    page === 'index'
+      ? [
+          {
+            name: 'David',
+            of: 'Fintech Firm',
+            comment:
+              'Araxis did a tremendous job in finding the right skill and right fit for our organization and saving a lot of time.'
+          },
+          {
+            name: 'Alexandra',
+            of: 'Design Agency',
+            comment:
+              'Hassle free search for the right candidate for your company starts here.'
+          },
+          {
+            name: 'Charles',
+            of: 'Job Seeker',
+            comment:
+              'We always want to get placed in the right organization and araxis helped me get placed just there.'
+          },
+          {
+            name: 'Alex',
+            of: 'Job Seeker',
+            comment:
+              'All it took me was my resume upload and araxis took care of the rest.'
+          }
+        ]
+      : [
+          {
+            name: 'Charles',
+            of: 'Job Seeker',
+            comment:
+              'We always want to get placed in the right organization and araxis helped me get placed just there.'
+          },
+          {
+            name: 'Alex',
+            of: 'Job Seeker',
+            comment:
+              'All it took me was my resume upload and araxis took care of the rest.'
+          },
+          {
+            name: 'Chaitanya',
+            of: 'Job Seeker',
+            comment:
+              'For a junior developer, it was difficult to find both growth opportunity and right compensation. Araxis made it possible for me.'
+          }
+        ];
 
   const settings = {
     dots: true,
