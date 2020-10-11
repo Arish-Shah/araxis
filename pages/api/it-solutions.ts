@@ -45,11 +45,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           </table>
         `
       },
-      (error, info) => {
+      async (error, info) => {
         if (error) {
           res.status(400).json({ message: 'Error Occured', ...error });
         } else {
-          confirmationMail(email);
+          await confirmationMail(email);
           res.status(200).json({ message: 'Email sent', ...info });
         }
       }

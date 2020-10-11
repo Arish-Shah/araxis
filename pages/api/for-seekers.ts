@@ -57,9 +57,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         `,
         attachments: [resume]
       },
-      (error, info) => {
+      async (error, info) => {
         if (error) {
-          res.status(400).json({ message: 'Error Occured', ...error });
+          await res.status(400).json({ message: 'Error Occured', ...error });
         } else {
           confirmationMail(email);
           res.status(200).json({ message: 'Email sent', ...info });
