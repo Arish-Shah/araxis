@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Container from '../container';
 import { RedButton } from '../index/hero';
+import Spinner from '../spinner';
 
 interface IFormInput {
   firstName: string;
@@ -16,8 +18,10 @@ interface IFormInput {
 }
 
 function Form() {
+  const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(true);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+  const router = useRouter();
 
   useEffect(() => {
     const image = new Image();
@@ -25,12 +29,18 @@ function Form() {
   }, []);
 
   const onSubmit = async (data: IFormInput) => {
-    const req = await fetch('/api/for-recruiters', {
-      method: 'POST',
-      body: JSON.stringify({ ...data, communications: checked })
-    });
-    const json = await req.json();
-    console.log(json);
+    setLoading(true);
+    try {
+      await fetch('/api/for-recruiters', {
+        method: 'POST',
+        body: JSON.stringify({ ...data, communications: checked })
+      });
+      router.push('/thank-you');
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputs: {
@@ -204,8 +214,15 @@ function Form() {
               I agree to receive communications from Araxis Systems.
             </p>
           </div>
-          <div className="mt-12 flex lg:block text-center">
-            <RedButton text="Click to Submit" />
+          <div className="mt-12 flex lg:block">
+            <button
+              type="submit"
+              className={`flex-1 flex mx-auto justify-center items-center uppercase font-medium text-xl text-white bg-gradient-to-r from-red to-red-dark rounded-none py-4 lg:px-16 ${
+                loading ? 'loading' : ''
+              }`}
+            >
+              {loading ? <Spinner /> : 'Click to Submit'}
+            </button>
           </div>
         </div>
       </form>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '../container';
 
 function Ready() {
@@ -10,12 +11,14 @@ function Ready() {
         Work with us!
       </h1>
       <div className="mt-4 flex lg:block">
-        <button
-          type="submit"
-          className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-20"
-        >
-          Get in Touch
-        </button>
+        <Link href="/contact">
+          <button
+            type="submit"
+            className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-20"
+          >
+            Get in Touch
+          </button>
+        </Link>
       </div>
     </Container>
   );

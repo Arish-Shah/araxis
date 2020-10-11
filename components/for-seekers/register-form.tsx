@@ -1,9 +1,11 @@
 import { useForm } from 'react-hook-form';
+import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import Container from '../container';
-import { useState, useRef, useEffect } from 'react';
 import { RedButton } from '../index/hero';
 import base64 from '../../util/base64';
+import Spinner from '../spinner';
 
 interface IFormInput {
   firstName: string;
@@ -17,6 +19,7 @@ interface IFormInput {
 
 function RegisterForm() {
   const [checked, setChecked] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   useEffect(() => {
@@ -24,14 +27,22 @@ function RegisterForm() {
     image.src = '/form/check-green.svg';
   }, []);
 
+  const router = useRouter();
+
   const onSubmit = async (data: IFormInput) => {
-    const resume = await base64(data.resume[0]);
-    const request = await fetch('/api/for-seekers', {
-      method: 'POST',
-      body: JSON.stringify({ ...data, resume, communications: checked })
-    });
-    const json = await request.json();
-    console.log(json);
+    setLoading(true);
+    try {
+      const resume = await base64(data.resume[0]);
+      await fetch('/api/for-seekers', {
+        method: 'POST',
+        body: JSON.stringify({ ...data, resume, communications: checked })
+      });
+      router.push('/thank-you');
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputs: {
@@ -189,7 +200,14 @@ function RegisterForm() {
           </p>
         </div>
         <div className="mt-12 flex lg:block">
-          <RedButton text="Click to Submit" />
+          <button
+            type="submit"
+            className={`flex-1 flex mx-auto justify-center items-center uppercase bg-gradient-to-r from-red to-red-dark font-medium text-xl text-white rounded-none py-4 lg:px-16 ${
+              loading ? 'loading' : ''
+            }`}
+          >
+            {loading ? <Spinner /> : 'Click to Submit'}
+          </button>
         </div>
       </form>
     </Container>

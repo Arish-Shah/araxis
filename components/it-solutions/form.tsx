@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
 
 import Container from '../container';
+import Spinner from '../spinner';
 
 interface IFormInput {
   name: string;
@@ -11,15 +14,21 @@ interface IFormInput {
 }
 
 function Form() {
+  const [loading, setLoading] = useState(false);
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+  const router = useRouter();
 
   const onSubmit = async (data: IFormInput) => {
-    const request = await fetch('/api/it-solutions', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    });
-    const json = await request.json();
-    console.log(json);
+    try {
+      await fetch('/api/it-solutions', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      router.push('/thank-you');
+    }
   };
 
   const inputs: {
@@ -146,9 +155,11 @@ function Form() {
           <div className="mt-6 flex lg:block">
             <button
               type="submit"
-              className="flex-1 uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-20"
+              className={`flex-1 flex mx-auto justify-center items-center uppercase bg-green font-medium text-xl text-white rounded-none py-4 lg:px-16 ${
+                loading ? 'loading' : ''
+              }`}
             >
-              Submit
+              {loading ? <Spinner /> : 'Submit'}
             </button>
           </div>
         </form>

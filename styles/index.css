@@ -63,6 +63,12 @@ button:hover {
   transition: opacity 150ms ease;
 }
 
+button.loading {
+  opacity: 0.85 !important;
+  transition: opacity 150ms ease;
+  cursor: not-allowed;
+}
+
 /* Instagram hover */
 .instagram {
   display: inline-block;
