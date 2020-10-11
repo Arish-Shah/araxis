@@ -52,11 +52,15 @@ const ContactUsForm = () => {
   const router = useRouter();
 
   const onSubmit = async (data: IFormInput) => {
-    // const request = await fetch('/api/contact', {
-    //   method: 'POST',
-    //   body: JSON.stringify(data)
-    // });
-    router.push('/thank-you');
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+      router.push('/thank-you');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const inputs: {
