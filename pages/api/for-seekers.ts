@@ -25,8 +25,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(
       {
-        from: '"Form Submission" <formsubmission.araxis@gmail.com>',
-        to: 'yashjha0007@gmail.com',
+        from: '"Araxis" <noreply@araxissystems.com>',
+        to: 'info@araxissystems.com',
         subject: 'New Submission on For Seekers Page',
         text: firstName + ' submitted the seekers form',
         html: `
@@ -53,7 +53,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               <td>${communications}</td>
             </tr>
           </table>
-          <a href="mailto:${email}">Click here to reply</a>
         `,
         attachments: [resume]
       },

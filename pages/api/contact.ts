@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
+import confirmationMail from '../../util/confirmation-mail';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
@@ -14,8 +15,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(
       {
-        from: '"Form Submission" <formsubmission.araxis@gmail.com>',
-        to: 'yashjha0007@gmail.com',
+        from: '"Araxis" <noreply@araxissystems.com>',
+        to: 'info@araxissystems.com',
         subject: 'New Submission on Contact Page',
         text: name + ' submitted the contact form',
         html: `
@@ -42,13 +43,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               <td>${message}</td>
             </tr>
           </table>
-          <a href="mailto:${email}">Click here to reply</a>
         `
       },
       (error, info) => {
         if (error) {
           res.status(400).json({ message: 'Error Occured', ...error });
         } else {
+          confirmationMail(email);
           res.status(200).json({ message: 'Email Sent', ...info });
         }
       }
