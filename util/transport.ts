@@ -1,9 +1,11 @@
 import nodemailer from 'nodemailer';
 
 const transport = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'mail.araxissystems.com ',
+  port: 465,
+  secure: true,
   auth: {
-    user: 'formsubmission.araxis@gmail.com',
+    user: 'noreply@araxissystems.com',
     pass: 'Araxis@2020'
   }
 });
