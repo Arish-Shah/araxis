@@ -19,15 +19,17 @@ function Form() {
   const router = useRouter();
 
   const onSubmit = async (data: IFormInput) => {
+    setLoading(true);
     try {
       await fetch('/api/it-solutions', {
         method: 'POST',
         body: JSON.stringify(data)
       });
+      router.push('/thank-you');
     } catch (err) {
       console.log(err);
     } finally {
-      router.push('/thank-you');
+      setLoading(false);
     }
   };
 
