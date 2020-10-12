@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
-import confirmationMail from '../../util/confirmation-mail';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
@@ -68,11 +67,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           </table>
         `
       },
-      async (error, info) => {
+      (error, info) => {
         if (error) {
           res.status(400).json({ message: 'Error Occured', ...error });
         } else {
-          await confirmationMail(email);
           res.status(200).json({ message: 'Email sent', ...info });
         }
       }
