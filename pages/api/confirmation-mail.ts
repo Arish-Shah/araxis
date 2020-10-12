@@ -3,7 +3,7 @@ import transporter from '../../util/transport';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const email = JSON.parse(req.body);
+    const { email } = JSON.parse(req.body);
     const valid = email?.trim() !== '';
 
     if (!valid) {
