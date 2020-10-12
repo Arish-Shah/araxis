@@ -37,6 +37,10 @@ function RegisterForm() {
         method: 'POST',
         body: JSON.stringify({ ...data, resume, communications: checked })
       });
+      await fetch('/api/confirmation-mail', {
+        method: 'POST',
+        body: JSON.stringify({ email: data.email })
+      });
       router.push('/thank-you');
     } catch (err) {
       console.log(err);

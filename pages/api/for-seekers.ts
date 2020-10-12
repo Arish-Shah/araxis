@@ -25,8 +25,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(
       {
-        from: '"Araxis" <noreply@araxissystems.com>',
-        to: 'info@araxissystems.com',
+        from: '"Araxis" <formsubmission.araxis@gmail.com>',
+        to: 'mohammedazharuddin100@gmail.com',
         subject: 'New Submission on For Seekers Page',
         text: firstName + ' submitted the seekers form',
         html: `
