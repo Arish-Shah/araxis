@@ -13,7 +13,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     await transporter.sendMail(
       {
-        from: '"Araxis" <noreply@araxissystems.com>',
+        from: '"Araxis" <formsubmission.araxis@gmail.com>',
         to: email,
         subject: 'Thank you for contacting Araxis',
         text: 'Your submission has been received, our team is working on it.',

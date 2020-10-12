@@ -14,8 +14,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(
       {
-        from: '"Araxis" <noreply@araxissystems.com>',
-        to: 'info@araxissystems.com',
+        from: '"Araxis" <formsubmission.araxis@gmail.com>',
+        to: 'yashjha0007@gmail.com',
         subject: 'New Submission on Contact Page',
         text: name + ' submitted the contact form',
         html: `
