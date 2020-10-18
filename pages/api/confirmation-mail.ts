@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import transporter from '../../util/transport';
+import mailingList from '../../util/mailing-list';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -13,7 +14,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     await transporter.sendMail(
       {
-        from: '"Araxis" <formsubmission.araxis@gmail.com>',
+        from: mailingList.from,
         to: email,
         subject: 'Thank you for contacting Araxis',
         text: 'Your submission has been received, our team is working on it.',

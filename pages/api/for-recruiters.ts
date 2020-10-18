@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import mailingList from '../../util/mailing-list';
 import transporter from '../../util/transport';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -29,8 +30,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(
       {
-        from: '"Araxis" <formsubmission.araxis@gmail.com>',
-        to: 'mohammedazharuddin100@gmail.com',
+        from: mailingList.from,
+        to: mailingList.to,
         subject: 'New Submission on For Recruiters Page',
         text: firstName + ' submitted the recruiters form',
         html: `
