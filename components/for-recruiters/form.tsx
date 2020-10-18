@@ -165,6 +165,7 @@ function Form() {
                 id={id}
                 ref={register(rules)}
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                disabled={loading}
               />
             </div>
           ))}
@@ -190,6 +191,7 @@ function Form() {
                 message: 'Fields marked * are required'
               }
             })}
+            disabled={loading}
           />
           <p className="text-left text-gray-600 pt-16 leading-loose text-sm lg:text-base">
             From time to time, we would like to contact you about opportunities

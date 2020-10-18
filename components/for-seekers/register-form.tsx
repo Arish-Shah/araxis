@@ -137,6 +137,7 @@ function RegisterForm() {
                   name={id}
                   ref={register(rules)}
                   className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                  disabled={loading}
                 />
               </div>
             );
@@ -173,6 +174,7 @@ function RegisterForm() {
               })}
               multiple={false}
               className="text-sm w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+              disabled={loading}
             />
           </div>
         </div>

@@ -149,6 +149,7 @@ const ContactUsForm = () => {
                 ref={register(rules)}
                 type={type}
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                disabled={loading}
               />
             </div>
           );
@@ -167,6 +168,7 @@ const ContactUsForm = () => {
               value="Recruiting"
               ref={register()}
               defaultChecked={true}
+              disabled={loading}
             />
             <span className="pl-2">Recruiting</span>
           </label>
@@ -177,6 +179,7 @@ const ContactUsForm = () => {
               id="job-seeking"
               value="Job Seeking"
               ref={register()}
+              disabled={loading}
             />
             <span className="pl-2">Job Seeking</span>
           </label>
@@ -187,6 +190,7 @@ const ContactUsForm = () => {
               id="it-solutions"
               value="IT Solutions"
               ref={register()}
+              disabled={loading}
             />
             <span className="pl-2">IT Solutions</span>
           </label>
@@ -197,6 +201,7 @@ const ContactUsForm = () => {
               id="other"
               value="Other"
               ref={register()}
+              disabled={loading}
             />
             <span className="pl-2">Other</span>
           </label>
@@ -208,6 +213,7 @@ const ContactUsForm = () => {
           className="w-full h-40 placeholder-blue border-solid border-2 border-gray-300 rounded-md p-2 focus:border-green"
           name="message"
           ref={register()}
+          disabled={loading}
         />
       </div>
       <div className="mt-6 flex text-left lg:block">

@@ -119,6 +119,7 @@ function Form() {
                   ref={register(rules)}
                   type={type}
                   className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
+                  disabled={loading}
                 />
               </div>
             ))}
@@ -132,6 +133,7 @@ function Form() {
                 placeholder="Select"
                 className="w-full border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
                 ref={register()}
+                disabled={loading}
               >
                 <option value="Custom Application Development">
                   Custom Application Development
@@ -156,6 +158,7 @@ function Form() {
               placeholder="Message"
               className="w-full text-sm h-40 border-solid border-2 border-gray-300 rounded-md p-2 mt-3 focus:border-green"
               ref={register()}
+              disabled={loading}
             />
           </div>
           <div className="mt-6 flex lg:block">
