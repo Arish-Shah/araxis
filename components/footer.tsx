@@ -16,7 +16,7 @@ function Footer() {
       href: '/',
       className: 'hover:text-facebook transition duration-200 mr-5',
       icon: facebook
-    }
+    },
     // {
     //   href: '/',
     //   className: 'hover:text-twitter transition duration-200 mr-5',
@@ -27,11 +27,11 @@ function Footer() {
     //   className: 'hover:text-instagram transition duration-200 mr-5',
     //   icon: instagram
     // },
-    // {
-    //   href: '/',
-    //   className: 'hover:text-linkedin transition duration-200 mr-5',
-    //   icon: linkedin
-    // }
+    {
+      href: 'https://www.linkedin.com/company/araxis-systems-inc/',
+      className: 'hover:text-linkedin transition duration-200 mr-5',
+      icon: linkedin
+    }
   ];
 
   const phoneLink = {

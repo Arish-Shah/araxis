@@ -242,19 +242,19 @@ const Card = (
       <img src="/contact/headset.svg" alt="Headset" className="mt-1 mr-3" />
       <div>
         <p className="text-green text-sm">Customer Care</p>
-        <p className="text-sm">040 1234567890</p>
+        <p className="text-sm">+1 (757) 271-8920</p>
       </div>
     </div>
     <div className="relative z-10 flex items-start mt-10">
       <img src="/contact/location.svg" alt="Location" className=" mr-3" />
       <div>
         <p className="text-green text-sm">Our Locations:</p>
-        <p className="text-xs text-black-lighter">Postal Address</p>
-        <p className="text-sm">8 Smoky Hollow Street</p>
-        <p className="text-sm">Clayton, NC 27520</p>
-        <p className="text-xs text-black-lighter mt-4">Corporate Address</p>
-        <p className="text-sm">380 Old Hilltop Rd.</p>
-        <p className="text-sm">Gibsonia, PA 15044</p>
+        <p className="text-xs text-black-lighter">Location 1</p>
+        <p className="text-sm">1Tara blvd,</p>
+        <p className="text-sm">Suite 102,Nashua NH 03062</p>
+        <p className="text-xs text-black-lighter mt-4">Location 2</p>
+        <p className="text-sm">2277 Rio Rancho Dr.,</p>
+        <p className="text-sm">Virginia Beach, VA-23456</p>
       </div>
     </div>
     <img
